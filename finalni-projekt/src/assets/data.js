@@ -238,7 +238,7 @@ let recepty = [{
     {
         nazev: 'Quiche s pórkem, houbami a sýrem',
         pocetPorci: 8,
-        kategorie: ['hlavní jídla', 'svačiny', 'snidane'],
+        kategorie: ['hlavní jídla', 'svačiny', 'snídaně'],
         postup: 'Z mouky, nasekaného másla, soli a vody vytvoříme kouli. Zabalíme ji do fólie a dáme do ledničky. Pórek a houby nakrájíme na kousky a podusíme na lžíci oleje. Osolíme. V případě potřeby podléváme vodou. Z těsta vytvoříme placku, kterou vmáčkneme do formy s vyššími okraji. Těsto by mělo tvořit misku. Dovnitř naskládáme zeleninovou směs, zalijeme rozšlehanými vejci a zasypeme sýrem. Pečeme při teplotě 180°C, dokud těsto nezezlátne.',
         ingredience: ['280 g hladké špaldové mouky', '165 g másla', '8 lžic vody', 'sůl', '6 vajec', 'pórek', '500 g žampiónů', 'lžíce oleje', '100 g tvrdého nastrouhaného sýra'],
         obrazek: 'quichesporkem.jpg',
@@ -262,7 +262,7 @@ let recepty = [{
         postup: 'Batáty oloupeme, nakrájíme na malé kousky a vaříme v osolené vodě 10-15 minut do změknutí. Po scedení přidáme lžíci másla a rozšťoucháme na pyré. Filety candáta omyjeme a usušíme. Potom ho osolíme a opepříme z obou stran. Candáta osmažíme na rozpáleném oleji maximálně 5 minut z obou stran. Na závěr ho můžeme pokapat citrónem.',
         ingredience: ['750g batátů', '4 filety candáta', 'olivový olej', 'pepř', 'sůl', 'citrón'],
         obrazek: 'batatovepyrescandatem.jpg',
-        vyhledavani: ['batáty', 'candát']
+        vyhledavani: ['batáty', 'candát', 'ryba']
     },
 
     {
@@ -274,6 +274,35 @@ let recepty = [{
         obrazek: 'kurecivyvar.jpg',
         vyhledavani: ['kuře', 'vývar', 'polévky',]
     },
+    {
+        nazev: 'Ovesné sušenky',
+        pocetPorci: 20,
+        kategorie: ['svačiny', 'dezerty'],
+        postup: 'Máslo rozpustíme na mírném ohni a smícháme se sirupem. Přidáme sodu rozmíchánou se dvěmi lžícemi horké vody. Dáme dohromady všechny suché ingredience a promícháme s rozehřátou směsí. Vyložíme plech pečícím papírem a lžící vytvarujeme těsto na sušenky. Pečeme 15-20 minut na 150 stupňů.',
+        ingredience: ['1 hrnek ovesných vloček', '1 hrnek celozrnné hladké mouky', '1/2 hrnku třtinového cukru', '125 g másla', '3 lžíce sirupu/medu', '1 lžička jedlé sody', 'libovolně oříšků, rozinek a semínek'],
+        obrazek: 'ovesnesusenky.jpg',
+        vyhledavani: ['ovesné vločky', 'oříšky']
+     },
+    {
+        nazev: 'Vajíčkové muffiny',
+        pocetPorci: 12,
+        kategorie: ['snídaně', 'svačiny'],
+        postup: 'Troubu předehřejeme na 160 stupňů. V míse smíchame všechny ingredience. Směs vylejeme do formiček na muffiny a pečeme 8-10 minut.',
+        ingredience: ['10 vajec', '100g tvrdého sýru', '150g čerstvého špenátu', '2 rajčata', 'sůl', 'pepř'],
+        obrazek: 'vajickovemuffiny.jpg',
+        vyhledavani: ['vejce', 'sýr', 'rajčata', 'špenát']
+    },
+    {
+        nazev: 'Salát s balkánským sýrem',
+        pocetPorci: 4,
+        kategorie: ['svačiny', 'saláty'],
+        postup: 'Všechnu zeleninu nakrájíme nadrobno a dáme do mísy. Podrobíme balkánským sýrem, osolíme, opepříme a můžeme podávat.',
+        ingredience: ['okurka', 'rajčata', 'paprika', 'červená cibule', 'olivy', 'salát'],
+        obrazek: 'salatsbalkanskymsyrem.jpg',
+        vyhledavani: ['balkánský sýr', 'rajčata', 'okurka', 'paprika', 'olivy', 'zelenina']
+    },
+
+
 
 
 ];
