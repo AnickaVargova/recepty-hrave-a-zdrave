@@ -109,7 +109,7 @@ let recepty = [{
         vyhledavani: ['těstoviny', 'ryba', 'rajčata', 'paprika', 'cibule', 'jogurt']
     },
     {
-        nazev: 'Salát z červené řepy z bílým sýrem',
+        nazev: 'Salát z červené řepy s bílým sýrem',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'vegetariánské', 'saláty'],
         postup: 'Červenou řepu uvaříme doměkka. Po vychladnutí oloupeme a nastrouháme na tenké plátky. Sýr nakrájíme na kostičky, přidáme slunečnicová semínka a vše smícháme dohromady. Zakápneme olivovým olejem a vinným octem a pokud je třeba, přisolíme. Podáváme s celozrnným pečivem.',
@@ -244,6 +244,37 @@ let recepty = [{
         obrazek: 'quichesporkem.jpg',
         vyhledavani: ['pórek', 'vejce', 'houby', 'sýr']
     },
+
+    {
+        nazev: 'Brownies',
+        pocetPorci: 20,
+        kategorie: ['dezerty'],
+        postup: 'V jedné misce smícháme hladkou mouku, kakao a kypřící prášek. V druhé misce rozmačkáme banány vidličkou, přidáme sirup, vajíčko a kokosový olej (pokud nemáme, můžeme ho nahradit 100g rozpuštěného másla). Smícháme obě misky dohromady a vylejeme do formy vyložené pečícím papírem. Podrobíme nastrouhanou čokoládou a pečeme 30 minut na 180 stupnů.',
+        ingredience: ['90g hladké celozrnné mouky', '3 banány', '2 vajíčka', '50g kakaa', 'kypřící prášek', '5 lžic medu/sirupu', '2 lžíce kokosového oleje', 'hořká čokoláda'],
+        obrazek: 'brownies.jpg',
+        vyhledavani: ['banán', 'čokoláda']
+    },
+
+    {
+        nazev: 'Batátové pyré s candátem',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla'],
+        postup: 'Batáty oloupeme, nakrájíme na malé kousky a vaříme v osolené vodě 10-15 minut do změknutí. Po scedení přidáme lžíci másla a rozšťoucháme na pyré. Filety candáta omyjeme a usušíme. Potom ho osolíme a opepříme z obou stran. Candáta osmažíme na rozpáleném oleji maximálně 5 minut z obou stran. Na závěr ho můžeme pokapat citrónem.',
+        ingredience: ['750g batátů', '4 filety candáta', 'olivový olej', 'pepř', 'sůl', 'citrón'],
+        obrazek: 'batatovepyrescandatem.jpg',
+        vyhledavani: ['batáty', 'candát']
+    },
+
+    {
+        nazev: 'Kuřecí vývar',
+        pocetPorci: 4,
+        kategorie: ['polévky'],
+        postup: 'Kuřecí díly přidáme do hrnce plného studené vody. Necháme přivést k varu a stáhneme plamen na minimum, aby voda jemně problublávala. Přidáme polévkové koření a necháme běžet minimálně dvě hodiny - mezitím vybíráme lžící pěnu, která se objeví na hladině. Potom přidáme polévkovou zeleninu a povaříme jí do změknutí. Části kuřete vyjmeme, necháme chvíli vychladnout a maso obereme. Maso vložíme zpět do kuřecího vývaru. Dochutíme solí, případně i pepřem.',
+        ingredience: ['Kuřecí polévková směs', '1/4 celere', '1 petržel', '1 mrkev', '1 cibule', '5 kuliček nového koření', '3 listy bobkového listu', '5 kuliček pepře'],
+        obrazek: 'kurecivyvar.jpg',
+        vyhledavani: ['kuře', 'vývar', 'polévky',]
+    },
+
 
 ];
 
