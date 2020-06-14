@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="okno">
       <h1>Tady bude hra</h1>
       </div>
 </template>
