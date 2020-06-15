@@ -211,7 +211,7 @@ let recepty = [{
         nazev: 'Kuřecí salát',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'saláty'],
-        postup: '',
+        postup: 'Kuřecí maso opláchneme, nakrájíme na kousky, osolíme, opepříme a necháme opékat na rozpáleném ohni cca 15 minut. Zeleninu nakrájíme a dáme do mísy. Přidáme hotové maso. Dresing připravíme smícháním bílého jogurtu, soli a citrónu. ',
         ingredience: ['500 g kuřecích prsou', 'olej na opékání', 'rajčata, papriky, ledový salát a jiná zelenina', '300 ml bílého jogurtu', 'lžíce citrónové šťávy', 'sůl'],
         obrazek: 'kurecisalat.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'salát', 'zelenina', 'jogurt']
@@ -262,7 +262,7 @@ let recepty = [{
         postup: 'Batáty oloupeme, nakrájíme na malé kousky a vaříme v osolené vodě 10-15 minut do změknutí. Po scedení přidáme lžíci másla a rozšťoucháme na pyré. Filety candáta omyjeme a usušíme. Potom ho osolíme a opepříme z obou stran. Candáta osmažíme na rozpáleném oleji maximálně 5 minut z obou stran. Na závěr ho můžeme pokapat citrónem.',
         ingredience: ['750g batátů', '4 filety candáta', 'olivový olej', 'pepř', 'sůl', 'citrón'],
         obrazek: 'batatovepyrescandatem.jpg',
-        vyhledavani: ['batáty', 'candát', 'ryba']
+        vyhledavani: ['batáty', 'candát', 'ryby']
     },
 
     {
@@ -295,13 +295,76 @@ let recepty = [{
     {
         nazev: 'Salát s balkánským sýrem',
         pocetPorci: 4,
-        kategorie: ['svačiny', 'saláty'],
+        kategorie: ['svačiny', 'saláty','vegetariánské'],
         postup: 'Všechnu zeleninu nakrájíme nadrobno a dáme do mísy. Podrobíme balkánským sýrem, osolíme, opepříme a můžeme podávat.',
         ingredience: ['okurka', 'rajčata', 'paprika', 'červená cibule', 'olivy', 'salát'],
         obrazek: 'salatsbalkanskymsyrem.jpg',
         vyhledavani: ['balkánský sýr', 'rajčata', 'okurka', 'paprika', 'olivy', 'zelenina']
     },
+    {
+        nazev: 'Krůtí roláda',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla'],
+        postup: 'Krůtí maso omyjeme, naklepeme, osolíme a opepříme. Poklademe kousky mozzarely a cherry rajčat. Následně směs zarolujeme a svážeme potravinářským provázkem. Pečeme na 180 stupňů cca 2 hodiny, přitom průběžně podléváme. Krůtí roláda se skvěle hodí k bramborové kaši.',
+        ingredience: ['Krůtí vykostěnné stehno', '125g mozzarely', '100g cherry rajčat', '750g brambor'],
+        obrazek: 'krutirolada.jpg',
+        vyhledavani: ['krůtí maso', 'mozzarela', 'rajčata', 'brambory']
+    },
+    {
+        nazev: 'Kuřecí řízky s cuketou',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla'],
+        postup: 'Předehřejeme troubu na 200 stupňů. Plátky kuřete naklepeme a dáme je do pekáče. Přidáme pár brambor, nakrájený citrón a sezóní zeleninu, například cuketu. Osolíme, opepříme a můžeme dochutit bazalkou. Pekáč zakápneme kapkou olivového oleje a pečeme 35-45 minut.',
+        ingredience: ['600g kuřecích prsních řízků', '1/2 citrónu', '500g cukety', '1 cuketa', 'bazalka'],
+        obrazek: 'kureciprsascuketou.jpg',
+        vyhledavani: ['kuřecí maso', 'cuketa', 'zelenina', 'brambory', 'citrón', 'bazalka']
+    },
+    {
+        nazev: 'Losos s chřestem',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla', 'ryby'],
+        postup: 'Plech vyložíme pečícím papírem. Chřest umyjeme a nakrojíme cca 1,5 cm od konců. Filety také omyjeme a pokládáme na plech v pořadí chřest filety chřest. Vršek slabě osolíme a přidáme kousky citrónu a másla. Pečeme cca 30 min na 175 stupňů. ',
+        ingredience: ['500g lososa', '2 citróny', '50g másla', '500g chřestu', 'sůl'],
+        obrazek: 'lososschrestem.jpg',
+        vyhledavani: ['losos', 'ryby', 'chřest', 'zelenina', 'citrón', 'máslo']
+    },
+    {
+        nazev: 'Quiche s mozzarelou a rajčaty',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla', 'svačiny', 'vegetariánské'],
+        postup: 'Zpracujeme mouku, máslo, 1 vajíčko a dvě lžíce mléka do těsta a dáme ho vychladit do ledničky. Po 30ti minutách ho vytáhneme a namačkáme do formy, pečeme 15min na 180 stupňů. Nápň připravíme smícháním tří vajíček, mléka, smetany a po špetce soli, pepře a muškátového oříšku. Do hotového korpusu naskládáme kousky mozzarely na plátky, pokrájená rajčáta a čerstvý špenát nastřídačku a nakonec zalijeme náplní. Pečeme 45 minut.',
+        ingredience: ['300g hladké celozrnné mouky', '150g másla', '4 vejce', '70 ml mléka', '250g mozzarely', '250g rajčat', '20 lístků bazalky', '80ml smetany', 'muškátový oříšek', 'čerstvý špenát'],
+        obrazek: 'quichesmozzarelouarajcaty.jpg',
+        vyhledavani: ['rajčata', 'sýr', 'mozzarela', 'špenát', 'vejce']
+    },
 
+    {
+        nazev: 'Tuňákový salát s vajíčkem',
+        pocetPorci: 1,
+        kategorie: ['hlavní jídla', 'svačiny', 'saláty', 'ryby'],
+        postup: 'Salát nakrájíme, smícháme se zeleninou a dáme na talíř. Vajíčka oloupeme a nakrájíme a přidáme navrch směsi. Na to položíme tuňáka z konzervy. Salát jemně osolíme a opepříme.',
+        ingredience: ['salát', 'tuňák z konzervy v olivovém oleji', 'zelenina', 'rajčata', 'okurka', 'vejce', 'kukuřice', 'olivy'],
+        obrazek: 'tunakovysalatsvajickem.jpg',
+        vyhledavani: ['ryby', 'vejce', 'salát', 'zelenina', 'rajčata']
+    },
+    {
+        nazev: 'Kuře na kari',
+        pocetPorci: 4,
+        kategorie: ['hlavní jídla'],
+        postup: 'Uvařte rýži dle návodu. Maso nakrájejte a osmahněte na pánvi s troškou oleje. Přidejte ananas se šťávou, sůl a kari koření a chvíli povařte. Přidejte žervé a míchejte, dokud se nerozpustí. Můžeme podávat.',
+        ingredience: ['300g rýže', '500g kuřecích prsních nebo stehenních řízků', '300 g čerstvého nebo kompotovaného ananasu bez cukru', '2 lžičky kari', '150g žervé', 'olivový olej'],
+        obrazek: 'kurecinakari.jpg',
+        vyhledavani: ['kuřecí maso', 'rýže', 'kari', 'ananas', 'ovoce']
+    },
+    {
+        nazev: 'Ananasový shake s koriandrem',
+        pocetPorci: 4,
+        kategorie: ['dezerty', 'svačiny'],
+        postup: 'Ananas nakrájíme a dáme do mixéru, přidáme ostatní suroviny a mixujeme, dokud není směs hladká.',
+        ingredience: ['ananas', 'ananasový džus', '4 snítky koriandru', '1 plátek zázvoru', '1 špetka soli'],
+        obrazek: 'ananasovyshakeskoriandrem.jpg',
+        vyhledavani: ['ananas', 'ovoce', 'zázvor']
+    },
 
 
 
