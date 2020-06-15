@@ -211,7 +211,7 @@ let recepty = [{
         nazev: 'Kuřecí salát',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'saláty'],
-        postup: '',
+        postup: 'Kuřecí prsa nakrájíme na kousky a opečeme na rozpáleném oleji do zlatova. Zeleninu nakrájíme na kousky. Vyrobíme dressing z jogurtu, citrónové šťávy a soli. Smícháme vše dohromady a podáváme.',
         ingredience: ['500 g kuřecích prsou', 'olej na opékání', 'rajčata, papriky, ledový salát a jiná zelenina', '300 ml bílého jogurtu', 'lžíce citrónové šťávy', 'sůl'],
         obrazek: 'kurecisalat.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'salát', 'zelenina', 'jogurt']
@@ -272,7 +272,7 @@ let recepty = [{
         postup: 'Kuřecí díly přidáme do hrnce plného studené vody. Necháme přivést k varu a stáhneme plamen na minimum, aby voda jemně problublávala. Přidáme polévkové koření a necháme běžet minimálně dvě hodiny - mezitím vybíráme lžící pěnu, která se objeví na hladině. Potom přidáme polévkovou zeleninu a povaříme jí do změknutí. Části kuřete vyjmeme, necháme chvíli vychladnout a maso obereme. Maso vložíme zpět do kuřecího vývaru. Dochutíme solí, případně i pepřem.',
         ingredience: ['Kuřecí polévková směs', '1/4 celere', '1 petržel', '1 mrkev', '1 cibule', '5 kuliček nového koření', '3 listy bobkového listu', '5 kuliček pepře'],
         obrazek: 'kurecivyvar.jpg',
-        vyhledavani: ['kuře', 'vývar', 'polévky',]
+        vyhledavani: ['kuře', 'vývar', 'polévky', ]
     },
     {
         nazev: 'Ovesné sušenky',
@@ -281,8 +281,8 @@ let recepty = [{
         postup: 'Máslo rozpustíme na mírném ohni a smícháme se sirupem. Přidáme sodu rozmíchánou se dvěmi lžícemi horké vody. Dáme dohromady všechny suché ingredience a promícháme s rozehřátou směsí. Vyložíme plech pečícím papírem a lžící vytvarujeme těsto na sušenky. Pečeme 15-20 minut na 150 stupňů.',
         ingredience: ['1 hrnek ovesných vloček', '1 hrnek celozrnné hladké mouky', '1/2 hrnku třtinového cukru', '125 g másla', '3 lžíce sirupu/medu', '1 lžička jedlé sody', 'libovolně oříšků, rozinek a semínek'],
         obrazek: 'ovesnesusenky.jpg',
-        vyhledavani: ['ovesné vločky', 'oříšky']
-     },
+        vyhledavani: ['ovesné vločky', 'oříšky'] 
+    },
     {
         nazev: 'Vajíčkové muffiny',
         pocetPorci: 12,
