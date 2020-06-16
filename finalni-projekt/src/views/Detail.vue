@@ -1,37 +1,40 @@
 <template>
-  <div class="container">
-    <div class="light-green">
-    <h2 class="font-size-30 forest-green">
-      název receptu          
-    </h2>
-  <div>
-    <img src="./../assets/images/kurecinakari.jpg" id = "fotka" class="img-fluid"/></div>
-  <div class="odstavec">
-    <h3 class="font-size-20 forest-green">Postup</h3>
+  <div class="hlavni">
+    <div class="container light-green padding">
+      <div class="nadpis">
+        <h2 class="font-size-30 dark-green">název receptu</h2>
+      </div>
+      <div class="obrazek">
+        <img src="./../assets/images/kurecinakari.jpg" id="fotka" class="img-fluid rounded" />
+      </div>
     </div>
-    <p class="border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nam culpa? Velit facere quis quasi? Eum, labore fuga odio earum minus vitae ut ipsam natus nihil modi consequuntur, maxime corporis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis repellat, odit sed dolorem quo dolore quos, nobis quod molestiae pariatur nostrum expedita ducimus, nisi ex tenetur impedit dignissimos reiciendis distinctio! 
-    </p>
-  </div>
-  <div class="odstavec"> 
-    <h3 class="font-size-20 forest-green light-green">Ingredience</h3>
-    
-    <p class="porce">Počet porcí: 4</p>
-    <ul>
-       <li>300g rýže</li>
-       <li>500g kuřecích prsních nebo stehenních řízků</li>
-       <li>300 g čerstvého nebo kompotovaného ananasu bez cukru</li>
-       <li>2 lžičky kari</li>
-       <li>150g žervé</li>
-       <li>olivový olej</li>
-    </ul>
-    
-  </div>
-    
-    
-
-    <router-link to="/tvojeRecepty">Tvoje recepty</router-link>
-    <router-link to="/hra2">Na co máš chuť?</router-link>
-    <router-link to="/vyhledavani">Vyhledávání podle kategorií</router-link>
+    <div class="container">
+      <h3 class="font-size-20 dark-green postup">Postup</h3>
+      <div class="navod">
+        <p>Uvařte rýži dle návodu. Maso nakrájejte a osmahněte na pánvi s troškou oleje. Přidejte ananas se šťávou, sůl a kari koření a chvíli povařte. Přidejte žervé a míchejte, dokud se nerozpustí. Můžeme podávat.',</p>
+      </div>
+      <div>
+        <h3 class="font-size-20 dark-green ingredience">Ingredience</h3>
+      </div>
+      <div class="bila">
+        <p class="porce">Počet porcí: 4</p>
+        <ul>
+          <li>300g rýže</li>
+          <li>500g kuřecích prsních nebo stehenních řízků</li>
+          <li>300 g čerstvého nebo kompotovaného ananasu bez cukru</li>
+          <li>2 lžičky kari</li>
+          <li>150g žervé</li>
+          <li>olivový olej</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container light-green">
+      <div class="row d-flex">
+      <router-link class="col-4 flex-fill border text-center padding-top dark-green font-weight-bold" to="/tvojeRecepty">?Zpět?</router-link>
+      <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/hra2">Na co máš chuť?</router-link>
+     <router-link class="col-4 flex-fill border text-center padding-top dark-green font-weight-bold" to="/vyhledavani">Kategorie</router-link>
+     </div>
+    </div>
   </div>
 </template>
 
@@ -41,17 +44,31 @@ export default {};
 
 <style>
 
-.light-green {
-  background-color: lightgreen;
-  
+.border{
+  border: 3px solid black;
+}
+.navod {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+.postup {
+  padding: 16px 0 8px 0;
+  border-bottom: 3px solid darkgreen;
 }
 
-.border {
-  border-top: 20px grey solid;
-  border-bottom: 20px grey solid;
-  border-left: none;
-  border-right: none;
-  background-color: white;
+.ingredience {
+  border-bottom: 3px solid darkgreen;
+  padding: 0px 0 8px 0;
+}
+
+.padding {
+  padding-bottom: 40px;
+}
+.padding-top{
+  padding-top:20px;
+}
+.light-green {
+  background-color: lightgreen;
 }
 
 .porce {
@@ -66,7 +83,7 @@ export default {};
 }
 
 .odstavec {
-  margin:  30px auto;
+  margin: 30px auto;
   display: block;
 }
 
@@ -74,12 +91,10 @@ export default {};
   font-size: 30px;
 }
 
-.forest-green {
-  color: forestgreen;
+.dark-green {
+  color: darkgreen;
 }
-
 h2 {
-  
   margin: auto;
   padding: 20px;
   text-align: center;
@@ -94,5 +109,4 @@ img {
   margin: auto;
 }
 */
-
 </style>
