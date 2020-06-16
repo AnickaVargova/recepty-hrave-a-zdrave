@@ -102,7 +102,7 @@ export default {
 
     posunIkonu1() {
       if (this.jidlo1.posunOsaY < 220) {
-        this.jidlo1.posunOsaY += Math.random() * 1.5; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
+        this.jidlo1.posunOsaY += Math.random() * 1.2; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
       } else {
         this.vratIkonu1();
         this.jidlo1.posunOsaY = 0;
@@ -111,7 +111,7 @@ export default {
 
     posunIkonu2() {
       if (this.jidlo2.posunOsaY < 220) {
-        this.jidlo2.posunOsaY += Math.random() * 1.5;
+        this.jidlo2.posunOsaY += Math.random() * 1.2;
       } else {
         this.vratIkonu2();
         this.jidlo2.posunOsaY = 0;
@@ -119,7 +119,7 @@ export default {
     },
     posunIkonu3() {
       if (this.jidlo3.posunOsaY < 220) {
-        this.jidlo3.posunOsaY += Math.random() * 1.5;
+        this.jidlo3.posunOsaY += Math.random() * 1.2;
       } else {
         this.vratIkonu3();
         this.jidlo3.posunOsaY = 0;
@@ -127,7 +127,7 @@ export default {
     },
     posunIkonu4() {
       if (this.jidlo4.posunOsaY < 220) {
-        this.jidlo4.posunOsaY += Math.random() * 1.5;
+        this.jidlo4.posunOsaY += Math.random() * 1.2;
       } else {
         this.vratIkonu4();
         this.jidlo4.posunOsaY = 0;
