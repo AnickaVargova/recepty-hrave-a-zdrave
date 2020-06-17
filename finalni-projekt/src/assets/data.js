@@ -242,210 +242,210 @@ let recepty = [{
         ingredience: ['2 velká zralá avokáda', '2 rajčata', 'paprika', 'okurka', '200 g balkánského sýra', 'olivový olej', 'citronová šťáva'],
         obrazek: 'plneneavokado.jpg',
         vyhledavani: ['avokádo', 'rajčata', 'papriky', 'okurky', 'sýr', 'zelenina'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [44, 5, 6, 45, 9, 41]
     },
     {
         nazev: 'Rajčata s mozzarellou',
         pocetPorci: 4,
         kategorie: ['předkrmy', 'svačiny', 'saláty'],
-        kategorieCisla: [],
+        kategorieCisla: [5, 8, 7],
         postup: 'Rajčata a mozzarellu nakrájíme na půlcentimetrové plátky. Střídavě naskládáme na talíř, lehce osolíme, pokapeme olivovým olejem a balzamikem. Nakonec ozdobíme lístky bazalky.',
         ingredience: ['4 velká rajčata', '200 g mozzarelly', 'bazalka', 'olivový olej', 'balzamikový ocet', 'sůl'],
         obrazek: 'rajcatasmozzarellou.jpg',
         vyhledavani: ['rajčata', 'mozzarella', 'sýr', 'zelenina', 'bazalka', 'bylinky'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [5, ]
     },
     {
         nazev: 'Kuřecí salát',
         pocetPorci: 4,
-        kategorie: ['hlavní jídla', 'saláty'],
-        kategorieCisla: [],
+        kategorie: ['hlavní jídla', 'saláty', 'maso'],
+        kategorieCisla: [4, 7, 2],
         postup: 'Kuřecí maso opláchneme, nakrájíme na kousky, osolíme, opepříme a necháme opékat na rozpáleném ohni cca 15 minut. Zeleninu nakrájíme a dáme do mísy. Přidáme hotové maso. Dresing připravíme smícháním bílého jogurtu, soli a citrónu. ',
         ingredience: ['500 g kuřecích prsou', 'olej na opékání', 'rajčata, papriky, ledový salát a jiná zelenina', '300 ml bílého jogurtu', 'lžíce citrónové šťávy', 'sůl'],
         obrazek: 'kurecisalat.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'salát', 'zelenina', 'jogurt'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [22, 4, 6, 41, 71, 12]
     },
 
     {
         nazev: 'Dýňová polévka',
         pocetPorci: 4,
         kategorie: ['polévky'],
-        kategorieCisla: [],
+        kategorieCisla: [1],
         postup: 'Toto je super jednoduchá, ale chutná varianta dýňové polévky. Dýni rozpůlíme, odstraníme semena, neloupeme, rozkrájíme na kousky a dáme do studené vody, aby všechny kousky byly ponořené. Uvaříme do měkka. Rozmixujeme vše ponorným mixérem. Pokud je polévka příliš hustá, naředíme vodou. Osolíme podle chuti. Na talíři servírujeme se lžící zakysané smetany a bylinkami či semínky.',
         ingredience: ['1 kg dýně hokkaido', 'zakysaná smetana', 'bylinky nebo dýňová semena na ozdobu', 'sůl'],
         obrazek: 'dynovapolevka.jpg',
         vyhledavani: ['dýně', 'smetana'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [48, 49, 56]
     },
     {
         nazev: 'Špagety s rukolou a rajčaty',
         pocetPorci: 4,
         kategorie: ['hlavní jídla'],
-        kategorieCisla: [],
+        kategorieCisla: [1, 3],
         postup: 'Špagety uvaříme al dente (téměř do měkka). Nakrájíme česnek na plátky a rajčátka na poloviny. Na pánvi si rozehřejeme olej a opečeme na něm plátky česneku. Potom přihodíme rajčata a mícháme asi 5 min. Pak přidáme špagety a opět promícháme. Dáme do mísy a přimícháme rukolu. Na talířích posypeme parmazánem.',
         ingredience: ['400 g špaget', '400 g cherry rajčat', '2 hrsti rukoly', '5 stroužků česneku', 'strouhaný parmazán', 'olivový olej', 'sůl'],
         obrazek: 'spagetysrukolou.jpg',
         vyhledavani: ['těstoviny', 'špagety', 'rajčata', 'rukola', 'česnek', 'parmazán', 'sýr', 'zelenina'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [77, 5, 50, 69, 51, 9, 41]
     },
     {
         nazev: 'Quiche s pórkem, houbami a sýrem',
         pocetPorci: 8,
         kategorie: ['hlavní jídla', 'svačiny', 'snídaně'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 8, 6],
         postup: 'Z mouky, nasekaného másla, soli a vody vytvoříme kouli. Zabalíme ji do fólie a dáme do ledničky. Pórek a houby nakrájíme na kousky a podusíme na lžíci oleje. Osolíme. V případě potřeby podléváme vodou. Z těsta vytvoříme placku, kterou vmáčkneme do formy s vyššími okraji. Těsto by mělo tvořit misku. Dovnitř naskládáme zeleninovou směs, zalijeme rozšlehanými vejci a zasypeme sýrem. Pečeme při teplotě 180°C, dokud těsto nezezlátne.',
         ingredience: ['280 g hladké špaldové mouky', '165 g másla', '8 lžic vody', 'sůl', '6 vajec', 'pórek', '500 g žampiónů', 'lžíce oleje', '100 g tvrdého nastrouhaného sýra'],
         obrazek: 'quichesporkem.jpg',
         vyhledavani: ['pórek', 'vejce', 'houby', 'sýr'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [2, 11, 23, 9]
     },
 
     {
         nazev: 'Brownies',
         pocetPorci: 20,
         kategorie: ['dezerty'],
-        kategorieCisla: [],
+        kategorieCisla: [10],
         postup: 'V jedné misce smícháme hladkou mouku, kakao a kypřící prášek. V druhé misce rozmačkáme banány vidličkou, přidáme sirup, vajíčko a kokosový olej (pokud nemáme, můžeme ho nahradit 100g rozpuštěného másla). Smícháme obě misky dohromady a vylejeme do formy vyložené pečícím papírem. Podrobíme nastrouhanou čokoládou a pečeme 30 minut na 180 stupnů.',
         ingredience: ['90g hladké celozrnné mouky', '3 banány', '2 vajíčka', '50g kakaa', 'kypřící prášek', '5 lžic medu/sirupu', '2 lžíce kokosového oleje', 'hořká čokoláda'],
         obrazek: 'brownies.jpg',
         vyhledavani: ['banány', 'čokoláda'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [52, 59]
     },
 
     {
         nazev: 'Batátové pyré s candátem',
         pocetPorci: 4,
         kategorie: ['hlavní jídla'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 11],
         postup: 'Batáty oloupeme, nakrájíme na malé kousky a vaříme v osolené vodě 10-15 minut do změknutí. Po scedení přidáme lžíci másla a rozšťoucháme na pyré. Filety candáta omyjeme a usušíme. Potom ho osolíme a opepříme z obou stran. Candáta osmažíme na rozpáleném oleji maximálně 5 minut z obou stran. Na závěr ho můžeme pokapat citrónem.',
         ingredience: ['750g batátů', '4 filety candáta', 'olivový olej', 'pepř', 'sůl', 'citrón'],
         obrazek: 'batatovepyrescandatem.jpg',
         vyhledavani: ['batáty', 'candát', 'ryby'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [53, 54, 25]
     },
 
     {
         nazev: 'Kuřecí vývar',
         pocetPorci: 4,
         kategorie: ['polévky'],
-        kategorieCisla: [],
+        kategorieCisla: [1],
         postup: 'Kuřecí díly přidáme do hrnce plného studené vody. Necháme přivést k varu a stáhneme plamen na minimum, aby voda jemně problublávala. Přidáme polévkové koření a necháme běžet minimálně dvě hodiny - mezitím vybíráme lžící pěnu, která se objeví na hladině. Potom přidáme polévkovou zeleninu a povaříme jí do změknutí. Části kuřete vyjmeme, necháme chvíli vychladnout a maso obereme. Maso vložíme zpět do kuřecího vývaru. Dochutíme solí, případně i pepřem.',
         ingredience: ['Kuřecí polévková směs', '1/4 celere', '1 petržel', '1 mrkev', '1 cibule', '5 kuliček nového koření', '3 listy bobkového listu', '5 kuliček pepře'],
         obrazek: 'kurecivyvar.jpg',
         vyhledavani: ['kuře', 'vývar', 'polévky', ],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [2, 1]
     },
     {
         nazev: 'Ovesné sušenky',
         pocetPorci: 20,
-        kategorieCisla: [],
+        kategorieCisla: [10, 8],
         kategorie: ['svačiny', 'dezerty'],
         postup: 'Máslo rozpustíme na mírném ohni a smícháme se sirupem. Přidáme sodu rozmíchánou se dvěmi lžícemi horké vody. Dáme dohromady všechny suché ingredience a promícháme s rozehřátou směsí. Vyložíme plech pečícím papírem a lžící vytvarujeme těsto na sušenky. Pečeme 15-20 minut na 150 stupňů.',
         ingredience: ['1 hrnek ovesných vloček', '1 hrnek celozrnné hladké mouky', '1/2 hrnku třtinového cukru', '125 g másla', '3 lžíce sirupu/medu', '1 lžička jedlé sody', 'libovolně oříšků, rozinek a semínek'],
         obrazek: 'ovesnesusenky.jpg',
         vyhledavani: ['ovesné vločky', 'oříšky'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [58, 57]
     },
     {
         nazev: 'Vajíčkové muffiny',
         pocetPorci: 12,
         kategorie: ['snídaně', 'svačiny'],
-        kategorieCisla: [],
+        kategorieCisla: [6, 8],
         postup: 'Troubu předehřejeme na 160 stupňů. V míse smíchame všechny ingredience. Směs vylejeme do formiček na muffiny a pečeme 8-10 minut.',
         ingredience: ['10 vajec', '100g tvrdého sýru', '150g čerstvého špenátu', '2 rajčata', 'sůl', 'pepř'],
         obrazek: 'vajickovemuffiny.jpg',
         vyhledavani: ['vejce', 'sýr', 'rajčata', 'špenát'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [11, 9, 5, 27]
     },
     {
         nazev: 'Salát s balkánským sýrem',
         pocetPorci: 4,
         kategorie: ['svačiny', 'saláty', 'vegetariánské'],
-        kategorieCisla: [],
+        kategorieCisla: [3, 4, 8],
         postup: 'Všechnu zeleninu nakrájíme nadrobno a dáme do mísy. Podrobíme balkánským sýrem, osolíme, opepříme a můžeme podávat.',
         ingredience: ['okurka', 'rajčata', 'paprika', 'červená cibule', 'olivy', 'salát'],
         obrazek: 'salatsbalkanskymsyrem.jpg',
         vyhledavani: ['balkánský sýr', 'rajčata', 'okurka', 'paprika', 'olivy', 'zelenina'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [9, 5, 45, 6, 41, 16]
     },
     {
         nazev: 'Krůtí roláda',
         pocetPorci: 4,
         kategorie: ['hlavní jídla'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 2],
         postup: 'Krůtí maso omyjeme, naklepeme, osolíme a opepříme. Poklademe kousky mozzarelly a cherry rajčat. Následně směs zarolujeme a svážeme potravinářským provázkem. Pečeme na 180 stupňů cca 2 hodiny, přitom průběžně podléváme. Krůtí roláda se skvěle hodí k bramborové kaši.',
         ingredience: ['krůtí vykostěné stehno', '125g mozzarely', '100g cherry rajčat', '750g brambor'],
         obrazek: 'krutirolada.jpg',
         vyhledavani: ['krůtí maso', 'mozzarella', 'rajčata', 'brambory'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [22, 72, 46, 5]
     },
     {
         nazev: 'Kuřecí řízky s cuketou',
         pocetPorci: 4,
         kategorie: ['hlavní jídla'],
-        kategorieCisla: [],
+        kategorieCisla: [2, 4],
         postup: 'Předehřejeme troubu na 200 stupňů. Plátky kuřete naklepeme a dáme je do pekáče. Přidáme pár brambor, nakrájený citrón a sezóní zeleninu, například cuketu. Osolíme, opepříme a můžeme dochutit bazalkou. Pekáč zakápneme kapkou olivového oleje a pečeme 35-45 minut.',
         ingredience: ['600g kuřecích prsních řízků', '1/2 citrónu', '500g cukety', '1 cuketa', 'bazalka'],
         obrazek: 'kureciprsascuketou.jpg',
         vyhledavani: ['kuřecí maso', 'cuketa', 'zelenina', 'brambory', 'citrón', 'bazalka'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [4, 73, 41, 24, 47, 61]
     },
     {
         nazev: 'Losos s chřestem',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'ryby'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 11],
         postup: 'Plech vyložíme pečícím papírem. Chřest umyjeme a nakrojíme cca 1,5 cm od konců. Filety také omyjeme a pokládáme na plech v pořadí chřest filety chřest. Vršek slabě osolíme a přidáme kousky citrónu a másla. Pečeme cca 30 min na 175 stupňů. ',
         ingredience: ['500g lososa', '2 citróny', '50g másla', '500g chřestu', 'sůl'],
         obrazek: 'lososschrestem.jpg',
         vyhledavani: ['losos', 'ryby', 'chřest', 'zelenina', 'citrón', 'máslo'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [74, 25, 75, 41, 34, 76]
     },
     {
         nazev: 'Quiche s mozzarelou a rajčaty',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'svačiny', 'vegetariánské'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 8, 3],
         postup: 'Zpracujeme mouku, máslo, 1 vajíčko a dvě lžíce mléka do těsta a dáme ho vychladit do ledničky. Po 30ti minutách ho vytáhneme a namačkáme do formy, pečeme 15min na 180 stupňů. Nápň připravíme smícháním tří vajíček, mléka, smetany a po špetce soli, pepře a muškátového oříšku. Do hotového korpusu naskládáme kousky mozzarely na plátky, pokrájená rajčáta a čerstvý špenát nastřídačku a nakonec zalijeme náplní. Pečeme 45 minut.',
         ingredience: ['300g hladké celozrnné mouky', '150g másla', '4 vejce', '70 ml mléka', '250g mozzarely', '250g rajčat', '20 lístků bazalky', '80ml smetany', 'muškátový oříšek', 'čerstvý špenát'],
         obrazek: 'quichesmozzarelouarajcaty.jpg',
         vyhledavani: ['rajčata', 'sýr', 'mozzarela', 'špenát', 'vejce'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [5, 9, 46, 27, 11]
     },
 
     {
         nazev: 'Tuňákový salát s vajíčkem',
         pocetPorci: 1,
         kategorie: ['hlavní jídla', 'svačiny', 'saláty', 'ryby'],
-        kategorieCisla: [],
+        kategorieCisla: [4, 8, 7, 11],
         postup: 'Salát nakrájíme, smícháme se zeleninou a dáme na talíř. Vajíčka oloupeme a nakrájíme a přidáme navrch směsi. Na to položíme tuňáka z konzervy. Salát jemně osolíme a opepříme.',
         ingredience: ['salát', 'tuňák z konzervy v olivovém oleji', 'zelenina', 'rajčata', 'okurka', 'vejce', 'kukuřice', 'olivy'],
         obrazek: 'tunakovysalatsvajickem.jpg',
         vyhledavani: ['ryby', 'vejce', 'salát', 'zelenina', 'rajčata'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [11, 25, 71, 41, 5]
     },
     {
         nazev: 'Kuře na kari',
         pocetPorci: 4,
         kategorie: ['hlavní jídla'],
-        kategorieCisla: [],
+        kategorieCisla: [4],
         postup: 'Uvařte rýži dle návodu. Maso nakrájejte a osmahněte na pánvi s troškou oleje. Přidejte ananas se šťávou, sůl a kari koření a chvíli povařte. Přidejte žervé a míchejte, dokud se nerozpustí. Můžeme podávat.',
         ingredience: ['300g rýže', '500g kuřecích prsních nebo stehenních řízků', '300 g čerstvého nebo kompotovaného ananasu bez cukru', '2 lžičky kari', '150g žervé', 'olivový olej'],
         obrazek: 'kurecinakari.jpg',
         vyhledavani: ['kuřecí maso', 'rýže', 'kari', 'ananas', 'ovoce'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [4, 22, 64, ]
     },
     {
         nazev: 'Ananasový shake s koriandrem',
         pocetPorci: 4,
         kategorie: ['dezerty', 'svačiny'],
-        kategorieCisla: [],
+        kategorieCisla: [10, 8],
         postup: 'Ananas nakrájíme a dáme do mixéru, přidáme ostatní suroviny a mixujeme, dokud není směs hladká.',
         ingredience: ['ananas', 'ananasový džus', '4 snítky koriandru', '1 plátek zázvoru', '1 špetka soli'],
         obrazek: 'ananasovyshakeskoriandrem.jpg',
         vyhledavani: ['ananas', 'ovoce', 'zázvor'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [65, 33, 66]
     },
 
 
