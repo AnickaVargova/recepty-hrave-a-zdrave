@@ -45,7 +45,7 @@
       <div id="prehled" v-else>
         <p id="body">Počet bodů: {{ pocetBodu }}</p>
         <p id="chyby">Počet chyb: {{ pocetChyb }}</p>
-        <div id="minutka">{{minutka}}</div>
+        <div id="minutka">{{ minutka }}</div>
       </div>
     </div>
   </div>
@@ -101,8 +101,8 @@ export default {
     },
 
     posunIkonu1() {
-      if (this.jidlo1.posunOsaY < 220) {
-        this.jidlo1.posunOsaY += Math.random() * 1.2; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
+      if (this.jidlo1.posunOsaY < 400) {
+        this.jidlo1.posunOsaY += Math.random() * 1.8; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
       } else {
         this.vratIkonu1();
         this.jidlo1.posunOsaY = 0;
@@ -110,38 +110,39 @@ export default {
     },
 
     posunIkonu2() {
-      if (this.jidlo2.posunOsaY < 220) {
-        this.jidlo2.posunOsaY += Math.random() * 1.2;
+      if (this.jidlo2.posunOsaY < 400) {
+        this.jidlo2.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu2();
         this.jidlo2.posunOsaY = 0;
       }
     },
     posunIkonu3() {
-      if (this.jidlo3.posunOsaY < 220) {
-        this.jidlo3.posunOsaY += Math.random() * 1.2;
+      if (this.jidlo3.posunOsaY < 400) {
+        this.jidlo3.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu3();
         this.jidlo3.posunOsaY = 0;
       }
     },
     posunIkonu4() {
-      if (this.jidlo4.posunOsaY < 220) {
-        this.jidlo4.posunOsaY += Math.random() * 1.2;
+      if (this.jidlo4.posunOsaY < 400) {
+        this.jidlo4.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu4();
         this.jidlo4.posunOsaY = 0;
       }
     },
 
-    sekundaDolu(){
+    //na pocitaci jidlo konci zbytecne vysoko - vyresit
+
+    sekundaDolu() {
       this.minutka--;
     },
 
-    odectiSekundu(){
+    odectiSekundu() {
       this.intervalMinutka = setInterval(this.sekundaDolu, 1000);
     },
-  
 
     pohybujIkonou1() {
       this.interval1 = setInterval(this.posunIkonu1, 5);
@@ -170,6 +171,7 @@ export default {
     },
 
     priKliknuti2() {
+      console.log("klik2");
       if (!this.konecHry) {
         if (this.jidlo2.zdrave) {
           this.pocetBodu++;
@@ -182,6 +184,7 @@ export default {
     },
 
     priKliknuti3() {
+      console.log("klik3");
       if (!this.konecHry) {
         if (this.jidlo3.zdrave) {
           this.pocetBodu++;
@@ -194,6 +197,7 @@ export default {
     },
 
     priKliknuti4() {
+      console.log("klik4");
       if (!this.konecHry) {
         if (this.jidlo4.zdrave) {
           this.pocetBodu++;
@@ -240,58 +244,76 @@ export default {
 
 <style>
 #police {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  width: 100vw;
 }
 
-#police img {
-  height: 70vh;
+#police > img {
+  width: 100vh;
+  height: 100vh;
 }
 
 #jidlo {
-  max-width: 200px;
-  height: 10vh;
+  width: 80vw;
   display: flex;
-  margin-top: 20px;
   position: absolute;
-  top: -10px;
-  left: 40px;
+  top: 100px;
+}
+/* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
+
+.ikonaJidla {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.ikonaJidla > img {
+  max-width: 100%;
 }
 
 #ikona1 {
-  position: absolute;
+  left: 0;
 }
 
 #ikona2 {
-  left: 60px;
-  position: absolute;
+  left: 25%;
 }
 
 #ikona3 {
-  left: 120px;
-  position: absolute;
+  left: 50%;
 }
 
 #ikona4 {
-  left: 180px;
-  position: absolute;
+  left: 75%;
 }
 
-#ikona5 {
-  left: 240px;
-  position: absolute;
-}
-.ikonaJidla {
-  height: 50px;
-  flex-basis: 20%;
+@media (min-width: 700px) {
+  #jidlo {
+    top:0;
+  }
+  .ikonaJidla {
+    width: 25%;
+    max-height: 80px;
+  }
+  .ikonaJidla>img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.ikonaJidla img {
-  max-height: 50px;
-  object-fit: scale-down;
+@media (min-width: 1000px) {
+  #jidlo {
+    width: 50vw;
+  }
 }
+
 
 #vysledek {
   border: 2px solid blue;
