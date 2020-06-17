@@ -182,62 +182,62 @@ let recepty = [{
         nazev: 'Jablečný koláč',
         pocetPorci: 4,
         kategorie: ['dezerty', 'snídaně', 'svačiny'],
-        kategorieCisla: [],
+        kategorieCisla: [10, 6, 8],
         postup: 'Oba druhy mouky smícháme, vytvoříme důlek, do něj vložíme nakrájené máslo a žloutek. Vařečkou směs důkladně spojíme, přilijeme studenou vodu a vytvoříme kouli. Zabalíme ji do fólie a dáme do ledničky. Troubu předehřejeme na 180°C. Jablka oloupeme, zbavíme jader a nakrájíme na plátky. Těsto rozválíme na placku a přemístíme na plech. Poklademe plátky jablek, posypeme cukrem, skořicí a poklademe máslem. Pečeme zhruba 45 min.',
         ingredience: ['120 g hladké špaldové mouky', '80 g celozrnné mouky', '100 g másla pokojové teploty', '1 žloutek', '2-3 lžíce studené vody', '4-5 jablek', '3 lžíce přírodního cukru', '50 g másla', 'skorice'],
         obrazek: 'jablecnykolac.jpg',
         vyhledavani: ['jablka', 'máslo', 'skořice'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [36, 34, 35]
     },
     {
         nazev: 'Jogurtový pohár',
         pocetPorci: 4,
         kategorie: ['dezerty'],
-        kategorieCisla: [],
+        kategorieCisla: [10],
         postup: 'Část jogurtu promícháme s medem, část s kakaem. Do poháru skládáme vrstvy piškotů, dvou druhů jogurtu a ovoce. Poslední vrstvu tvoří ovoce.',
         ingredience: ['600 ml bílého jogurtu', 'lžička kakaa', 'piškoty', 'med', 'ovoce podle chuti'],
         obrazek: 'jogurtovypohar.jpg',
         vyhledavani: ['jogurt', 'kakao', 'piškoty', 'med', 'ovoce'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [12, 37, 38, 39, 33]
     },
     {
         nazev: 'Košíčky',
         pocetPorci: 40,
         kategorie: ['dezerty'],
-        kategorieCisla: [],
+        kategorieCisla: [10],
         postup: 'Oba druhy mouky smícháme, vytvoříme důlek, do něj vložíme nakrájené máslo a žloutek. Vařečkou směs důkladně spojíme, přilijeme studenou vodu a hnětením vytvoříme kouli. Zabalíme ji do fólie a dáme do ledničky. Troubu předehřejeme na 180°C. Kousky těsta vytvarujeme do formiček. Pečeme asi 15 minut, dokud košíčky nezrůžoví. Necháme zchladnout a až potom opatrně vyklopíme z formiček. Mezitím si uvaříme pudink podle receptu na obalu sáčku. Nalijeme ho do formiček a necháme v chladu ztuhnout. Nakonec ozdobíme ovocem.',
         ingredience: ['300 g hladké špaldové mouky', '200 g hladké celozrnné mouky', '250 g másla', 'žloutek', '2 lžíce vody', '2 sáčky vanilkového pudinku', '0,5 l mléka', '2 lžíce přírodního cukru', 'ovoce'],
         obrazek: 'kosicky.jpg',
         vyhledavani: ['pudink', 'ovoce'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [40, 33]
     },
     {
         nazev: 'Ovocné nanuky',
         pocetPorci: 6,
         kategorie: ['dezerty'],
-        kategorieCisla: [],
+        kategorieCisla: [10],
         postup: 'Ovoce rozmačkáme a vmícháme do jogurtu, můžeme ho též rozkrájet na kousky. Směs dosladíme podle chuti. Nalijeme do tvořítek na nanuky a dáme zmrazit.',
         ingredience: ['500 ml bílého nebo ovocného jogurtu', 'ovoce', 'přírodní cukr nebo med'],
         obrazek: 'nanuky.jpg',
         vyhledavani: ['jogurt', 'ovoce'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [12, 33]
     },
     {
         nazev: 'Severský obložený chléb',
         pocetPorci: 4,
         kategorie: ['snídaně', 'hlavní jídla', 'svačiny'],
-        kategorieCisla: [],
+        kategorieCisla: [6, 4, 8],
         postup: 'Chléb potřeme máslem, zeleninu, vejce a ryby nakrájíme na plátky nebo na kousky a skládáme na chleby podle chuti a inspirace. Posypeme bylinkami.',
         ingredience: ['8 plátků tmavého chleba', 'máslo na potření', 'uzený losos', 'konzervované ryby a mořské plody', 'natvrdo uvařené vejce', 'plátkový sýr', 'okurka, rajčata a jiná zelenina', 'kopr', 'petržel'],
         obrazek: 'oblozenychleb.jpg',
         vyhledavani: ['chléb', 'vejce', 'ryby', 'zelenina', 'sýr', 'kopr', 'petržel', 'mořské plody'],
-        vyhledavaniCisla: []
+        vyhledavaniCisla: [70, 11, 9, 25, 41, 42, 43, 67]
     },
     {
         nazev: 'Plněné avokádo',
         pocetPorci: 4,
         kategorie: ['předkrmy', 'svačiny', 'saláty'],
-        kategorieCisla: [],
+        kategorieCisla: [5, 6, 8],
         postup: 'Avokáda rozpůlíme a vyjmeme pecku. Rajčata, papriky, okurku a balkánský sýr nakrájíme na kostičky. Pokapeme olivovým olejem a citronovou šťávou. Směs navršíme na poloviny avokád.',
         ingredience: ['2 velká zralá avokáda', '2 rajčata', 'paprika', 'okurka', '200 g balkánského sýra', 'olivový olej', 'citronová šťáva'],
         obrazek: 'plneneavokado.jpg',

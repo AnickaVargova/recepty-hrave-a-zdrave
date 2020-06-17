@@ -107,70 +107,75 @@ export default [{
     },
     //az sem je to hotove
     {
-        id: 15,
-        jmeno: "",
-        ikona: '',
+        id: 19,
+        jmeno: "brambory",
+        ikona: 'potato.png',
 
     },
     {
         id: 16,
-        jmeno: "",
-        ikona: '',
+        jmeno: "ovoce",
+        ikona: 'fruits.png',
 
     },
     {
         id: 17,
-        jmeno: "",
-        ikona: '',
+        jmeno: "zelenina",
+        ikona: 'vegetables.png',
 
     },
     {
         id: 18,
-        jmeno: "",
-        ikona: '',
+        jmeno: "mořské plody",
+        ikona: 'seafood.png',
 
     },
     {
         id: 19,
-        jmeno: "",
-        ikona: 'radish.png',
+        jmeno: "okurky",
+        ikona: 'cucumber.png',
 
     },
     {
         id: 20,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "dýně",
+        ikona: 'pumpkin.png',
 
     },
     {
         id: 21,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "banán",
+        ikona: 'banana.png',
 
     },
     {
         id: 22,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "polévka",
+        ikona: 'soup.png',
 
     },
     {
         id: 23,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "čokoláda",
+        ikona: 'chocolate.png',
 
     },
     {
         id: 24,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "česnek",
+        ikona: 'garlic.png',
 
     },
     {
         id: 25,
-        jmeno: "ředkvičky",
-        ikona: 'radish.png',
+        jmeno: "těstoviny",
+        ikona: 'pasta.png',
 
     },
+    {
+        id: 26,
+        jmeno: "jablko",
+        ikona: 'apple.png',
+    }
 
 ]
