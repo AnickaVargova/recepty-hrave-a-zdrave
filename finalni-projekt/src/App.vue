@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <router-view />
-    <hr />
-    <div id="button">
-      <router-link to="/">Domů</router-link>
-    </div>
+      
+    <router-view/>
+    
+    <router-link to="/">Domů</router-link>
   </div>
 </template>
 <script>
@@ -12,7 +11,8 @@ export default {};
 </script>
 
 <style>
-#button {
+
+a {
   font-size: 15px;
   padding: 10px;
   border: 2px solid black;
