@@ -7,9 +7,7 @@
   </div>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
@@ -17,6 +15,7 @@ export default {
 a {
   font-size: 15px;
   padding: 10px;
+  border: 2px solid black;
+  font-weight: bold;
 }
-
 </style>

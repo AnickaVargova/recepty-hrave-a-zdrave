@@ -45,7 +45,8 @@
       <div id="prehled" v-else>
         <p id="body">Počet bodů: {{ pocetBodu }}</p>
         <p id="chyby">Počet chyb: {{ pocetChyb }}</p>
-        <div id="minutka">{{ minutka }}</div>
+        <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
+        <!-- vyřešit sklonovani -->
       </div>
     </div>
   </div>
@@ -101,7 +102,7 @@ export default {
     },
 
     posunIkonu1() {
-      if (this.jidlo1.posunOsaY < 400) {
+      if (this.jidlo1.posunOsaY < 600) {
         this.jidlo1.posunOsaY += Math.random() * 1.8; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
       } else {
         this.vratIkonu1();
@@ -110,7 +111,7 @@ export default {
     },
 
     posunIkonu2() {
-      if (this.jidlo2.posunOsaY < 400) {
+      if (this.jidlo2.posunOsaY < 600) {
         this.jidlo2.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu2();
@@ -118,7 +119,7 @@ export default {
       }
     },
     posunIkonu3() {
-      if (this.jidlo3.posunOsaY < 400) {
+      if (this.jidlo3.posunOsaY < 600) {
         this.jidlo3.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu3();
@@ -126,7 +127,7 @@ export default {
       }
     },
     posunIkonu4() {
-      if (this.jidlo4.posunOsaY < 400) {
+      if (this.jidlo4.posunOsaY < 600) {
         this.jidlo4.posunOsaY += Math.random() * 1.8;
       } else {
         this.vratIkonu4();
@@ -250,12 +251,12 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  width: 100vw;
+  width: 80vw;
 }
 
 #police > img {
-  width: 100vh;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
 }
 
 #jidlo {
@@ -310,25 +311,27 @@ export default {
 
 @media (min-width: 1000px) {
   #jidlo {
-    width: 50vw;
+    width: 40vw;
   }
 }
 
 
 #vysledek {
   border: 2px solid blue;
-  font-size: 20px;
-  padding: 5px;
+  font-size: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-weight: bold;
 }
 
 #body {
   color: green;
-  font-size: 20px;
+ 
 }
 
 #chyby {
   color: red;
-  font-size: 20px;
+  
 }
 
 #prehled {

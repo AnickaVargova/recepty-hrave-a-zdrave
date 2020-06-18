@@ -1,181 +1,230 @@
+'use strict'
 export default [{
         id: 1,
+        klicoveSlovo: 25,
         jmeno: "ryby",
         ikona: 'fish.png',
+        aktivni: false,
     },
     {
         id: 2,
+        klicoveSlovo: 22,
         jmeno: "maso",
         ikona: 'meat.png',
+        aktivni: false,
     },
     {
         id: 3,
+        klicoveSlovo: 2,
         jmeno: "pórek",
         ikona: 'leek.png',
+        aktivni: false,
     },
     {
         id: 4,
+        klicoveSlovo: 36,
         jmeno: "jablka",
         ikona: 'apple.png',
+        aktivni: false,
     },
     {
         id: 5,
+        klicoveSlovo: 5,
         jmeno: "rajče",
         ikona: 'tomato.png',
+        aktivni: false,
     },
     {
         id: 6,
+        klicoveSlovo: 18,
         jmeno: "mrkev",
         ikona: 'carrot.png',
+        aktivni: false,
     },
     {
         id: 7,
+        klicoveSlovo: 9,
         jmeno: "sýr",
         ikona: 'cheese.png',
+        aktivni: false,
     },
     {
         id: 8,
-        jmeno: "kuře",
+        klicoveSlovo: 4,
         ikona: 'chicken.png',
+        aktivni: false,
     },
     {
         id: 9,
+        klicoveSlovo: 11,
         jmeno: "vejce",
         ikona: 'egg.png',
+        aktivni: false,
     },
     {
         id: 10,
+        klicoveSlovo: 69,
         jmeno: "česnek",
         ikona: 'garlic.png',
+        aktivni: false,
     },
     {
         id: 11,
+        klicoveSlovo: 6,
         jmeno: "paprika",
         ikona: 'pepper.png',
+        aktivni: false,
     },
     {
         id: 12,
+        klicoveSlovo: 1,
         jmeno: "hrášek",
         ikona: 'peas.png',
+        aktivni: false,
     },
     {
         id: 13,
-        jmeno: "jogurt",
-        ikona: 'yoghurt.png',
+        klicoveSlovo: 77,
+        jmeno: "těstoviny",
+        ikona: 'pasta.png',
+        aktivni: false,
     },
     {
         id: 14,
+        klicoveSlovo: 65,
         jmeno: "ananas",
         ikona: 'pineapple.png',
+        aktivni: false,
 
     },
     {
         id: 15,
+        klicoveSlovo: 16,
         jmeno: "olivy",
         ikona: 'olives.png',
+        aktivni: false,
 
     },
     {
         id: 16,
+        klicoveSlovo: 20,
         jmeno: "květák",
         ikona: 'cauliflower.png',
+        aktivni: false,
 
     },
     {
         id: 17,
+        klicoveSlovo: 21,
         jmeno: "mléko",
         ikona: 'milk.png',
+        aktivni: false,
 
     },
     {
         id: 18,
+        klicoveSlovo: 58,
         jmeno: "ořechy",
         ikona: 'walnut.png',
+        aktivni: false,
 
     },
     {
         id: 19,
+        klicoveSlovo: 12,
         jmeno: "jogurt",
         ikona: 'yoghurt.png',
+        aktivni: false,
 
     },
     {
         id: 20,
+        klicoveSlovo: 23,
         jmeno: "houby",
         ikona: 'mushroom.png',
+        aktivni: false,
 
     },
-    //az sem je to hotove
-    {
-        id: 19,
-        jmeno: "brambory",
-        ikona: 'potato.png',
 
-    },
-    {
-        id: 16,
-        jmeno: "ovoce",
-        ikona: 'fruits.png',
-
-    },
-    {
-        id: 17,
-        jmeno: "zelenina",
-        ikona: 'vegetables.png',
-
-    },
-    {
-        id: 18,
-        jmeno: "mořské plody",
-        ikona: 'seafood.png',
-
-    },
-    {
-        id: 19,
-        jmeno: "okurky",
-        ikona: 'cucumber.png',
-
-    },
-    {
-        id: 20,
-        jmeno: "dýně",
-        ikona: 'pumpkin.png',
-
-    },
     {
         id: 21,
-        jmeno: "banán",
-        ikona: 'banana.png',
+        klicoveSlovo: 24,
+        jmeno: "brambory",
+        ikona: 'potato.png',
+        aktivni: false,
 
     },
     {
         id: 22,
-        jmeno: "polévka",
-        ikona: 'soup.png',
+        klicoveSlovo: 33,
+        jmeno: "ovoce",
+        ikona: 'fruits.png',
+        aktivni: false,
 
     },
     {
         id: 23,
-        jmeno: "čokoláda",
-        ikona: 'chocolate.png',
+        klicoveSlovo: 41,
+        jmeno: "zelenina",
+        ikona: 'vegetables.png',
+        aktivni: false,
 
     },
     {
         id: 24,
-        jmeno: "česnek",
-        ikona: 'garlic.png',
+        klicoveSlovo: 43,
+        jmeno: "mořské plody",
+        ikona: 'seafood.png',
+        aktivni: false,
 
     },
     {
         id: 25,
-        jmeno: "těstoviny",
-        ikona: 'pasta.png',
+        klicoveSlovo: 45,
+        jmeno: "okurky",
+        ikona: 'cucumber.png',
+        aktivni: false,
 
     },
     {
         id: 26,
+        klicoveSlovo: 48,
+        jmeno: "dýně",
+        ikona: 'pumpkin.png',
+        aktivni: false,
+
+    },
+    {
+        id: 27,
+        klicoveSlovo: 52,
+        jmeno: "banán",
+        ikona: 'banana.png',
+        aktivni: false,
+
+    },
+    {
+        id: 28,
+        klicoveSlovo: 56,
+        jmeno: "polévka",
+        ikona: 'soup.png',
+        aktivni: false,
+
+    },
+    {
+        id: 29,
+        klicoveSlovo: 59,
+        jmeno: "čokoláda",
+        ikona: 'chocolate.png',
+        aktivni: false,
+
+    },
+    {
+        id: 30,
+        klicoveSlovo: 36,
         jmeno: "jablko",
         ikona: 'apple.png',
-    }
+        aktivni: false,
+
+    },
 
 ]
