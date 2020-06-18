@@ -1,10 +1,10 @@
 <template>
-  <div class="hlavni position-relative">
+  <div class="hlavni">
     <div class="container light-green padding-bottom">
       <div class="nadpis">
         <h2 class="font-size-30 dark-green">název receptu</h2>
       </div>
-      <div class="obrazek">
+      <div class="fotka">
         <img src="./../assets/images/kurecinakari.jpg" id="fotka" class="img-fluid rounded" />
       </div>
     </div>
@@ -43,10 +43,12 @@ export default {};
 </script>
 
 <style>
-
+.hlavni{
+  position: relative;
+}
 .menu {
-  margin-top: 40px;
-  position: absolute;
+  margin-top: 40px auto;
+  position: relative;
   bottom: 0;
 }
 
