@@ -1,7 +1,6 @@
 <template>
-  
   <div class="okno position-relative">
-    <div class="container  hlavni2">
+    <div class="container light-green hlavni2">
       <h2 class="pt-4 m-0 dark-green">Máš chuť na tyto recepty:</h2>
     </div>
 
@@ -47,23 +46,6 @@
               
             </div>
           </router-link>
-<div class="bg container img-fluid">
-  <div class="container hlavni2">
-    <h2 class="pt-4 m-0 green bile-pozadi ">Máš chuť na tyto recepty</h2>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
-      <router-link to="/detail">
-        <div class="white">
-          <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
-          <div class="media d-flex align-items-center">
-            <div class="media-body">
-              <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
-            </div>
-
-            <img src="./../assets/images/kurecinakari.jpg" class="mr-3 obrazek img-fluid rounded" />
-          </div>
         </div>
       </router-link>
     </div>
