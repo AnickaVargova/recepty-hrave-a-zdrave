@@ -142,7 +142,7 @@ export default [{
         ingredience: ['500 g těstovin', '300 g konzervovaného tuňáka ve vlastní šťávě', '400 g cherry rajčat', '1 žlutá paprika', '1 cibule', '200 ml bílého jogurtu', 'lžíce francouzské hořčice', 'bylinky podle chuti'],
         obrazek: 'testovinovysalat.jpg',
         vyhledavani: ['těstoviny', 'ryby', 'rajčata', 'papriky', 'cibule', 'jogurt'],
-        vyhledavaniCisla: [26, 25, 5, 6, 3, 12, 79, 41, 67],
+        vyhledavaniCisla: [26, 25, 5, 6, 3, 12, 79, 41, 67, 77],
         shody: 0,
     },
     {
@@ -166,7 +166,7 @@ export default [{
         ingredience: ['250 g kuskusu', '250 ml vody', 'sůl', 'citrónová šťáva', '2 lžíce olivového oleje', 'čerstvá máta a petržel', '6 malých rajčat', '2 cibulky se zelenou natí'],
         obrazek: 'kuskusovysalat.jpg',
         vyhledavani: ['kuskus', 'rajčata', 'máta', 'petržel', 'cibule'],
-        vyhledavaniCisla: [30, 31, 3, 19, 5, 41, 67],
+        vyhledavaniCisla: [30, 31, 3, 19, 5, 41, 67, 77],
         shody: 0,
     },
     {
