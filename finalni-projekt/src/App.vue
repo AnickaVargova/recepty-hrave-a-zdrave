@@ -2,7 +2,7 @@
   <div id="app">
       
     <router-view/>
-    <hr>
+    
     <router-link to="/">Domů</router-link>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style>
+
 a {
   font-size: 15px;
   padding: 10px;

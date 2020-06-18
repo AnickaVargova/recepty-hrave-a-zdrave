@@ -1,6 +1,6 @@
 <template>
-  <div class="hlavni">
-    <div class="container light-green padding">
+  <div class="hlavni position-relative">
+    <div class="container light-green padding-bottom">
       <div class="nadpis">
         <h2 class="font-size-30 dark-green">název receptu</h2>
       </div>
@@ -8,7 +8,7 @@
         <img src="./../assets/images/kurecinakari.jpg" id="fotka" class="img-fluid rounded" />
       </div>
     </div>
-    <div class="container">
+    <div class="container padding-bottom">
       <h3 class="font-size-20 dark-green postup">Postup</h3>
       <div class="navod">
         <p>Uvařte rýži dle návodu. Maso nakrájejte a osmahněte na pánvi s troškou oleje. Přidejte ananas se šťávou, sůl a kari koření a chvíli povařte. Přidejte žervé a míchejte, dokud se nerozpustí. Můžeme podávat.',</p>
@@ -28,11 +28,11 @@
         </ul>
       </div>
     </div>
-    <div class="container light-green">
+    <div class="menu container light-green">
       <div class="row d-flex">
-      <router-link class="col-4 flex-fill border text-center padding-top dark-green font-weight-bold" to="/tvojeRecepty">?Zpět?</router-link>
-      <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/hra2">Na co máš chuť?</router-link>
-     <router-link class="col-4 flex-fill border text-center padding-top dark-green font-weight-bold" to="/vyhledavani">Kategorie</router-link>
+      <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/tvojeRecepty">?Zpět?</router-link>
+      <router-link class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold" to="/hra2">Vyber recept</router-link>
+     <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/vyhledavani">Kategorie</router-link>
      </div>
     </div>
   </div>
@@ -44,6 +44,16 @@ export default {};
 
 <style>
 
+.menu {
+  margin-top: 40px;
+  position: absolute;
+  bottom: 0;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
 .border{
   border: 3px solid black;
 }
@@ -51,6 +61,7 @@ export default {};
   margin: 0 auto;
   padding: 0 auto;
 }
+
 .postup {
   padding: 16px 0 8px 0;
   border-bottom: 3px solid darkgreen;
@@ -61,7 +72,7 @@ export default {};
   padding: 0px 0 8px 0;
 }
 
-.padding {
+.padding-bottom {
   padding-bottom: 40px;
 }
 .padding-top{
