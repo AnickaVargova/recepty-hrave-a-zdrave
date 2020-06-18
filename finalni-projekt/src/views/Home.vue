@@ -1,11 +1,14 @@
 <template>
-  <div class="okno">
-     <h1>Ahoj! Pojď si s námi hrát a vařit.</h1>
+  <div class="okno container">
+     
 
-     <div class="odkazy">
-      <button class="rozcestnik"><router-link to="/hra1">Chyť si své jídlo</router-link></button> |
-      <button class="rozcestnik"><router-link to="/hra2">Na co máš chuť?</router-link></button> |
+     <div class="">
+       <div class="p-200 pb-200">
+      <button class="rozcestnik "><router-link to="/hra1">Chyť si své jídlo</router-link></button> 
+      <button class="rozcestnik"><router-link to="/hra2">Na co máš chuť?</router-link></button> 
       <button class="rozcestnik"><router-link to="/vyhledavani">Vyhledávání receptů</router-link></button>
+     </div>
+      
     </div>
    
   </div>
@@ -18,12 +21,11 @@ export default {
 }
 </script>
 <style>
-.okno {
-  min-height: 80vh;
-}
+
 .rozcestnik {
   display: block;
   border: 2px solid black;
+ 
    
 }
 

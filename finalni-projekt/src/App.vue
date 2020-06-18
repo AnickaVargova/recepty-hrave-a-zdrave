@@ -3,7 +3,7 @@
       
     <router-view/>
     
-    <router-link to="/">Domů</router-link>
+    
   </div>
 </template>
 <script>

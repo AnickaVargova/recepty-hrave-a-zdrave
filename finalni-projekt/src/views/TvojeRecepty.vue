@@ -7,7 +7,7 @@
       <div class="row">
 
 
-        <div class="detail col-12 col-md-6 col-lg-3">
+        <div class="detail col-12 col-md-6 col-lg-4">
           <router-link to="/detail">
             <div class="white">
               <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
@@ -16,7 +16,7 @@
                   <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
                 </div>
                 
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
+                <img src="./../assets/images/kurecinakari.jpg"  class=" mr-3 obrazek img-fluid rounded"/>
                 
               </div>
               
@@ -25,7 +25,7 @@
         </div>
 
 
-     <div class="detail col-12 col-md-6 col-lg-3">
+     <div class="detail col-12 col-md-6 col-lg-4">
           <router-link to="/detail">
             <div class="white">
               <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
@@ -34,7 +34,7 @@
                   <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
                 </div>
                 
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
+                <img src="./../assets/images/kurecinakari.jpg"  class=" mr-3 obrazek img-fluid rounded"/>
                
               </div>
               
@@ -43,7 +43,7 @@
         </div>
 
 
-       <div class="detail col-12 col-md-6 col-lg-3">
+       <div class="detail col-12 col-md-6 col-lg-4">
           <router-link to="/detail">
             <div class="white">
               <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
@@ -52,7 +52,7 @@
                   <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
                 </div>
                 
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
+                <img src="./../assets/images/kurecinakari.jpg"  class=" mr-3 obrazek img-fluid rounded"/>
                 
               </div>
               
@@ -60,7 +60,7 @@
           </router-link>
         </div>
 
-     <div class="detail col-12 col-md-6 col-lg-3">
+     <div class="detail col-12 col-md-6 col-lg-4">
           <router-link to="/detail">
             <div class="white">
               <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
@@ -69,7 +69,7 @@
                   <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
                 </div>
                 
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
+                <img src="./../assets/images/kurecinakari.jpg"  class="mr-3 obrazek img-fluid rounded"/>
                 
               </div>
               
