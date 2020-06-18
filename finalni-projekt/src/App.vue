@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-      
-    <router-view/>
-    <hr>
-    <router-link to="/">Domů</router-link>
+    <router-view />
+    <hr />
+    <div id="button">
+      <router-link to="/">Domů</router-link>
+    </div>
   </div>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
-a {
+#button {
   font-size: 15px;
   padding: 10px;
+  border: 2px solid black;
+  font-weight: bold;
 }
-
 </style>
