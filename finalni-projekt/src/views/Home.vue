@@ -1,14 +1,18 @@
 <template>
-  <div class="okno container">
-     
+  <div class="okno container bg img-fluid">
+     <div class="prazde-misto ">
+     </div>
 
      <div class="">
-       <div class="p-200 pb-200">
-      <button class="rozcestnik "><router-link to="/hra1">Chyť si své jídlo</router-link></button> 
-      <button class="rozcestnik"><router-link to="/hra2">Na co máš chuť?</router-link></button> 
-      <button class="rozcestnik"><router-link to="/vyhledavani">Vyhledávání receptů</router-link></button>
+       <div class="">
+      <button class="rozcestnik"><router-link to="/hra1" class="odkaz">CHYŤ SI SVÉ JÍDLO</router-link></button> 
+      <button class="rozcestnik"><router-link to="/hra2" class="odkaz">NA CO MÁŠ CHUŤ?</router-link></button> 
+      <button class="rozcestnik"><router-link to="/vyhledavani" class="odkaz">VYHLEDÁVÁNÍ RECEPTŮ</router-link></button>
      </div>
       
+    </div>
+
+    <div class="prazde-misto2">
     </div>
    
   </div>
@@ -22,32 +26,57 @@ export default {
 </script>
 <style>
 
-.rozcestnik {
-  display: block;
-  border: 2px solid black;
- 
-   
+.odkaz{
+  color:white;
+  font-weight: 600;
 }
-
-h1 {
-  padding-top: 40px;
-  text-align: center;
+.odkaz:hover,
+.odkaz:active,
+.odkaz:after{
+  text-decoration:none;
+  color: white;
 }
+.bg{
+  background-image: url("./../assets/images/navrhpozadi2.jpg");
+  max-width: 75%;
+  height: auto;
 
-.rozcestnik a {
-  font-size: 30px;
-  padding: 10px;
-  margin: 20px;
-}
-
-.odkazy {
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  opacity: 1;
 }
 
+.prazde-misto2{
+  height:300px;
+}
+
+.rozcestnik{
+box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+border:darkgrey;
+border-radius: 10px;
+display: block;
+margin: 40px auto;
+padding: 18px;
+background-color:green;
+color: white;
+}
+.rozcestnik:hover,
+.rozcestnik:active{
+ color:white;
+ border: 2px solid white;
+ background-color: darkgreen;
+ transition-duration: 0.1s;
+}
+
+
+@media (min-width: 600px){
+  .prazde-misto{
+    height: 250px;
+  }
+}
+@media (max-width: 600px){
+.prazde-misto{
+  height: 150px;
+}
+}
 
 </style>
