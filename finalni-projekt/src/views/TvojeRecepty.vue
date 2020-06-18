@@ -1,6 +1,7 @@
 <template>
+  
   <div class="okno position-relative">
-    <div class="container light-green hlavni2">
+    <div class="container  hlavni2">
       <h2 class="pt-4 m-0 dark-green">Máš chuť na tyto recepty:</h2>
     </div>
 
@@ -46,22 +47,36 @@
               
             </div>
           </router-link>
+<div class="bg container img-fluid">
+  <div class="container hlavni2">
+    <h2 class="pt-4 m-0 green bile-pozadi ">Máš chuť na tyto recepty</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">
+      <router-link to="/detail">
+        <div class="white">
+          <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
+          <div class="media d-flex align-items-center">
+            <div class="media-body">
+              <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
+            </div>
+
+            <img src="./../assets/images/kurecinakari.jpg" class="mr-3 obrazek img-fluid rounded" />
+          </div>
         </div>
+      </router-link>
+    </div>
 
-
-       <div class="detail col-12 col-md-6 col-lg-3">
-          <router-link to="/detail">
-            <div class="white">
-              <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
-              <div class="media d-flex align-items-center">
-                <div class="media-body">          
-                  <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
-                </div>
-                
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
-                
-              </div>
-              
+    <div class="col-12 col-md-6 col-lg-4">
+      <router-link to="/detail">
+        <div class="white">
+          <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
+          <div class="media d-flex align-items-center">
+            <div class="media-body">
+              <p
+                class="text-dark ml-2 mp-2"
+              >Tady bude začátek receptu, který se po nějaké době schová...</p>
             </div>
           </router-link>
         </div>-->
@@ -146,8 +161,13 @@ export default {
 </script>
 
 <style>
-.hlavni2 {
-  border-bottom: 2px solid lightgreen;
+.bile-pozadi{
+  background-color: white;
+  color: green;
+  border-bottom: 2px solid green;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 .obrazek {
   max-width: 180px;
@@ -156,9 +176,10 @@ export default {
 
 .white {
   background-color: white;
-  border: 3px solid darkgreen;
+  border: 3px SOLID DARKGREEN;
   height: 200px;
   widows: 400px;
+  margin: 15px auto;
 }
 
 p {
