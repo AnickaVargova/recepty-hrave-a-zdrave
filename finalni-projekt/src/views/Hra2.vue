@@ -24,7 +24,7 @@
 
       <button class="hotovo" v-on:click="srovnejPole">
         Hotovo
-        </button>
+      </button>
     </div>
   </div>
 </template>
@@ -69,25 +69,30 @@ export default {
 
       // for (let item1 of this.vybranePole) {
       //   for (let item2 of this.recepty) {
-        for(let item2 of this.recepty){
-          item2.shody = 0;
-            for(let item1 of this.vybranePole){
+      for (let item2 of this.recepty) {
+        item2.kratky = item2.postup
+          .split(" ")
+          .slice(0, 6)
+          .join(" ")+'...';
+        
+        
+        item2.shody = 0;
+        for (let item1 of this.vybranePole) {
           if (item2.vyhledavaniCisla.includes(item1)) {
             item2.shody++;
             console.log("shoda nalezena " + item2.nazev);
-            if(!this.vybraneRecepty.includes(item2)){
-            this.vybraneRecepty.push(item2);
-            this.vybraneRecepty.sort((a,b)=>b.shody-a.shody);
-            let prvni4 = this.vybraneRecepty.slice(0,8);
-            //tady je omezeni delky pole
-            this.vybraneRecepty=prvni4;
+            if (!this.vybraneRecepty.includes(item2)) {
+              this.vybraneRecepty.push(item2);
+              this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
+              let prvni4 = this.vybraneRecepty.slice(0, 8);
+              //tady je omezeni delky pole
+              this.vybraneRecepty = prvni4;
             }
             console.log(this.vybranePole);
           }
         }
       }
 
-     
       console.log(this.vybraneRecepty.length);
 
       // //nahodne recepty na doplneni do poctu 4, nemusi to tam byt
@@ -105,8 +110,6 @@ export default {
       this.vybrano = true;
 
       console.log(this.vybranePole);
-
-     
     },
 
     zviditelni() {
@@ -122,7 +125,6 @@ export default {
       for (let item of ikonyZakladni) {
         item.aktivni = false;
       }
-      
     },
   },
 };
@@ -130,7 +132,6 @@ export default {
 
 <style>
 .ikony {
- 
   height: 60vh;
   width: 60vw;
   margin: auto;

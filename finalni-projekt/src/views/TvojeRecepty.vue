@@ -1,7 +1,7 @@
 <template>
   <div class="okno position-relative">
     <div class="container light-green hlavni2">
-      <h2 class="pt-4 m-0 dark-green">Máš chuť na tyto recepty:</h2>
+      <h2 class="pt-4 m-0 dark-green">Máš chuť na tato jídla:</h2>
     </div>
 
     <div class="container light-green">
@@ -19,7 +19,7 @@
               </h3>
               <div class="media d-flex align-items-center">
                 <div class="media-body">
-                  <p class="text-dark ml-2 mp-2">Tady bude zacatek postupu</p>
+                  <p class="text-dark ml-2 mp-2">{{recept.kratky}}</p>
                 </div>
 
                 <img
