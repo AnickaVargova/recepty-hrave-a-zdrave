@@ -1,55 +1,124 @@
 <template>
   <div class="okno">
-    <h3>Tady bude vyhledávání podle kategorií a klíčových slov</h3>
-    <label for="vyber-slovo">Klíčové slovo:</label>
-    <input type="text" id="vyber-slovo"/>
+    <h3>Vyhledávání</h3>
+
     <div id="vyber-kategorie">
-      <select id="kategorie">
-        <option>Kategorie</option>
-        <option>Hlavní jídla</option>
-        <option>Dezerty</option>
-        <option>Vegetariánské</option>
-        <option>Snídaně</option>
-        <option>Svačiny</option>
-        <option>Polévky</option>
-        <option>Saláty</option>
+      <label for="kategorie">Vyber kategorii:</label>
+      <select
+        name="kategorie"
+        v-model.number="kategorieId"
+        id="kategorie"
+        v-on:click="vyberReceptyKategorie"
+      >
+        <option value="56">Polévky</option>
+        <option value="22">Maso</option>
+        <option value="85">Vegetariánské</option>
+        <option value="86">Hlavní jídla</option>
+        <option value="87">Předkrmy</option>
+        <option value="88">Snídaně</option>
+        <option value="71">Saláty</option>
+        <option value="89">Svačiny</option>
+        <option value="90">Pomazánky</option>
+        <option value="91">Dezerty</option>
+        <option value="25">Ryby</option>
       </select>
-      <router-link to="/detail"
-        ><div id="zacatek">
-          <div id="obrazek">Obrázek</div>
-          <h3>Název receptu</h3>
-        </div></router-link
-      >
-      <router-link to="/detail"
-        ><div id="zacatek">
-          <div id="obrazek">Obrázek</div>
-          <h3>Název receptu</h3>
-        </div></router-link
-      >
-      <router-link to="/detail"
-        ><div id="zacatek">
-          <div id="obrazek">Obrázek</div>
-          <h3>Název receptu</h3>
-        </div></router-link
-      >
-      <router-link to="/detail"
-        ><div id="zacatek">
-          <div id="obrazek">Obrázek</div>
-          <h3>Název receptu</h3>
-        </div></router-link
-      >
-      <router-link to="/detail"
-        ><div id="zacatek">
-          <div id="obrazek">Obrázek</div>
-          <h3>Název receptu</h3>
-        </div></router-link
-      >
+
+      <label for="vyber-slovo">Klíčové slovo:</label>
+      <input
+        type="text"
+        id="vyber-slovo"
+        v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo"
+      />
+      <p v-if="oznameni">
+        Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
+      </p>
+
+      <receptyVyhledavani v-bind:vybraneRecepty="vybraneRecepty" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import recepty from "./../assets/data.js";
+import klicovaSlova from "./../assets/klicovaSlova.js";
+import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
+export default {
+  components: {
+    receptyVyhledavani: ReceptyVyhledavani,
+  },
+
+  data() {
+    return {
+      klicoveSlovo: "",
+      klicoveId: null,
+      kategorieId: null,
+      klicovaSlova: klicovaSlova,
+      recepty: recepty,
+      vybraneRecepty: [],
+      oznameni: false,
+    };
+  },
+
+  methods: {
+    vyberReceptySlovo() {
+      for (let item of this.klicovaSlova) {
+        if (item.jmeno === this.klicoveSlovo) {
+          //pridat metodu pro ignorovani velkych pismen, diakritiky, mnozneho cisla
+          //do klicovaSlova pridat nazvy konkretnich jidel
+          //vyresit vice klicovych slov najednou
+          this.klicoveId = item.id;
+        }
+      }
+
+      if (this.klicoveId === null) {
+        this.oznameni = true;
+        vyberNahodneRecepty();
+      }
+
+      this.vybraneRecepty = this.recepty.filter((recept) =>
+        recept.vyhledavaniCisla.includes(this.klicoveId)
+      );
+    },
+
+    vyberReceptyKategorie() {
+      
+      this.vybraneRecepty = this.recepty.filter((recept) =>
+        recept.vyhledavaniCisla.includes(this.kategorieId)
+      );
+      
+    },
+
+    vyberNahodneRecepty() {
+
+      for (let i = 0; i < 5; i++) {
+        let nahodnyRecept = this.recepty[
+          Math.floor(Math.random() * this.recepty.length)
+        ];
+        if (!this.vybraneRecepty.includes(nahodnyRecept)) {
+          this.vybraneRecepty.push(nahodnyRecept);
+        }
+      }
+    },
+
+    zkratPostup() {
+
+      for (let item2 of this.recepty) {
+        item2.kratky =
+          item2.postup
+            .split(" ")
+            .slice(0, 15)
+            .join(" ") + "...";
+      }
+    },
+  },
+
+  created() {
+
+    this.zkratPostup();
+    this.vyberNahodneRecepty();
+  },
+};
 </script>
 
 <style>
@@ -65,21 +134,7 @@ export default {};
 }
 
 #vyber-kategorie {
-  margin-left: 20px;
   margin-top: 20px;
   justify-content: center;
-}
-
-#zacatek {
-  display: flex;
-  border: 2px solid black;
-  margin: 5px;
-}
-
-#zacatek #obrazek {
-  flex-basis: 30%;
-  height: 30px;
-  border: 1px solid black;
-  margin: 5px;
 }
 </style>

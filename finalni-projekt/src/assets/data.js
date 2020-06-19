@@ -3,12 +3,11 @@ export default [{
         nazev: 'Hrášková polévka',
         pocetPorci: 4,
         kategorie: ['polévky', 'vegetariánské'],
-        kategorieCisla: [1, 3],
         postup: 'Pórek a cibuli nakrájíme najemno. V kastrolu na středním ohni rozehřejeme  máslo, přidáme pórek a cibuli, zamícháme, přiklopíme poklicí a necháme dusit 3 minuty. Opět promícháme. Přidáme mražený hrášek, zvýšíme oheň a důkladně mícháme 2 minuty. Přilijeme vroucí vodu, osolíme a přivedeme k varu. Přidáme zakysanou smetanu, opět přivedeme k varu a kastrol stáhneme z ohně. Přidáme lístky máty  a polévku důkladně rozmixujeme v mixéru. Poté ji přepasírujeme přes cedník do čistého hrnce.',
         ingredience: ['500 g mraženého hrášku', '800 ml vody', '1 lžíce   zakysané smetany', '100 g bílé části pórku', '100 g oloupané cibule', '50 g másla', 'hrst lístků máty', 'sůl'],
         obrazek: 'hraskovapolevka.jpg',
         vyhledavani: ['hrášek', 'pórek', 'cibule'],
-        vyhledavaniCisla: [1, 2, 3, 56, 41, 67],
+        vyhledavaniCisla: [1, 2, 3, 56, 41, 67, 85, 86],
         shody: 0,
 
     },
@@ -22,7 +21,7 @@ export default [{
         ingredience: ['380 g kuřecích řízků', '70 g slaniny nakrájené na plátky', '4 kukuřičné tortilly', '4 plátky sýra čedar nebo gouda', '2 lžíce olivového oleje', '300 g rajčat', '100 g červené papriky', '4 lžíce lístků koriandru', 'sůl'],
         obrazek: 'quesadillas.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'tortilly', 'slanina', 'sýr', 'koriandr'],
-        vyhledavaniCisla: [4, 5, 6, 7, 8, 9, 10, 22, 41, 67],
+        vyhledavaniCisla: [4, 5, 6, 7, 8, 9, 10, 22, 41, 67, 86],
         shody: 0,
     },
     {
@@ -34,7 +33,7 @@ export default [{
         ingredience: ['8 vajec', '200 ml bílého jogurtu', '1 lžíce francouzské hořčice', 'hrst pažitky', '1 malá cibule', 'sůl'],
         obrazek: 'vajecnapomazanka.jpg',
         vyhledavani: ['vejce', 'jogurt', 'pažitka', 'cibule', 'hořčice'],
-        vyhledavaniCisla: [11, 12, 13, 3, 14],
+        vyhledavaniCisla: [11, 12, 13, 3, 14, 88, 89, 90, 85],
         shody: 0,
     },
     {
@@ -46,7 +45,7 @@ export default [{
         ingredience: ['300 g hladké mouky', '200 g celozrnné mouky', '3-4 dcl vlažné vody', 'sáček sušeného droždí', '2 lžičky soli', '5 lžic oleje', '1 větší cibule nakrájená na plátky', '200 ml sušených  rajčat v oleji', '200 g černých nebo zelených oliv', 'bylinky podle chuti', ],
         obrazek: 'focaccia.jpg',
         vyhledavani: ['mouka', 'rajčata', 'olivy', 'cibule'],
-        vyhledavaniCisla: [15, 5, 16, 3, 41, 67],
+        vyhledavaniCisla: [15, 5, 16, 3, 41, 67, 85, 86],
         shody: 0,
     },
     {
@@ -58,7 +57,7 @@ export default [{
         ingredience: ['200 g červené čočky', '1 cibule', '1 petržel', '1 mrkev', 'majoránka', '2 lžíce oleje', 'sůl'],
         obrazek: 'cockovapolevka.jpg',
         vyhledavani: ['čočka', 'mrkev', 'petržel'],
-        vyhledavaniCisla: [17, 18, 19, 41],
+        vyhledavaniCisla: [17, 18, 19, 41, 85, 56],
         shody: 0,
     },
     {
@@ -70,7 +69,7 @@ export default [{
         ingredience: ['900 g květáku', '150 ml mléka', '45 g hladké mouky', '60 g másla', '150 g tvrdého sýra', 'petržel na ozdobu'],
         obrazek: 'zapecenykvetak.jpg',
         vyhledavani: ['květák', 'sýr', 'mléko'],
-        vyhledavaniCisla: [20, 21, 9, 41],
+        vyhledavaniCisla: [20, 21, 9, 41, 85, 86],
         shody: 0,
     },
     {
@@ -82,7 +81,7 @@ export default [{
         ingredience: ['600 g zadního hovězího', '300 g čerstvých hub', '2 cibule', '3 lžíce oleje', 'sůl', '0,5 l vody nebo vývaru'],
         obrazek: 'hovezinahoubach.jpg',
         vyhledavani: ['hovězí maso', 'maso', 'houby'],
-        vyhledavaniCisla: [68, 22, 23],
+        vyhledavaniCisla: [68, 22, 23, 86],
         shody: 0,
     },
     {
@@ -94,7 +93,7 @@ export default [{
         ingredience: ['750 g brambor', 'sůl', 'olivový olej', '500 ml bílého jogurtu', 'bylinky', 'česnek'],
         obrazek: 'pecenebrambory.jpg',
         vyhledavani: ['brambory', 'česnek', 'jogurt'],
-        vyhledavaniCisla: [24, 69, 12, 67],
+        vyhledavaniCisla: [24, 69, 12, 67, 85, 86],
         shody: 0,
     },
     {
@@ -106,7 +105,7 @@ export default [{
         ingredience: ['2 lžíce oleje', '1 lžíce másla', '600 g cibule', '100 g sladšího tvrdého sýra', '1 lžíce hladké mouky', '1 l vody', 'sůl', 'rohlíky nebo bagety, nakrájené na kostičky', 'petrželka na ozdobu'],
         obrazek: 'francouzskacibulacka.jpg',
         vyhledavani: ['cibule', 'sýr'],
-        vyhledavaniCisla: [3, 9, 78],
+        vyhledavaniCisla: [3, 9, 78, 56, 85],
         shody: 0,
     },
     {
@@ -118,7 +117,7 @@ export default [{
         ingredience: ['800 g kuřecích řízků', '1 cibule', '200 ml mléka', '1 lžíce hladké mouky', '1 lžíce oleje', '1 lžíce sladké papriky', 'sůl'],
         obrazek: 'kurenapaprice.jpg',
         vyhledavani: ['kuře', 'cibule', 'mléko'],
-        vyhledavaniCisla: [22, 4, 3, 21],
+        vyhledavaniCisla: [22, 4, 3, 21, 86],
         shody: 0,
     },
     {
@@ -130,7 +129,7 @@ export default [{
         ingredience: ['4 kostky rybího filé', '2 velká rajčata', '100 g tvrdého sýra', 'česnek', 'sůl', 'bylinky (např. oregano nebo tymián)'],
         obrazek: 'pecenefile.jpg',
         vyhledavani: ['ryby', 'rajčata', 'sýr', 'česnek'],
-        vyhledavaniCisla: [25, 5, 9, 69, 41, 67],
+        vyhledavaniCisla: [25, 5, 9, 69, 41, 67, 86],
         shody: 0,
     },
     {
@@ -142,7 +141,7 @@ export default [{
         ingredience: ['500 g těstovin', '300 g konzervovaného tuňáka ve vlastní šťávě', '400 g cherry rajčat', '1 žlutá paprika', '1 cibule', '200 ml bílého jogurtu', 'lžíce francouzské hořčice', 'bylinky podle chuti'],
         obrazek: 'testovinovysalat.jpg',
         vyhledavani: ['těstoviny', 'ryby', 'rajčata', 'papriky', 'cibule', 'jogurt'],
-        vyhledavaniCisla: [26, 25, 5, 6, 3, 12, 79, 41, 67, 77],
+        vyhledavaniCisla: [26, 25, 5, 6, 3, 12, 79, 41, 67, 77, 86, 71],
         shody: 0,
     },
     {
@@ -154,7 +153,7 @@ export default [{
         ingredience: ['500 g červené řepy', '200 g mozzarelly nebo jiného bílého sýra', '2 lžíce slunečnicových semínek', 'olivový olej', 'vinný ocet', 'sůl podle chuti'],
         obrazek: 'salatzcervenerepy.jpg',
         vyhledavani: ['červená řepa', 'slunečnice', 'sýr'],
-        vyhledavaniCisla: [28, 29, 9, 41],
+        vyhledavaniCisla: [28, 29, 9, 41, 71, 85, 86],
         shody: 0,
     },
     {
@@ -166,7 +165,7 @@ export default [{
         ingredience: ['250 g kuskusu', '250 ml vody', 'sůl', 'citrónová šťáva', '2 lžíce olivového oleje', 'čerstvá máta a petržel', '6 malých rajčat', '2 cibulky se zelenou natí'],
         obrazek: 'kuskusovysalat.jpg',
         vyhledavani: ['kuskus', 'rajčata', 'máta', 'petržel', 'cibule'],
-        vyhledavaniCisla: [30, 31, 3, 19, 5, 41, 67, 77],
+        vyhledavaniCisla: [30, 31, 3, 19, 5, 41, 67, 77, 71, 85, 86],
         shody: 0,
     },
     {
@@ -178,7 +177,7 @@ export default [{
         ingredience: ['400 ml mléka', '2 vejce', '200 g hladké mouky (možno částečně nahradit celozrnnou)', 'špetka soli'],
         obrazek: 'palacinky.jpg',
         vyhledavani: ['mléko', 'vejce', 'mouka'],
-        vyhledavaniCisla: [21, 15, 11, 33],
+        vyhledavaniCisla: [21, 15, 11, 33, 85, 86, 91, 88],
         shody: 0,
     },
     {
@@ -190,7 +189,7 @@ export default [{
         ingredience: ['100 g chia semínek', '250 ml mléka', '250 ml vody', '2 lžíce javorového nebo jiného sirupu', 'ovoce podle chuti'],
         obrazek: 'chiapudink.jpg',
         vyhledavani: ['chia', 'mléko', 'ovoce'],
-        vyhledavaniCisla: [32, 21, 33, 39],
+        vyhledavaniCisla: [32, 21, 33, 39, 91, 88, 89],
         shody: 0,
     },
 
@@ -203,7 +202,7 @@ export default [{
         ingredience: ['120 g hladké špaldové mouky', '80 g celozrnné mouky', '100 g másla pokojové teploty', '1 žloutek', '2-3 lžíce studené vody', '4-5 jablek', '3 lžíce přírodního cukru', '50 g másla', 'skorice'],
         obrazek: 'jablecnykolac.jpg',
         vyhledavani: ['jablka', 'máslo', 'skořice'],
-        vyhledavaniCisla: [36, 34, 35, 15, 33],
+        vyhledavaniCisla: [36, 34, 35, 15, 33, 91, 88, 89, 85],
         shody: 0,
     },
     {
@@ -215,7 +214,7 @@ export default [{
         ingredience: ['600 ml bílého jogurtu', 'lžička kakaa', 'piškoty', 'med', 'ovoce podle chuti'],
         obrazek: 'jogurtovypohar.jpg',
         vyhledavani: ['jogurt', 'kakao', 'piškoty', 'med', 'ovoce'],
-        vyhledavaniCisla: [12, 37, 38, 39, 33],
+        vyhledavaniCisla: [12, 37, 38, 39, 33, 91, 88, 89, 85],
         shody: 0,
     },
     {
@@ -227,7 +226,7 @@ export default [{
         ingredience: ['300 g hladké špaldové mouky', '200 g hladké celozrnné mouky', '250 g másla', 'žloutek', '2 lžíce vody', '2 sáčky vanilkového pudinku', '0,5 l mléka', '2 lžíce přírodního cukru', 'ovoce'],
         obrazek: 'kosicky.jpg',
         vyhledavani: ['pudink', 'ovoce'],
-        vyhledavaniCisla: [40, 33, 34, 15],
+        vyhledavaniCisla: [40, 33, 34, 15, 91],
         shody: 0,
     },
     {
@@ -239,7 +238,7 @@ export default [{
         ingredience: ['500 ml bílého nebo ovocného jogurtu', 'ovoce', 'přírodní cukr nebo med'],
         obrazek: 'nanuky.jpg',
         vyhledavani: ['jogurt', 'ovoce'],
-        vyhledavaniCisla: [12, 33],
+        vyhledavaniCisla: [12, 33, 91],
         shody: 0,
     },
     {
@@ -251,7 +250,7 @@ export default [{
         ingredience: ['8 plátků tmavého chleba', 'máslo na potření', 'uzený losos', 'konzervované ryby a mořské plody', 'natvrdo uvařené vejce', 'plátkový sýr', 'okurka, rajčata a jiná zelenina', 'kopr', 'petržel'],
         obrazek: 'oblozenychleb.jpg',
         vyhledavani: ['chléb', 'vejce', 'ryby', 'zelenina', 'sýr', 'kopr', 'petržel', 'mořské plody'],
-        vyhledavaniCisla: [70, 11, 9, 25, 41, 42, 43, 67, 74, 22],
+        vyhledavaniCisla: [70, 11, 9, 25, 41, 42, 43, 67, 74, 22, 85, 86, 89],
         shody: 0,
     },
     {
@@ -263,7 +262,7 @@ export default [{
         ingredience: ['2 velká zralá avokáda', '2 rajčata', 'paprika', 'okurka', '200 g balkánského sýra', 'olivový olej', 'citronová šťáva'],
         obrazek: 'plneneavokado.jpg',
         vyhledavani: ['avokádo', 'rajčata', 'papriky', 'okurky', 'sýr', 'zelenina'],
-        vyhledavaniCisla: [44, 5, 6, 45, 9, 41],
+        vyhledavaniCisla: [44, 5, 6, 45, 9, 41, 87, 89, 71, 85],
         shody: 0,
     },
     {
@@ -275,7 +274,7 @@ export default [{
         ingredience: ['4 velká rajčata', '200 g mozzarelly', 'bazalka', 'olivový olej', 'balzamikový ocet', 'sůl'],
         obrazek: 'rajcatasmozzarellou.jpg',
         vyhledavani: ['rajčata', 'mozzarella', 'sýr', 'zelenina', 'bazalka', 'bylinky'],
-        vyhledavaniCisla: [5, 9, 46, 41, 47, 67],
+        vyhledavaniCisla: [5, 9, 46, 41, 47, 67, 87, 89, 71, 85],
         shody: 0,
     },
     {
@@ -287,7 +286,7 @@ export default [{
         ingredience: ['500 g kuřecích prsou', 'olej na opékání', 'rajčata, papriky, ledový salát a jiná zelenina', '300 ml bílého jogurtu', 'lžíce citrónové šťávy', 'sůl'],
         obrazek: 'kurecisalat.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'salát', 'zelenina', 'jogurt'],
-        vyhledavaniCisla: [22, 4, 6, 41, 71, 12],
+        vyhledavaniCisla: [22, 4, 6, 41, 71, 12, 86],
         shody: 0,
     },
 
@@ -300,7 +299,7 @@ export default [{
         ingredience: ['1 kg dýně hokkaido', 'zakysaná smetana', 'bylinky nebo dýňová semena na ozdobu', 'sůl'],
         obrazek: 'dynovapolevka.jpg',
         vyhledavani: ['dýně', 'smetana'],
-        vyhledavaniCisla: [48, 49, 56, 67, 41],
+        vyhledavaniCisla: [48, 49, 56, 67, 41, 85],
         shody: 0,
     },
     {
@@ -312,7 +311,7 @@ export default [{
         ingredience: ['400 g špaget', '400 g cherry rajčat', '2 hrsti rukoly', '5 stroužků česneku', 'strouhaný parmazán', 'olivový olej', 'sůl'],
         obrazek: 'spagetysrukolou.jpg',
         vyhledavani: ['těstoviny', 'špagety', 'rajčata', 'rukola', 'česnek', 'parmazán', 'sýr', 'zelenina'],
-        vyhledavaniCisla: [77, 5, 50, 69, 51, 9, 41, 80],
+        vyhledavaniCisla: [77, 5, 50, 69, 51, 9, 41, 80, 86, 85],
         shody: 0,
     },
     {
@@ -324,7 +323,7 @@ export default [{
         ingredience: ['280 g hladké špaldové mouky', '165 g másla', '8 lžic vody', 'sůl', '6 vajec', 'pórek', '500 g žampiónů', 'lžíce oleje', '100 g tvrdého nastrouhaného sýra'],
         obrazek: 'quichesporkem.jpg',
         vyhledavani: ['pórek', 'vejce', 'houby', 'sýr'],
-        vyhledavaniCisla: [2, 11, 23, 9, 41],
+        vyhledavaniCisla: [2, 11, 23, 9, 41, 86, 89, 88, 85],
         shody: 0,
     },
 
@@ -337,7 +336,7 @@ export default [{
         ingredience: ['90 g hladké celozrnné mouky', '3 banány', '2 vajíčka', '50 g kakaa', 'kypřící prášek', '5 lžic medu/sirupu', '2 lžíce kokosového oleje', 'hořká čokoláda'],
         obrazek: 'brownies.jpg',
         vyhledavani: ['banány', 'čokoláda'],
-        vyhledavaniCisla: [52, 59],
+        vyhledavaniCisla: [52, 59, 91],
         shody: 0,
     },
 
@@ -350,7 +349,7 @@ export default [{
         ingredience: ['750g batátů', '4 filety candáta', 'olivový olej', 'pepř', 'sůl', 'citrón'],
         obrazek: 'batatovepyrescandatem.jpg',
         vyhledavani: ['batáty', 'candát', 'ryby'],
-        vyhledavaniCisla: [53, 54, 25],
+        vyhledavaniCisla: [53, 54, 25, 86],
         shody: 0,
     },
 
@@ -375,7 +374,7 @@ export default [{
         ingredience: ['1 hrnek ovesných vloček', '1 hrnek celozrnné hladké mouky', '1/2 hrnku třtinového cukru', '125 g másla', '3 lžíce sirupu/medu', '1 lžička jedlé sody', 'libovolné množství oříšků, rozinek a semínek'],
         obrazek: 'ovesnesusenky.jpg',
         vyhledavani: ['ovesné vločky', 'oříšky'],
-        vyhledavaniCisla: [58, 57, 34, 15, 29, 39, 82],
+        vyhledavaniCisla: [58, 57, 34, 15, 29, 39, 82, 91, 89],
         shody: 0,
     },
     {
@@ -387,7 +386,7 @@ export default [{
         ingredience: ['10 vajec', '100g tvrdého sýru', '150g čerstvého špenátu', '2 rajčata', 'sůl', 'pepř'],
         obrazek: 'vajickovemuffiny.jpg',
         vyhledavani: ['vejce', 'sýr', 'rajčata', 'špenát'],
-        vyhledavaniCisla: [11, 9, 5, 27, 41],
+        vyhledavaniCisla: [11, 9, 5, 27, 41, 88, 89, 85],
         shody: 0,
     },
     {
@@ -399,7 +398,7 @@ export default [{
         ingredience: ['okurka', 'rajčata', 'paprika', 'červená cibule', 'olivy', 'salát'],
         obrazek: 'salatsbalkanskymsyrem.jpg',
         vyhledavani: ['balkánský sýr', 'rajčata', 'okurka', 'paprika', 'olivy', 'zelenina'],
-        vyhledavaniCisla: [9, 5, 45, 6, 41, 16],
+        vyhledavaniCisla: [9, 5, 45, 6, 41, 16, 89, 85, 86, 71],
         shody: 0,
     },
     {
@@ -411,7 +410,7 @@ export default [{
         ingredience: ['krůtí vykostěné stehno', '125g mozzarely', '100g cherry rajčat', '750g brambor'],
         obrazek: 'krutirolada.jpg',
         vyhledavani: ['krůtí maso', 'mozzarella', 'rajčata', 'brambory'],
-        vyhledavaniCisla: [22, 72, 46, 5, 22, 41],
+        vyhledavaniCisla: [22, 72, 46, 5, 22, 41, 86],
         shody: 0,
     },
     {
@@ -423,7 +422,7 @@ export default [{
         ingredience: ['600g kuřecích prsních řízků', '1/2 citrónu', '1 cuketa', 'bazalka'],
         obrazek: 'kureciprsascuketou.jpg',
         vyhledavani: ['kuřecí maso', 'cuketa', 'zelenina', 'brambory', 'citrón', 'bazalka'],
-        vyhledavaniCisla: [4, 73, 41, 24, 47, 61, 22, 67],
+        vyhledavaniCisla: [4, 73, 41, 24, 47, 61, 22, 67, 86],
         shody: 0,
     },
     {
@@ -435,7 +434,7 @@ export default [{
         ingredience: ['500 g lososa', '2 citróny', '50 g másla', '500 g chřestu', 'sůl'],
         obrazek: 'lososschrestem.jpg',
         vyhledavani: ['losos', 'ryby', 'chřest', 'zelenina', 'citrón', 'máslo'],
-        vyhledavaniCisla: [74, 25, 75, 41, 34, 76],
+        vyhledavaniCisla: [74, 25, 75, 41, 34, 76, 86],
         shody: 0,
     },
     {
@@ -447,7 +446,7 @@ export default [{
         ingredience: ['300g hladké celozrnné mouky', '150g másla', '4 vejce', '70 ml mléka', '250g mozzarely', '250g rajčat', '20 lístků bazalky', '80ml smetany', 'muškátový oříšek', 'čerstvý špenát'],
         obrazek: 'quichesmozzarelouarajcaty.jpg',
         vyhledavani: ['rajčata', 'sýr', 'mozzarella', 'špenát', 'vejce'],
-        vyhledavaniCisla: [5, 9, 46, 27, 11, 15, 34, 47, 67, 41],
+        vyhledavaniCisla: [5, 9, 46, 27, 11, 15, 34, 47, 67, 41, 86, 89, 85],
         shody: 0,
     },
 
@@ -460,7 +459,7 @@ export default [{
         ingredience: ['salát', 'tuňák z konzervy v olivovém oleji', 'zelenina', 'rajčata', 'okurka', 'vejce', 'kukuřice', 'olivy'],
         obrazek: 'tunakovysalatsvajickem.jpg',
         vyhledavani: ['ryby', 'vejce', 'salát', 'zelenina', 'rajčata'],
-        vyhledavaniCisla: [11, 25, 71, 41, 5, 79, 5, 45, 16, 83],
+        vyhledavaniCisla: [11, 25, 71, 41, 5, 79, 5, 45, 16, 83, 86, 89],
         shody: 0,
     },
     {
@@ -472,7 +471,7 @@ export default [{
         ingredience: ['300 g rýže', '500 g kuřecích prsních nebo stehenních řízků', '300 g čerstvého nebo kompotovaného ananasu bez cukru', '2 lžičky kari', '150 g žervé', 'olivový olej'],
         obrazek: 'kurecinakari.jpg',
         vyhledavani: ['kuřecí maso', 'rýže', 'kari', 'ananas', 'ovoce'],
-        vyhledavaniCisla: [4, 22, 64, 65, 33, 84, 33],
+        vyhledavaniCisla: [4, 22, 64, 65, 33, 84, 33, 86],
         shody: 0,
     },
     {
@@ -484,7 +483,7 @@ export default [{
         ingredience: ['ananas', 'ananasový džus', '4 snítky koriandru', '1 plátek zázvoru', '1 špetka soli'],
         obrazek: 'ananasovyshakeskoriandrem.jpg',
         vyhledavani: ['ananas', 'ovoce', 'zázvor'],
-        vyhledavaniCisla: [65, 33, 66, 10, 67],
+        vyhledavaniCisla: [65, 33, 66, 10, 67, 89, 91],
         shody: 0,
     },
 
