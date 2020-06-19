@@ -82,6 +82,7 @@ export default {
             //tady je omezeni delky pole
             this.vybraneRecepty=prvni4;
             }
+            console.log(this.vybranePole);
           }
         }
       }
@@ -105,11 +106,12 @@ export default {
 
       console.log(this.vybranePole);
 
-      this.vybranePole = [];
+     
     },
 
     zviditelni() {
       this.vybrano = false;
+      console.log(this.vybranePole);
     },
 
     hratZnovu() {
@@ -120,7 +122,7 @@ export default {
       for (let item of ikonyZakladni) {
         item.aktivni = false;
       }
-      console.log(this.vybranePole);
+      
     },
   },
 };
