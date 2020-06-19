@@ -84,9 +84,9 @@ export default {
             if (!this.vybraneRecepty.includes(item2)) {
               this.vybraneRecepty.push(item2);
               this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
-              let prvni4 = this.vybraneRecepty.slice(0, 8);
+              let prvniRecepty = this.vybraneRecepty.slice(0, 8);
               //tady je omezeni delky pole
-              this.vybraneRecepty = prvni4;
+              this.vybraneRecepty = prvniRecepty;
             }
             console.log(this.vybranePole);
           }
@@ -95,7 +95,7 @@ export default {
 
       console.log(this.vybraneRecepty.length);
 
-      // //nahodne recepty na doplneni do poctu 4, nemusi to tam byt
+      // //nahodne recepty na doplneni do poctu, nemusi to tam byt
       // for (let k = 0; k < 4; k++) {
       //   let i = Math.floor(Math.random() * this.recepty.length);
       //   if (
@@ -109,12 +109,12 @@ export default {
       console.log(this.vybraneRecepty);
       this.vybrano = true;
 
-      console.log(this.vybranePole);
+      
     },
 
     zviditelni() {
       this.vybrano = false;
-      console.log(this.vybranePole);
+      
     },
 
     hratZnovu() {
