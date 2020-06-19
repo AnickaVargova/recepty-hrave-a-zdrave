@@ -1,46 +1,44 @@
 <template>
-  <div class="okno bg img-flud container"> 
-  <div class="container">
-    <form>
-      <div class="input-group">  
-       <input type="text" class="form-control" placeholder="Najdi recept" name="search" v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1"> <div class="input-group-btn">
-          <button class=" btn btn-default" type="submit">
-          <i class="glyphicon-search"></i></button>
-          </div>
+  <div class="okno bg img-flud container">
+    
+    <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+    <div v-else>
+
+      <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
+
+      <div id="vyber-kategorie">
+        <label for="kategorie">Vyber kategorii:</label>
+        <select
+          name="kategorie"
+          v-model.number="kategorieId"
+          id="kategorie"
+          v-on:click="vyberReceptyKategorie"
+        >
+          <option value="56">Polévky</option>
+          <option value="22">Maso</option>
+          <option value="85">Vegetariánské</option>
+          <option value="86">Hlavní jídla</option>
+          <option value="87">Předkrmy</option>
+          <option value="88">Snídaně</option>
+          <option value="71">Saláty</option>
+          <option value="89">Svačiny</option>
+          <option value="90">Pomazánky</option>
+          <option value="91">Dezerty</option>
+          <option value="25">Ryby</option>
+        </select>
+
+        <label for="vyber-slovo">Klíčové slovo:</label>
+       
+        <p v-if="oznameni">
+          Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
+        </p>
+
+        <receptyVyhledavani
+          v-bind:vybraneRecepty="vybraneRecepty"
+          v-on:prejdiNaDetail="prejdiNaDetail($event)"
+        />
       </div>
-    </form>
-  </div>
-
-
-    <div id="vyber-kategorie">
-      <label for="kategorie">Vyber kategorii:</label>
-      <select
-        name="kategorie"
-        v-model.number="kategorieId"
-        id="kategorie"
-        v-on:click="vyberReceptyKategorie"
-      >
-        <option value="56">Polévky</option>
-        <option value="22">Maso</option>
-        <option value="85">Vegetariánské</option>
-        <option value="86">Hlavní jídla</option>
-        <option value="87">Předkrmy</option>
-        <option value="88">Snídaně</option>
-        <option value="71">Saláty</option>
-        <option value="89">Svačiny</option>
-        <option value="90">Pomazánky</option>
-        <option value="91">Dezerty</option>
-        <option value="25">Ryby</option>
-      </select>
-
-      <label for="vyber-slovo">Klíčové slovo:</label>
-  </div>   
-      <p v-if="oznameni">
-        Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
-      </p>
-
-      <receptyVyhledavani v-bind:vybraneRecepty="vybraneRecepty" />
     </div>
   </div>
 </template>
@@ -49,11 +47,14 @@
 import recepty from "./../assets/data.js";
 import klicovaSlova from "./../assets/klicovaSlova.js";
 import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
-import Detail from "./../views/Detail.vue";
+import Detail from "./Detail.vue";
+
 
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
+    detail: Detail,
+    
   },
 
   data() {
