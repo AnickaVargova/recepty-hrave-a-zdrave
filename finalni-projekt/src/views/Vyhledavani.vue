@@ -1,5 +1,6 @@
 <template>
   <div class="okno">
+    
     <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
     <div v-else>
       <h3>Vyhledávání</h3>
@@ -49,12 +50,14 @@
 import recepty from "./../assets/data.js";
 import klicovaSlova from "./../assets/klicovaSlova.js";
 import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
-import Detail from "./../views/Detail.vue";
+import Detail from "./Detail.vue";
+
 
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
     detail: Detail,
+    
   },
 
   data() {

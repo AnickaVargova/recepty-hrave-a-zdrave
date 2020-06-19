@@ -9,82 +9,26 @@
         <div
           v-for="(recept, index) in vybraneRecepty"
           v-bind:key="index"
-          
+          v-on:click="prejdiNaDetail(index)"
           class="detail col-12 col-md-6 col-lg-3"
         >
-          <router-link to="/detail">
-            <div class="white">
-              <h3 class="dark-green text-center text-decoration-none pt-2">
-                {{ recept.nazev }}
-              </h3>
-              <div class="media d-flex align-items-center">
-                <div class="media-body">
-                  <p class="text-dark ml-2 mp-2">{{recept.kratky}}</p>
-                </div>
-
-                <img
-                  v-bind:src="require(`../assets/images/${recept.obrazek}`)"
-                  v-bind:alt="recept.nazev"
-                  class="align-self-center mr-3 obrazek img-fluid rounded"
-                />
+          <div class="white">
+            <h3 class="dark-green text-center text-decoration-none pt-2">
+              {{ recept.nazev }}
+            </h3>
+            <div class="media d-flex align-items-center">
+              <div class="media-body">
+                <p class="text-dark ml-2 mp-2">{{ recept.kratky }}</p>
               </div>
+
+              <img
+                v-bind:src="require(`../assets/images/${recept.obrazek}`)"
+                v-bind:alt="recept.nazev"
+                class="align-self-center mr-3 obrazek img-fluid rounded"
+              />
             </div>
-          </router-link>
+          </div>
         </div>
-
-        <!-- <div class="detail col-12 col-md-6 col-lg-3">
-          <router-link to="/detail">
-            <div class="white">
-              <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
-              <div class="media d-flex align-items-center">
-                <div class="media-body">          
-                  <p class="text-dark ml-2 mp-2">Tady bude začátek receptu, který se po nějaké době schová...</p>
-                </div>
-                
-                <img src="./../assets/images/kurecinakari.jpg"  class="align-self-center mr-3 obrazek img-fluid rounded"/>
-               
-              </div>
-              
-            </div>
-          </router-link>
-        </div>
-      </router-link>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4">
-      <router-link to="/detail">
-        <div class="white">
-          <h3 class="dark-green text-center text-decoration-none pt-2">Název receptu</h3>
-          <div class="media d-flex align-items-center">
-            <div class="media-body">
-              <p
-                class="text-dark ml-2 mp-2"
-              >Tady bude začátek receptu, který se po nějaké době schová...</p>
-            </div>
-          </router-link>
-        </div>-->
-
-        <!-- <div class="detail col-12 col-md-6 col-lg-3">
-          <router-link to="/detail">
-            <div class="white">
-              <h3 class="dark-green text-center text-decoration-none pt-2">
-                Název receptu
-              </h3>
-              <div class="media d-flex align-items-center">
-                <div class="media-body">
-                  <p class="text-dark ml-2 mp-2">
-                    Tady bude začátek receptu, který se po nějaké době schová...
-                  </p>
-                </div>
-
-                <img
-                  src="./../assets/images/kurecinakari.jpg"
-                  class="align-self-center mr-3 obrazek img-fluid rounded"
-                />
-              </div>
-            </div>
-          </router-link>
-        </div> -->
       </div>
     </div>
     <div class="menu container light-green">
@@ -104,7 +48,9 @@
           v-on:click="hratZnovu"
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/hra2"
-          >Hrát znovu</button>
+        >
+          Hrát znovu
+        </button>
         >
         <!-- <router-link
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
@@ -124,15 +70,19 @@
 <script>
 import Hra2 from "./Hra2.vue";
 export default {
-  props: ["vybraneRecepty","vybrano"],
+  props: ["vybraneRecepty", "vybrano"],
   methods: {
-    zpet(){
-      this.$emit('chciZpet');
+    zpet() {
+      this.$emit("chciZpet");
     },
-    hratZnovu(){
-      this.$emit('hratZnovu');
+    hratZnovu() {
+      this.$emit("hratZnovu");
+    },
+    prejdiNaDetail(index){
+      this.$emit('prejdiNaDetail',index);
+      
     }
-  }
+  },
   // data(){
   //   return
   // },
@@ -144,30 +94,30 @@ export default {
 </script>
 
 <style>
-.mas-chut{
+.mas-chut {
   background-color: white;
   font-weight: 600;
   color: green;
-  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
-  border:darkgrey;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
+  border: darkgrey;
   border-radius: 10px;
 }
 
-@media(min-width:1000px){
+@media (min-width: 1000px) {
   .bile-pozadi {
     width: 200px;
     height: 150px;
   }
 }
 
-@media(max-width: 1000px){
-  .bile-pozadi{
+@media (max-width: 1000px) {
+  .bile-pozadi {
     width: 150px;
     height: 100px;
   }
 }
 
-.bile-pozadi{
+.bile-pozadi {
   background-color: white;
   color: green;
   border-bottom: 2px solid green;
