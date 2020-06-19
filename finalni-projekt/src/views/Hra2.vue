@@ -53,7 +53,7 @@ export default {
     klikJidlo(index) {
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
-      console.log(this.vybraneJidlo);
+      // console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
         // upravit klicoveSlovo na pravdepodobne varianty
@@ -65,15 +65,22 @@ export default {
 
     srovnejPole() {
       this.vybraneRecepty = [];
-      console.log(this.vybraneRecepty);
+      // console.log(this.vybraneRecepty);
 
-      for (let item1 of this.vybranePole) {
-        for (let item2 of this.recepty) {
+      // for (let item1 of this.vybranePole) {
+      //   for (let item2 of this.recepty) {
+        for(let item2 of this.recepty){
           item2.shody = 0;
+            for(let item1 of this.vybranePole){
           if (item2.vyhledavaniCisla.includes(item1)) {
             item2.shody++;
             console.log("shoda nalezena " + item2.nazev);
+            if(!this.vybraneRecepty.includes(item2)){
             this.vybraneRecepty.push(item2);
+            this.vybraneRecepty.sort((a,b)=>b.shody-a.shody);
+            let prvni4 = this.vybraneRecepty.slice(0,4);
+            this.vybraneRecepty=prvni4;
+            }
           }
         }
       }
@@ -119,7 +126,7 @@ export default {
 
 <style>
 .ikony {
-  border: 2px solid black;
+ 
   height: 60vh;
   width: 60vw;
   margin: auto;
