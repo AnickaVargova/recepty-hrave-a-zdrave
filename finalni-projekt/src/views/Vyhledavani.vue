@@ -43,6 +43,8 @@
 import recepty from "./../assets/data.js";
 import klicovaSlova from "./../assets/klicovaSlova.js";
 import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
+import Detail from "./../views/Detail.vue";
+
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,

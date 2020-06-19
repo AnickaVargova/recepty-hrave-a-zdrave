@@ -7,6 +7,7 @@
       v-on:chciZpet="zviditelni"
       v-on:hratZnovu="hratZnovu"
     />
+    <!-- tlacitko hrat znovu nefunguje, jak ma -->
 
     <div v-else>
       <h2>Na co máš chuť?</h2>
@@ -60,15 +61,12 @@ export default {
         for (let slovo of this.vybraneJidlo.klicoveSlovo)
           this.vybranePole.push(slovo);
       }
-      console.log(this.vybranePole);
+      // console.log(this.vybranePole);
     },
 
     srovnejPole() {
       this.vybraneRecepty = [];
-      // console.log(this.vybraneRecepty);
-
-      // for (let item1 of this.vybranePole) {
-      //   for (let item2 of this.recepty) {
+      
       for (let item2 of this.recepty) {
         item2.kratky = item2.postup
           .split(" ")
@@ -80,7 +78,7 @@ export default {
         for (let item1 of this.vybranePole) {
           if (item2.vyhledavaniCisla.includes(item1)) {
             item2.shody++;
-            console.log("shoda nalezena " + item2.nazev);
+            // console.log("shoda nalezena " + item2.nazev);
             if (!this.vybraneRecepty.includes(item2)) {
               this.vybraneRecepty.push(item2);
               this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
@@ -88,12 +86,12 @@ export default {
               //tady je omezeni delky pole
               this.vybraneRecepty = prvniRecepty;
             }
-            console.log(this.vybranePole);
+            // console.log(this.vybranePole);
           }
         }
       }
 
-      console.log(this.vybraneRecepty.length);
+      // console.log(this.vybraneRecepty.length);
 
       // //nahodne recepty na doplneni do poctu, nemusi to tam byt
       // for (let k = 0; k < 4; k++) {
@@ -106,7 +104,7 @@ export default {
       //   }
       // }
 
-      console.log(this.vybraneRecepty);
+      // console.log(this.vybraneRecepty);
       this.vybrano = true;
 
       
@@ -114,8 +112,7 @@ export default {
 
     zviditelni() {
       this.vybrano = false;
-      
-    },
+     },
 
     hratZnovu() {
       this.vybrano = false;
