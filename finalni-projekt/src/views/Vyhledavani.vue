@@ -1,7 +1,9 @@
 <template>
-  <div class="okno bg img-flud container">
+  <!-- <div class="okno bg img-flud container"> -->
+    <div class="okno">
     
     <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+    
     <div v-else>
 
       <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
@@ -66,6 +68,7 @@ export default {
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
+      detail:false,
     };
   },
 
@@ -120,6 +123,14 @@ export default {
             .join(" ") + "...";
       }
     },
+
+    prejdiNaDetail(idx) {
+      this.i = idx;
+      this.detail = true;
+      console.log(this.i);
+    },
+
+
   },
 
   created() {
@@ -131,9 +142,9 @@ export default {
 </script>
 
 <style>
-.input {
+/* .input {
 
-}
+} */
 
 #kategorie {
   font-size: 20px;
