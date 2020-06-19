@@ -1,12 +1,16 @@
 <template>
-  <div class="okno bg img-flud container">
-
-    
-  <div>  
-
- <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
-
+  <div class="okno bg img-flud container"> 
+  <div class="container">
+    <form>
+      <div class="input-group">  
+       <input type="text" class="form-control" placeholder="Najdi recept" name="search" v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1"> <div class="input-group-btn">
+          <button class=" btn btn-default" type="submit">
+          <i class="glyphicon-search"></i></button>
+          </div>
+      </div>
+    </form>
+  </div>
 
 
     <div id="vyber-kategorie">
