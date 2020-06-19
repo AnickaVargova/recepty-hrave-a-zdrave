@@ -1,5 +1,6 @@
 <template>
-  <div class=" bg img-fluid okno">
+
+  <div class=" bg img-fluid padding-container d-flex container mx-auto okno">
     <tvojeRecepty
       v-if="vybrano"
       v-bind:vybraneRecepty="vybraneRecepty"
@@ -9,11 +10,12 @@
     />
     <!-- tlacitko hrat znovu nefunguje, jak ma -->
 
-    <div v-else>
-      <h2>Na co máš chuť?</h2>
-      <div class="ikony">
+    <div v-else class="margin">
+      <h2 class="mas-chut">Na co máš chuť?</h2>
+      <div class="ikony container ">
+        <div class="row w-100 justify-content-center mx-auto ">
         <div
-          class="obalObrazek"
+          class="obalObrazek col-2"
           v-for="(item, index) in ikonyZakladni"
           v-bind:key="index"
           v-on:click="klikJidlo(index)"
@@ -21,13 +23,19 @@
         >
           <img v-bind:src="require(`./../assets/ikony/${item.ikona}`)" />
         </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row-reverse">
+        <button class="hotovo" v-on:click="srovnejPole">
+            Hotovo
+        </button>
       </div>
 
-      <button class="hotovo" v-on:click="srovnejPole">
-        Hotovo
-      </button>
+
+      
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -128,17 +136,12 @@ export default {
 </script>
 
 <style>
-.ikony {
-  height: 60vh;
-  width: 60vw;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.padding-container{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
-
+@media(min-width: 576px){
 .obalObrazek {
-  flex-basis: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,6 +150,84 @@ export default {
   box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
   border:darkgrey;
   border-radius: 10px;
+  margin: 15px;
+  max-width: 120px !important;
+  padding: 10px 5px !important;
+  cursor: pointer;
+}
+
+.mas-chut{
+  background-color: white;
+  font-weight: 600;
+  color: green;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border:darkgrey;
+  border-radius: 10px;
+  width: 400px;
+  margin: 20px auto 20px;
+}
+
+
+}
+
+@media(max-width: 576px){
+
+.obalObrazek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid white;
+  background-color: white;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border:darkgrey;
+  border-radius: 10px;
+  margin: 7px;
+  cursor: pointer;
+
+}
+
+.mas-chut{
+  background-color: white;
+  font-weight: 600;
+  color: green;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border:darkgrey;
+  border-radius: 10px;
+  width: 400px;
+  margin: 30px auto 30px;
+}
+
+.hotovo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: white;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 30px;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.hotovo:active{
+  border: 3px solid green;
+  background-color: white;
+  color: green;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+
+.prazdne-misto3{
+  height: 150px;
+}
+}
+
+.margin{
+  margin: auto;
 }
 
 .obalObrazek:hover {
@@ -158,9 +239,5 @@ export default {
   background-color: lightgreen;
 }
 
-.hotovo {
-  font-size: 30px;
-  font-weight: bold;
-  padding: 10px;
-}
+
 </style>
