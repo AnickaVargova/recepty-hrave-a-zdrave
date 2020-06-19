@@ -1,6 +1,13 @@
 <template>
-  <div class="okno">
-    <h3>Vyhledávání</h3>
+  <div class="okno bg img-flud container">
+
+    
+  <div>  
+
+ <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
+
+
 
     <div id="vyber-kategorie">
       <label for="kategorie">Vyber kategorii:</label>
@@ -24,12 +31,7 @@
       </select>
 
       <label for="vyber-slovo">Klíčové slovo:</label>
-      <input
-        type="text"
-        id="vyber-slovo"
-        v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo"
-      />
+  </div>   
       <p v-if="oznameni">
         Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
       </p>
@@ -124,11 +126,8 @@ export default {
 </script>
 
 <style>
-#vyber-slovo {
-  border: 2px solid black;
-  width: 60vw;
-  margin-left: 20px;
-  font-size: 20px;
+.input {
+
 }
 
 #kategorie {
