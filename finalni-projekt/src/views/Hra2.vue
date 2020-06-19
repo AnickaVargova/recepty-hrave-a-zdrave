@@ -78,26 +78,27 @@ export default {
             if(!this.vybraneRecepty.includes(item2)){
             this.vybraneRecepty.push(item2);
             this.vybraneRecepty.sort((a,b)=>b.shody-a.shody);
-            let prvni4 = this.vybraneRecepty.slice(0,4);
+            let prvni4 = this.vybraneRecepty.slice(0,8);
+            //tady je omezeni delky pole
             this.vybraneRecepty=prvni4;
             }
           }
         }
       }
 
-      // this.recepty.sort((a, b) => b.shody - a.shody);
-      // console.log(this.recepty);
-
+     
       console.log(this.vybraneRecepty.length);
-      for (let k = 0; k < 4; k++) {
-        let i = Math.floor(Math.random() * this.recepty.length);
-        if (
-          this.vybraneRecepty.length < 4 &&
-          !this.vybraneRecepty.includes(this.recepty[i])
-        ) {
-          this.vybraneRecepty.push(this.recepty[i]);
-        }
-      }
+
+      // //nahodne recepty na doplneni do poctu 4, nemusi to tam byt
+      // for (let k = 0; k < 4; k++) {
+      //   let i = Math.floor(Math.random() * this.recepty.length);
+      //   if (
+      //     this.vybraneRecepty.length < 4 &&
+      //     !this.vybraneRecepty.includes(this.recepty[i])
+      //   ) {
+      //     this.vybraneRecepty.push(this.recepty[i]);
+      //   }
+      // }
 
       console.log(this.vybraneRecepty);
       this.vybrano = true;
@@ -119,6 +120,7 @@ export default {
       for (let item of ikonyZakladni) {
         item.aktivni = false;
       }
+      console.log(this.vybranePole);
     },
   },
 };
