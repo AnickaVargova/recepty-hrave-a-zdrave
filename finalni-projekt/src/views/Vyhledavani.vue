@@ -1,40 +1,46 @@
 <template>
   <div class="okno">
-    <h3>Vyhledávání</h3>
+    <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+    <div v-else>
+      <h3>Vyhledávání</h3>
 
-    <div id="vyber-kategorie">
-      <label for="kategorie">Vyber kategorii:</label>
-      <select
-        name="kategorie"
-        v-model.number="kategorieId"
-        id="kategorie"
-        v-on:click="vyberReceptyKategorie"
-      >
-        <option value="56">Polévky</option>
-        <option value="22">Maso</option>
-        <option value="85">Vegetariánské</option>
-        <option value="86">Hlavní jídla</option>
-        <option value="87">Předkrmy</option>
-        <option value="88">Snídaně</option>
-        <option value="71">Saláty</option>
-        <option value="89">Svačiny</option>
-        <option value="90">Pomazánky</option>
-        <option value="91">Dezerty</option>
-        <option value="25">Ryby</option>
-      </select>
+      <div id="vyber-kategorie">
+        <label for="kategorie">Vyber kategorii:</label>
+        <select
+          name="kategorie"
+          v-model.number="kategorieId"
+          id="kategorie"
+          v-on:click="vyberReceptyKategorie"
+        >
+          <option value="56">Polévky</option>
+          <option value="22">Maso</option>
+          <option value="85">Vegetariánské</option>
+          <option value="86">Hlavní jídla</option>
+          <option value="87">Předkrmy</option>
+          <option value="88">Snídaně</option>
+          <option value="71">Saláty</option>
+          <option value="89">Svačiny</option>
+          <option value="90">Pomazánky</option>
+          <option value="91">Dezerty</option>
+          <option value="25">Ryby</option>
+        </select>
 
-      <label for="vyber-slovo">Klíčové slovo:</label>
-      <input
-        type="text"
-        id="vyber-slovo"
-        v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo"
-      />
-      <p v-if="oznameni">
-        Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
-      </p>
+        <label for="vyber-slovo">Klíčové slovo:</label>
+        <input
+          type="text"
+          id="vyber-slovo"
+          v-model="klicoveSlovo"
+          v-on:keydown.enter="vyberReceptySlovo"
+        />
+        <p v-if="oznameni">
+          Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
+        </p>
 
-      <receptyVyhledavani v-bind:vybraneRecepty="vybraneRecepty" />
+        <receptyVyhledavani
+          v-bind:vybraneRecepty="vybraneRecepty"
+          v-on:prejdiNaDetail="prejdiNaDetail($event)"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +54,7 @@ import Detail from "./../views/Detail.vue";
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
+    detail: Detail,
   },
 
   data() {
@@ -59,6 +66,9 @@ export default {
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
+      detail: false,
+      detailIndex: null,
+      i: 0,
     };
   },
 
@@ -84,15 +94,12 @@ export default {
     },
 
     vyberReceptyKategorie() {
-      
       this.vybraneRecepty = this.recepty.filter((recept) =>
         recept.vyhledavaniCisla.includes(this.kategorieId)
       );
-      
     },
 
     vyberNahodneRecepty() {
-
       for (let i = 0; i < 5; i++) {
         let nahodnyRecept = this.recepty[
           Math.floor(Math.random() * this.recepty.length)
@@ -104,7 +111,6 @@ export default {
     },
 
     zkratPostup() {
-
       for (let item2 of this.recepty) {
         item2.kratky =
           item2.postup
@@ -113,10 +119,14 @@ export default {
             .join(" ") + "...";
       }
     },
+
+    prejdiNaDetail(idx) {
+      this.i = idx;
+      this.detail=true;
+    },
   },
 
   created() {
-
     this.zkratPostup();
     this.vyberNahodneRecepty();
   },
