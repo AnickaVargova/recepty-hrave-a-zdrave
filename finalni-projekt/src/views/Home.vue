@@ -31,8 +31,7 @@ export default {
   font-weight: 600;
 }
 .odkaz:hover,
-.odkaz:active,
-.odkaz:after{
+.odkaz:active{
   text-decoration:none;
   color: white;
 }
