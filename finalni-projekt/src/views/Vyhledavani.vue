@@ -1,13 +1,24 @@
 <template>
   <!-- <div class="okno bg img-flud container"> -->
-    <div class="okno">
-    
-    <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
-    
-    <div v-else>
+  <div class="okno">
+    <detail
+      v-bind:vybraneRecepty="vybraneRecepty"
+      v-bind:i="i"
+      v-if="detail"
+      id="detail"
+      v-on:zpetNaVyber="zpetNaVyber"
+    />
 
-      <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
+    <div v-else>
+      <input
+        type="text"
+        class="form-control"
+        placeholder=""
+        aria-label=""
+        v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo"
+        aria-describedby="basic-addon1"
+      />
 
       <div id="vyber-kategorie">
         <label for="kategorie">Vyber kategorii:</label>
@@ -30,8 +41,8 @@
           <option value="25">Ryby</option>
         </select>
 
-        <label for="vyber-slovo">Klíčové slovo:</label>
-       
+        <!-- <label for="vyber-slovo">Klíčové slovo:</label> -->
+
         <p v-if="oznameni">
           Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
         </p>
@@ -51,12 +62,10 @@ import klicovaSlova from "./../assets/klicovaSlova.js";
 import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
 import Detail from "./Detail.vue";
 
-
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
     detail: Detail,
-    
   },
 
   data() {
@@ -68,12 +77,28 @@ export default {
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
-      detail:false,
+      detail: false,
     };
   },
 
   methods: {
+    vyberNahodneRecepty() {
+      for (let i = 0; i < 5; i++) {
+        let nahodnyRecept = this.recepty[
+          Math.floor(Math.random() * this.recepty.length)
+        ];
+        if (!this.vybraneRecepty.includes(nahodnyRecept)) {
+          this.vybraneRecepty.push(nahodnyRecept);
+        }
+      }
+    },
+
     vyberReceptySlovo() {
+
+      console.log(this.klicoveSlovo);
+      this.vybraneRecepty=[];
+      this.klicoveId=null;
+      console.log(this.vybraneRecepty);
       for (let item of this.klicovaSlova) {
         if (item.jmeno === this.klicoveSlovo) {
           //pridat metodu pro ignorovani velkych pismen, diakritiky, mnozneho cisla
@@ -85,36 +110,23 @@ export default {
 
       if (this.klicoveId === null) {
         this.oznameni = true;
-        vyberNahodneRecepty();
-      }
+        this.vyberNahodneRecepty();
+      } else {
+        this.oznameni = false;
 
-      this.vybraneRecepty = this.recepty.filter((recept) =>
-        recept.vyhledavaniCisla.includes(this.klicoveId)
-      );
+        this.vybraneRecepty = this.recepty.filter((recept) =>
+          recept.vyhledavaniCisla.includes(this.klicoveId)
+        );
+      }
     },
 
     vyberReceptyKategorie() {
-      
       this.vybraneRecepty = this.recepty.filter((recept) =>
         recept.vyhledavaniCisla.includes(this.kategorieId)
       );
-      
-    },
-
-    vyberNahodneRecepty() {
-
-      for (let i = 0; i < 5; i++) {
-        let nahodnyRecept = this.recepty[
-          Math.floor(Math.random() * this.recepty.length)
-        ];
-        if (!this.vybraneRecepty.includes(nahodnyRecept)) {
-          this.vybraneRecepty.push(nahodnyRecept);
-        }
-      }
     },
 
     zkratPostup() {
-
       for (let item2 of this.recepty) {
         item2.kratky =
           item2.postup
@@ -130,11 +142,12 @@ export default {
       console.log(this.i);
     },
 
-
+    zpetNaVyber() {
+      this.detail = false;
+    },
   },
 
   created() {
-
     this.zkratPostup();
     this.vyberNahodneRecepty();
   },
@@ -142,9 +155,6 @@ export default {
 </script>
 
 <style>
-/* .input {
-
-} */
 
 #kategorie {
   font-size: 20px;

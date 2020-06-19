@@ -33,17 +33,7 @@
     </div>
     <div class="menu container light-green">
       <div class="row d-flex">
-        <button
-          v-on:click="zpet"
-          class="col-4 flex-fill border text-center dark-green font-weight-bold"
-        >
-          Zpět
-        </button>
-        <!-- <router-link
-          class="col-4 flex-fill border text-center dark-green font-weight-bold"
-          to="/"
-          >Zpět</router-link -->
-        <!-- > -->
+                
         <button
           v-on:click="hratZnovu"
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
@@ -51,16 +41,11 @@
         >
           Hrát znovu
         </button>
-        >
-        <!-- <router-link
-          class="col-4 flex-fill border text-center dark-green font-weight-bold"
-          to="/hra2"
-          >Hraj znovu</router-link
-        > -->
+                
         <router-link
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/vyhledavani"
-          >Kategorie</router-link
+          >Vyhledávání receptů</router-link
         >
       </div>
     </div>
@@ -72,9 +57,7 @@ import Hra2 from "./Hra2.vue";
 export default {
   props: ["vybraneRecepty", "vybrano"],
   methods: {
-    zpet() {
-      this.$emit("chciZpet");
-    },
+    
     hratZnovu() {
       this.$emit("hratZnovu");
     },
@@ -83,13 +66,7 @@ export default {
       
     }
   },
-  // data(){
-  //   return
-  // },
-
-  // created(){
-  //   console.log(this.vybraneRecepty);
-  // }
+  
 };
 </script>
 
