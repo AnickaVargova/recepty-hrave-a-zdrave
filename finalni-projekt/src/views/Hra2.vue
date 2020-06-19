@@ -1,5 +1,5 @@
 <template>
-  <div class="okno">
+  <div class=" bg img-fluid okno">
     <tvojeRecepty
       v-if="vybrano"
       v-bind:vybraneRecepty="vybraneRecepty"
@@ -145,7 +145,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid lightgrey;
+  border: 4px solid white;
+  background-color: white;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border:darkgrey;
+  border-radius: 10px;
 }
 
 .obalObrazek:hover {

@@ -1,10 +1,10 @@
 <template>
-  <div class="okno position-relative">
-    <div class="container light-green hlavni2">
-      <h2 class="pt-4 m-0 dark-green">Máš chuť na tato jídla:</h2>
+  <div class="okno bg img-fluid position-relative">
+    <div class="container  hlavni2">
+      <h2 class="pt-4 m-0 mas-chut">Máš chuť na tato jídla:</h2>
     </div>
 
-    <div class="container light-green">
+    <div class="container">
       <div class="row">
         <div
           v-for="(recept, index) in vybraneRecepty"
@@ -143,6 +143,29 @@ export default {
 </script>
 
 <style>
+.mas-chut{
+  background-color: white;
+  font-weight: 600;
+  color: green;
+  box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
+  border:darkgrey;
+  border-radius: 10px;
+}
+
+@media(min-width:1000px){
+  .bile-pozadi {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+@media(max-width: 1000px){
+  .bile-pozadi{
+    width: 150px;
+    height: 100px;
+  }
+}
+
 .bile-pozadi{
   background-color: white;
   color: green;

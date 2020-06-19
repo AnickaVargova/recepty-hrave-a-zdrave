@@ -38,9 +38,7 @@ export default {
 }
 .bg{
   background-image: url("./../assets/images/navrhpozadi2.jpg");
-  max-width: 75%;
   height: auto;
-
   margin: auto;
   opacity: 1;
 }
