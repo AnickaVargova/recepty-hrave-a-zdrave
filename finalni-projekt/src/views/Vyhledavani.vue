@@ -1,9 +1,11 @@
 <template>
-  <div class="okno">
+  <div class="okno bg img-flud container">
     
     <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
     <div v-else>
-      <h3>Vyhledávání</h3>
+
+      <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
 
       <div id="vyber-kategorie">
         <label for="kategorie">Vyber kategorii:</label>
@@ -27,12 +29,7 @@
         </select>
 
         <label for="vyber-slovo">Klíčové slovo:</label>
-        <input
-          type="text"
-          id="vyber-slovo"
-          v-model="klicoveSlovo"
-          v-on:keydown.enter="vyberReceptySlovo"
-        />
+       
         <p v-if="oznameni">
           Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
         </p>
@@ -69,9 +66,6 @@ export default {
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
-      detail: false,
-      detailIndex: null,
-      i: 0,
     };
   },
 
@@ -97,12 +91,15 @@ export default {
     },
 
     vyberReceptyKategorie() {
+      
       this.vybraneRecepty = this.recepty.filter((recept) =>
         recept.vyhledavaniCisla.includes(this.kategorieId)
       );
+      
     },
 
     vyberNahodneRecepty() {
+
       for (let i = 0; i < 5; i++) {
         let nahodnyRecept = this.recepty[
           Math.floor(Math.random() * this.recepty.length)
@@ -114,6 +111,7 @@ export default {
     },
 
     zkratPostup() {
+
       for (let item2 of this.recepty) {
         item2.kratky =
           item2.postup
@@ -122,14 +120,10 @@ export default {
             .join(" ") + "...";
       }
     },
-
-    prejdiNaDetail(idx) {
-      this.i = idx;
-      this.detail=true;
-    },
   },
 
   created() {
+
     this.zkratPostup();
     this.vyberNahodneRecepty();
   },
@@ -137,11 +131,8 @@ export default {
 </script>
 
 <style>
-#vyber-slovo {
-  border: 2px solid black;
-  width: 60vw;
-  margin-left: 20px;
-  font-size: 20px;
+.input {
+
 }
 
 #kategorie {
