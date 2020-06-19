@@ -2,48 +2,67 @@
   <div class="hlavni">
     <div class="container light-green padding-bottom">
       <div class="nadpis">
-        <h2 class="font-size-30 dark-green">název receptu</h2>
+        <h2 class="font-size-30 dark-green">{{ vybraneRecepty[i].nazev }}</h2>
       </div>
       <div class="fotka">
-        <img src="./../assets/images/kurecinakari.jpg" id="fotka" class="img-fluid rounded" />
+        <img
+          v-bind:src="require(`../assets/images/${vybraneRecepty[i].obrazek}`)"
+          v-bind:alt="vybraneRecepty[i].nazev"
+          id="fotka"
+          class="img-fluid rounded"
+        />
       </div>
     </div>
     <div class="container padding-bottom">
       <h3 class="font-size-20 dark-green postup">Postup</h3>
       <div class="navod">
-        <p>Uvařte rýži dle návodu. Maso nakrájejte a osmahněte na pánvi s troškou oleje. Přidejte ananas se šťávou, sůl a kari koření a chvíli povařte. Přidejte žervé a míchejte, dokud se nerozpustí. Můžeme podávat.',</p>
+        <p>{{ vybraneRecepty[i].postup }}</p>
       </div>
       <div>
         <h3 class="font-size-20 dark-green ingredience">Ingredience</h3>
       </div>
       <div class="bila">
-        <p class="porce">Počet porcí: 4</p>
+        <p class="porce">Počet porcí: {{ vybraneRecepty[i].pocetPorci }}</p>
         <ul>
-          <li>300g rýže</li>
-          <li>500g kuřecích prsních nebo stehenních řízků</li>
-          <li>300 g čerstvého nebo kompotovaného ananasu bez cukru</li>
-          <li>2 lžičky kari</li>
-          <li>150g žervé</li>
-          <li>olivový olej</li>
+          <li
+            v-for="(ingredience, index) in vybraneRecepty[i].ingredience"
+            v-bind:key="index"
+          >
+            {{ ingredience }}
+          </li>
         </ul>
       </div>
     </div>
     <div class="menu container light-green">
       <div class="row d-flex">
-      <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/tvojeRecepty">?Zpět?</router-link>
-      <router-link class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold" to="/hra2">Vyber recept</router-link>
-     <router-link class="col-4 flex-fill border text-center dark-green font-weight-bold" to="/vyhledavani">Kategorie</router-link>
-     </div>
+        <router-link
+          class="col-4 flex-fill border text-center dark-green font-weight-bold"
+          to="/tvojeRecepty"
+          >?Zpět?</router-link
+        >
+        <router-link
+          class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold"
+          to="/hra2"
+          >Vyber recept</router-link
+        >
+        <router-link
+          class="col-4 flex-fill border text-center dark-green font-weight-bold"
+          to="/vyhledavani"
+          >Kategorie</router-link
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["vybraneRecepty", "i"],
+};
 </script>
 
 <style>
-.hlavni{
+.hlavni {
   position: relative;
 }
 .menu {
@@ -56,7 +75,7 @@ export default {};
   font-size: 12px;
 }
 
-.border{
+.border {
   border: 3px solid black;
 }
 .navod {
@@ -77,8 +96,8 @@ export default {};
 .padding-bottom {
   padding-bottom: 40px;
 }
-.padding-top{
-  padding-top:20px;
+.padding-top {
+  padding-top: 20px;
 }
 .light-green {
   background-color: lightgreen;
@@ -113,13 +132,5 @@ h2 {
   text-align: center;
   display: block;
 }
-/*
-img {
-  display: block;
-  width:100%;
-  height: 150px;
-  text-align: center;
-  margin: auto;
-}
-*/
+
 </style>

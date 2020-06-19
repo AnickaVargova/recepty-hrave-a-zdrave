@@ -1,5 +1,4 @@
 <template>
-
   <div class=" bg img-fluid padding-container d-flex container mx-auto okno">
     <tvojeRecepty
       v-if="vybrano"
@@ -14,15 +13,18 @@
       <h2 class="mas-chut">Na co máš chuť?</h2>
       <div class="ikony container">
         <div class="row w-100 justify-content-center mx-auto ">
-        <div
-          class="obalObrazek col-2"
-          v-for="(item, index) in ikonyZakladni"
-          v-bind:key="index"
-          v-on:click="klikJidlo(index)"
-          v-bind:class="{ zvyraznene: item.aktivni }"
-        >
-          <img v-bind:src="require(`./../assets/ikony/${item.ikona}`)" />
-        </div>
+          <div
+            class="obalObrazek col-2"
+            v-for="(item, index) in ikonyZakladni"
+            v-bind:key="index"
+            v-on:click="klikJidlo(index)"
+            v-bind:class="{ zvyraznene: item.aktivni }"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
+              v-bind:alt="item.jmeno"
+            />
+          </div>
         </div>
       </div>
       <div class="d-flex flex-row-reverse">
@@ -30,12 +32,8 @@
             PŘEJÍT NA VÝBĚR RECEPTU
         </button>
       </div>
-
-
-      
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -74,14 +72,14 @@ export default {
 
     srovnejPole() {
       this.vybraneRecepty = [];
-      
+
       for (let item2 of this.recepty) {
-        item2.kratky = item2.postup
-          .split(" ")
-          .slice(0, 6)
-          .join(" ")+'...';
-        
-        
+        item2.kratky =
+          item2.postup
+            .split(" ")
+            .slice(0, 6)
+            .join(" ") + "...";
+
         item2.shody = 0;
         for (let item1 of this.vybranePole) {
           if (item2.vyhledavaniCisla.includes(item1)) {
@@ -114,13 +112,11 @@ export default {
 
       // console.log(this.vybraneRecepty);
       this.vybrano = true;
-
-      
     },
 
     zviditelni() {
       this.vybrano = false;
-     },
+    },
 
     hratZnovu() {
       this.vybrano = false;
@@ -136,7 +132,7 @@ export default {
 </script>
 
 <style>
-.padding-container{
+.padding-container {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
@@ -267,6 +263,4 @@ export default {
   border: 4px solid green;
   background-color: lightgreen;
 }
-
-
 </style>

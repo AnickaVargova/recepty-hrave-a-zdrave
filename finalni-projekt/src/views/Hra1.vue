@@ -8,7 +8,10 @@
           v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
           v-on:click="priKliknuti1"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -16,7 +19,10 @@
           v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
           v-on:click="priKliknuti2"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -24,7 +30,10 @@
           v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
           v-on:click="priKliknuti3"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -32,7 +41,10 @@
           v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
           v-on:click="priKliknuti4"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
+            alt="jídlo"
+          />
         </div>
       </div>
       <img src="./../assets/ikony/shelf-1.svg" />
@@ -297,13 +309,13 @@ export default {
 
 @media (min-width: 700px) {
   #jidlo {
-    top:0;
+    top: 0;
   }
   .ikonaJidla {
     width: 25%;
     max-height: 80px;
   }
-  .ikonaJidla>img {
+  .ikonaJidla > img {
     width: 80px;
     height: 80px;
   }
@@ -315,7 +327,6 @@ export default {
   }
 }
 
-
 #vysledek {
   border: 2px solid blue;
   font-size: 30px;
@@ -326,12 +337,10 @@ export default {
 
 #body {
   color: green;
- 
 }
 
 #chyby {
   color: red;
-  
 }
 
 #prehled {

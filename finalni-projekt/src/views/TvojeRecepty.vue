@@ -24,6 +24,7 @@
 
                 <img
                   v-bind:src="require(`../assets/images/${recept.obrazek}`)"
+                  v-bind:alt="recept.nazev"
                   class="align-self-center mr-3 obrazek img-fluid rounded"
                 />
               </div>
