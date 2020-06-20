@@ -22,7 +22,7 @@
         />
 
         <div v-else>
-          <h2>Na co máš chuť?</h2>
+          <h2>Na co máš chuť ?</h2>
           
             <div class="row w-100 justify-content-center mx-auto ">
               <div
@@ -177,7 +177,7 @@ export default {
     align-items: center;
     border: 4px solid white;
     background-color: white;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
     border-radius: 10px;
     margin: 15px;
@@ -190,7 +190,7 @@ export default {
     background-color: white;
     font-weight: 600;
     color: green;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
     border-radius: 10px;
     width: 400px;
@@ -203,7 +203,7 @@ export default {
     align-items: center;
     background-color: green;
     color: white;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
     border-radius: 10px;
     margin: -70px 100px 30px 30px;
@@ -236,7 +236,7 @@ export default {
     align-items: center;
     border: 4px solid white;
     background-color: white;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
     border-radius: 10px;
     margin: 7px;
@@ -247,7 +247,7 @@ export default {
     background-color: white;
     font-weight: 600;
     color: green;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
     border-radius: 10px;
     width: 400px;
@@ -260,7 +260,7 @@ export default {
     align-items: center;
     background-color: green;
     color: white;
-    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
     border-radius: 10px;
     margin: 30px;
@@ -287,11 +287,11 @@ export default {
 }
 
 .obalObrazek:hover {
-  border: 4px solid green;
+  border: 2px solid green;
 }
 
 .zvyraznene {
-  border: 4px solid green;
+  border: 2px solid green;
   background-color: lightgreen;
 }
 </style>
