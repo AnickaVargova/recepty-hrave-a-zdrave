@@ -81,8 +81,8 @@ export default {
   data() {
     return {
       klicoveSlovo: "",
-      klicoveId: null,
-      kategorieId: null,
+      klicoveId:[],
+      kategorieId:[],
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
@@ -94,27 +94,33 @@ export default {
 
   methods: {
     vyberReceptySlovo() {
-      
+      this.klicoveId=[];
+      this.vybraneRecepty=[];
       let string=this.klicoveSlovo.toLowerCase().slice(0,this.klicoveSlovo.length-1).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       for (let item of this.klicovaSlova) {
         item.jmeno=item.jmeno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         if (item.jmeno.includes(string)) {
-          
-          //vyresit vice klicovych slov najednou
-          this.klicoveId = item.id;
-          
+                    
+          this.klicoveId.push(item.id);
         }
-        console.log(this.klicoveId);
+        
       }
-
+    
       if (this.klicoveId === null) {
         this.oznameni = true;
         vyberNahodneRecepty();
       }
-
-      this.vybraneRecepty = this.recepty.filter(recept =>
-        recept.vyhledavaniCisla.includes(this.klicoveId)
-      );
+        for (let cislo of this.klicoveId){
+          console.log(cislo);
+         let receptySCislem = this.recepty.filter(recept =>
+        recept.vyhledavaniCisla.includes(cislo));
+        console.log(receptySCislem);
+        this.vybraneRecepty.push(receptySCislem);
+        
+        }
+      
+      this.vybraneRecepty=this.vybraneRecepty.flat();
+      
     },
 
     vyberReceptyKategorie() {
@@ -147,7 +153,7 @@ export default {
      prejdiNaDetail(idx) {
       this.i = idx;
       this.detail = true;
-      console.log(this.i);
+      // console.log(this.i);
     },
     zpetNaVyber() {
       this.detail = false;
