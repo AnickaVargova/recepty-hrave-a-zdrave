@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="col-md-10 mx-auto">
-      <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+      <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
           <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
@@ -134,6 +134,9 @@ export default {
       this.i = idx;
       this.detail = true;
       console.log(this.i);
+    },
+    zpetNaVyber() {
+      this.detail = false;
     },
 
   },
