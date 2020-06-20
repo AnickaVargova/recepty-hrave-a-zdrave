@@ -26,7 +26,7 @@
           
             <div class="row w-100 justify-content-center mx-auto ">
               <div
-                class="obalObrazek col-2"
+                class="obalObrazek col"
                 v-for="(item, index) in ikonyZakladni"
                 v-bind:key="index"
                 v-on:click="klikJidlo(index)"

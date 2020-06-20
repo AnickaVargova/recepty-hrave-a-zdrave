@@ -40,14 +40,14 @@ export default [{
         aktivni: false,
         zasednuti: false,
     },
-    {
+   /* {
         id: 6,
         klicoveSlovo: 18,
         jmeno: "mrkev",
         ikona: 'carrot.png',
         aktivni: false,
         zasednuti: false,
-    },
+    },*/
     {
         id: 7,
         klicoveSlovo: 9,
@@ -168,7 +168,7 @@ export default [{
 
     },
 
-    {
+    /*{
         id: 21,
         klicoveSlovo: 24,
         jmeno: "brambory",
@@ -176,7 +176,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 22,
         klicoveSlovo: 33,
@@ -204,7 +204,7 @@ export default [{
         zasednuti: false,
 
     },*/
-    {
+   /* {
         id: 25,
         klicoveSlovo: 45,
         jmeno: "okurky",
@@ -212,7 +212,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
    /* {
         id: 26,
         klicoveSlovo: 48,
@@ -240,16 +240,15 @@ export default [{
         zasednuti: false,
 
     },
-    {
+   /* {
         id: 29,
         klicoveSlovo: 59,
         jmeno: "čokoláda",
         ikona: 'chocolate.png',
         aktivni: false,
-        zasednuti: false,
-
-    },
-    {
+        zasednuti: false,},
+*/
+    /*{
         id: 30,
         klicoveSlovo: 3,
         jmeno: "cibule",
@@ -257,6 +256,6 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
 
 ]
