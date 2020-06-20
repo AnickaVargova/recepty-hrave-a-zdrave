@@ -37,8 +37,8 @@
               <option value="90">Pomazánky</option>
               <option value="91">Dezerty</option>
               <option value="25">Ryby</option>
-            </select>
-            -->
+            </select> -->
+            
          
           <label for="vyber-slovo"></label>
 

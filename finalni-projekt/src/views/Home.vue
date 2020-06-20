@@ -6,8 +6,8 @@
           
         <div class="col-md-6 pozadi">
             <div class="hlavicka">
-            <h1 class="text-center mt-4">NADPIS H1</h1>
-            <p class="text-center">tady bude popisek</p>
+            <h1 class="text-center mt-4">Pojď si s námi hrát a vařit!</h1>
+            <p class="text-center">Vyber si ze dvou her a vyhledávání receptů!</p>
           </div>
           
             <router-link to="/hra1"><button class="btn btn-primary">CHYŤ SI SVÉ JÍDLO</button></router-link>
