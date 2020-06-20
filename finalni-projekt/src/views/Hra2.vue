@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-md-6 mx-auto pozadi">
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -12,7 +12,7 @@
         class="container mt-4"
       >
       <div class="row justify-content-center mt-4 mb-4">
-        <div class="col-md-6 pozadi">
+        <div class="col-md-12 mx-auto">
         <tvojeRecepty
           v-if="vybrano"
           v-bind:vybraneRecepty="vybraneRecepty"

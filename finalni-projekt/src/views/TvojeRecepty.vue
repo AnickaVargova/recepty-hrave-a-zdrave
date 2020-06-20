@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="col-md-10 mx-auto">
-      <div class="pozadi pb-4 col-md-10 mx-auto">
-        <h1 class="mt-5 mb-4 pt-4 text-center">Máš chuť na tato jídla</h1>
+    <div class="mx-auto">
+      
+        <h1 class="mt-5 mb-4 pt-4 text-center col-md-12">Máš chuť na tato jídla</h1>
 
         <div
           v-for="(recept, index) in vybraneRecepty"
           v-bind:key="index"
           v-on:click="prejdiNaDetail(index)"
-          class="detail col-md-8 mx-auto"
+          class="detail mx-auto"
         >
           <div class="row bila recept-item overflow-hidden">
             <div class="col-md-3 col-4 p-0">
@@ -23,7 +23,7 @@
               </div>
           </div>
         </div>
-        </div>
+        
       </div>
     </div>
     <div class="menu container light-green">
