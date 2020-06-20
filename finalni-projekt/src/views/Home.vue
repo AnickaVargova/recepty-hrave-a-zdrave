@@ -1,10 +1,11 @@
 <template>
-  <div class="okno container-fluid bg img-fluid">
+  <div class="okno container-fluid ">
     
     
-      <div class="row justify-content-center ">
+      <div class="row justify-content-center mt-5">
         <div class="col-md-6 pozadi">
-          <h1 class="text-center">Nadpis H1</h1>
+          <h1 class="text-center mt-4">Nadpis H1</h1>
+          <p class="text-center">tady bude popisek</p>
 
           <button class="btn btn-primary">
             <router-link to="/hra1">CHYŤ SI SVÉ JÍDLO</router-link>
@@ -32,10 +33,11 @@ h1{
 }
 
 .pozadi{
-  background-color: white;
+  background:rgba(255, 255, 255, 0.7);
   border: 2px solid green;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
+  
 }
 
 .bg {
