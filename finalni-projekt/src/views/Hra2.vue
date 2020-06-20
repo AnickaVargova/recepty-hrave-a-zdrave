@@ -1,11 +1,7 @@
 <template>
   <div class="col-md-6 mx-auto pozadi position-relative">
 
-    <router-link to="/">
-      <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
-        <img src="./../assets/images/left-arrow.png" id="zpet"/>
-      </button>
-    </router-link>
+  
 
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
@@ -27,6 +23,11 @@
             />
 
             <div v-else>
+              <router-link to="/">
+      <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
+        <img src="./../assets/images/left-arrow.png" id="zpet"/>
+      </button>
+    </router-link>
               <h2 class="vrstva2">Na co máš chuť ?</h2>
 
               <div class="row w-100 justify-content-center mx-auto">
@@ -155,8 +156,7 @@ export default {
   },
   created() {
     this.zkratPostup();
-
-    this.hratznovu();
+    this.hratZnovu();
   }
 };
 </script>
