@@ -82,8 +82,8 @@ export default {
       console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
-        for (let slovo of this.vybraneJidlo.klicoveSlovo)
-          this.vybranePole.push(slovo);
+        
+          this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
       console.log(this.vybranePole);
     },
@@ -108,6 +108,7 @@ export default {
         }
       }
       this.vybrano = true;
+      console.log(this.vybraneRecepty);
     },
 
    

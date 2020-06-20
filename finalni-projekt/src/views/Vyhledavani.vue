@@ -79,6 +79,8 @@ export default {
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
+      detail: false,
+      i:0,
     };
   },
 
@@ -133,6 +135,13 @@ export default {
             .join(" ") + "...";
       }
     },
+
+     prejdiNaDetail(idx) {
+      this.i = idx;
+      this.detail = true;
+      console.log(this.i);
+    },
+
   },
 
   created() {
