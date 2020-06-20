@@ -32,15 +32,15 @@ export default {};
 
 
 h1{
-  color: darkgreen;
+  color: green;
 
 }
 
 .pozadi{
   background:rgba(255, 255, 255, 0.9);
-  border: 2px solid darkgreen;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
-  border-radius: 10px;
+  /*border: 2px solid darkgreen;*/
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   
 }
 
@@ -52,7 +52,7 @@ h1{
 }
 
 #app .btn-primary {
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   border: darkgrey;
   border-radius: 10px;
   display: block;
@@ -60,6 +60,8 @@ h1{
   padding: 18px;
   background-color: green;
   color: white;
+  width: 220px;
+  
 }
 
 #app a .btn-primary  {
@@ -75,20 +77,21 @@ h1{
 #app .btn-primary:hover,
 #app .btn-primary:active {
   color: white;
-  border: 3px solid white;
+ border: 3px solid darkgreen;
   background-color: darkgreen;
   transition-duration: 0.1s;
   text-decoration: none;
 }
 
 #app .btn-outline-secondary {
-  box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.1);
   border: 1.5px solid green;
   border-radius: 10px;
   display: block;
   margin: 40px auto;
   padding: 18px;
   background-color: white;
+  width: 220px;
 }
 
 #app  a .btn-outline-secondary{
