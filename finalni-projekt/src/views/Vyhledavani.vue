@@ -5,7 +5,7 @@
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
           <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
-          <form>
+        
             <div class="input-group">
               <input
                 type="text"
@@ -15,7 +15,7 @@
                 v-on:keydown.enter="vyberReceptySlovo"
               />
             </div>
-          </form>
+          
 
           <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
@@ -83,13 +83,17 @@ export default {
 
   methods: {
     vyberReceptySlovo() {
+      
+      let string=this.klicoveSlovo.toLowerCase().slice(0,this.klicoveSlovo.length-1).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       for (let item of this.klicovaSlova) {
-        if (item.jmeno === this.klicoveSlovo) {
-          //pridat metodu pro ignorovani velkych pismen, diakritiky, mnozneho cisla
-          //do klicovaSlova pridat nazvy konkretnich jidel
+        item.jmeno=item.jmeno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        if (item.jmeno.includes(string)) {
+          
           //vyresit vice klicovych slov najednou
           this.klicoveId = item.id;
+          
         }
+        console.log(this.klicoveId);
       }
 
       if (this.klicoveId === null) {
