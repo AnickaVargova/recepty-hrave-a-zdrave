@@ -17,7 +17,7 @@
             </div>
           
 
-          <div class="d-flex form-group col-md-8 ">
+          <!-- <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
               name="kategorie"
@@ -37,8 +37,8 @@
               <option value="90">Pomazánky</option>
               <option value="91">Dezerty</option>
               <option value="25">Ryby</option>
-            </select>
-            -->
+            </select> -->
+            
          
           <label for="vyber-slovo"></label>
 
