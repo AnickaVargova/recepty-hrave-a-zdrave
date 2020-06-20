@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="mx-auto">
-      <h1 class="mt-5 mb-4 pt-4 text-center col-md-12">
+      <h1 class="mt-0 mb-4 pt-4 text-center col-md-12">
         Máš chuť na tato jídla
       </h1>
 
@@ -42,8 +42,8 @@
           >Vyhledávání receptů</router-link
         >-->
       </div>
-    </div>
-  </div>
+   
+
 </template>
 
 <script>
@@ -61,4 +61,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
