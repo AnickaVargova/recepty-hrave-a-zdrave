@@ -2,7 +2,7 @@
   <div class="col-md-6 mx-auto pozadi position-relative">
 
     <router-link to="/">
-      <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
+      <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
         <img src="./../assets/images/left-arrow.png" id="zpet"/>
       </button>
     </router-link>
@@ -27,7 +27,7 @@
             />
 
             <div v-else>
-              <h2 class="d-flex text-center">Na co máš chuť ?</h2>
+              <h2 class="vrstva2">Na co máš chuť ?</h2>
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
@@ -155,11 +155,21 @@ export default {
   },
   created() {
     this.zkratPostup();
+
+    this.hratznovu();
   }
 };
 </script>
 
 <style>
+.vrstva2{
+  z-index: 2;
+}
+
+.vrstva1{
+  z-index: 1;
+}
+
 @media (max-width: 992px) {
  
   #pozadi-zpet{
