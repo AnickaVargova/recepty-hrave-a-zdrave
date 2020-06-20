@@ -2,13 +2,13 @@
   <div>
     <div v-for="(recept, index) in vybraneRecepty" v-bind:key="index">
       <div class="col-md-8">
-        <div class="row">
+        <div class="row recept-item">
           <div class="col-md-3">
             <img
               v-on:click="prejdiNaDetail(index)"
               v-bind:src="require(`../assets/images/${recept.obrazek}`)"
               v-bind:alt="recept.nazev"
-              class=" obrazek-vyhledavani align-self-center img-fluid"
+              class=""
             />
           </div>
           <div class="col-md-9" v-on:click="prejdiNaDetail(index)">
@@ -53,4 +53,12 @@ export default {
 .obrazek-vyhledavani{
   max-height: 100px;
 }
+  .recept-item img {
+    width: 100%;
+    display: block;
+    height: 100px;
+    object-fit: cover;
+  }
+
+
 </style>
