@@ -1,9 +1,9 @@
 <template>
   <div>
     <div v-for="(recept, index) in vybraneRecepty" v-bind:key="index">
-      
+
         <div class="row bila">
-          <div class="col-md-3 ">
+          <div class="col-md-3">
             <img
               v-on:click="prejdiNaDetail(index)"
               v-bind:src="require(`../assets/images/${recept.obrazek}`)"
