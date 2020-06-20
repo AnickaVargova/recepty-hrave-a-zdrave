@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-      
-    <router-view/>
+       <router-view/>
     
     
   </div>
@@ -20,5 +19,7 @@ export default {};
 body {
   background: url("./assets/images/navrhpozadi2.jpg") top repeat;
 }
+
+
 
 </style>

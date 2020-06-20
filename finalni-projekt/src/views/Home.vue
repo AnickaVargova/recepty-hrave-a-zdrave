@@ -1,7 +1,6 @@
 <template>
   <div class="okno container-fluid">
     
-    
       <div class="row justify-content-center mt-5">
           
         <div class="col-md-6 pozadi justify-content-center">

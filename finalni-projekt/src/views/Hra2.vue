@@ -1,5 +1,9 @@
 <template>
   <div class="col-md-6 mx-auto pozadi">
+ <router-link to="/"><button id="schovany"><img src="./../assets/images/left-arrow.png" id="zpet"></button></router-link>
+  
+    
+    
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -37,14 +41,12 @@
                   v-bind:alt="item.jmeno"
                 />
               </div>
-            </div>
-          </div>
-          <div class="d-flex flex-row-reverse">
-            <button class="hotovo" v-on:click="srovnejPole">
+              <button class="btn btn-primary hotovo" v-on:click="srovnejPole">
               HOTOVO
             </button>
+            </div>
           </div>
-        
+          
       </div>
       </div>
     </div>
@@ -165,6 +167,26 @@ export default {
 </script>
 
 <style>
+
+
+@media(max-width:992px){
+  #zpet{
+    display:none;
+  }
+}
+
+@media(min-width:992px){
+  #zpet{
+    height: 35px;
+    width: 50px;
+  }
+}
+#schovany{
+  background-color:white;
+}
+
+
+
 .padding-container {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -203,9 +225,9 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border: darkgrey;
+    
     border-radius: 10px;
-    margin: -70px 100px 30px 30px;
+    margin: 40px 20px 15px 30px;
     padding: 16px;
     background-color: green;
     color: white;
@@ -213,19 +235,12 @@ export default {
   .hotovo:hover,
   .hotovo:active {
     color: white;
-    border: 2px solid white;
-    background-color: darkgreen;
+   
+    
     transition-duration: 0.1s;
   }
 
-  .hotovo:before,
-  .hotovo:after {
-    content: "->";
-  }
-
-  .prazdne-misto3 {
-    height: 150px;
-  }
+ 
 }
 
 @media (max-width: 576px) {
@@ -262,7 +277,7 @@ export default {
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
     border-radius: 10px;
-    margin: 30px;
+    margin: auto;
     padding: 7px;
     font-weight: bold;
   }
