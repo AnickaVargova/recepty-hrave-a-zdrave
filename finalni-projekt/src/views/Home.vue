@@ -9,15 +9,15 @@
             <h1 class="text-center mt-4">NADPIS H1</h1>
             <p class="text-center">tady bude popisek</p>
           </div>
-          <button class="btn btn-primary">
-            <router-link to="/hra1">CHYŤ SI SVÉ JÍDLO</router-link>
-          </button>
-          <button class="btn btn-outline-secondary">
-            <router-link to="/hra2">NA CO MÁŠ CHUŤ?</router-link>
-          </button>
-          <button class="btn btn-outline-secondary">
-            <router-link to="/vyhledavani">VYHLEDÁVÁNÍ RECEPTŮ</router-link>
-          </button>
+          
+            <router-link to="/hra1"><button class="btn btn-primary">CHYŤ SI SVÉ JÍDLO</button></router-link>
+     
+          
+            <router-link to="/hra2"><button class="btn btn-outline-secondary">NA CO MÁŠ CHUŤ?</button></router-link>
+         
+   
+            <router-link to="/vyhledavani"> <button class="btn btn-outline-secondary">VYHLEDÁVÁNÍ RECEPTŮ</button></router-link>
+          
         </div>
       </div>
     </div>
@@ -62,11 +62,12 @@ h1{
   color: white;
 }
 
-#app .btn-primary a {
+#app a .btn-primary  {
   color: white;
+  text-decoration: none;
 }
 
-#app .btn-primary a:hover {
+#app a .btn-primary:hover {
   text-decoration: none;
   font-weight: 600;
 }
@@ -90,7 +91,7 @@ h1{
   background-color: white;
 }
 
-#app .btn-outline-secondary a {
+#app  a .btn-outline-secondary{
   color: green;
 }
 
@@ -99,13 +100,17 @@ h1{
   border: 3px solid green;
   transition-duration: 0.1s;
   font-weight: 600;
+  text-decoration: none;
 }
 
-#app .btn-outline-secondary a:hover,
-#app .btn-outline-secondary a:active {
+#app a .btn-outline-secondary:hover,
+#app a .btn-outline-secondary:active {
   color: green;
   text-decoration: none;
 }
 
-
+#app a:hover,
+#app a:active{
+  text-decoration: none;
+}
 </style>

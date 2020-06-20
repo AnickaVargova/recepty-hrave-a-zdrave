@@ -33,17 +33,18 @@
 
       <div class="menu container">
         <div class="row d-flex">
-          <button
-            class="col-4 flex-fill border text-center font-weight-bold"
+          <button 
+            class="nav-button col-4 flex-fill text-center font-weight-bold"
             v-on:click="zpetNaVyber"
           >Zpět</button>
-          <!-- <router-link
-          class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold"
+          <!--
+          <router-link
+          class="nav-button col-4 flex-fill text-center font-weight-bold"
           to="/hra2"
           >Vyber recept</router-link
         >
         <router-link
-          class="col-4 flex-fill border text-center dark-green font-weight-bold"
+          class="nav-button col-4 flex-fill text-center font-weight-bold"
           to="/vyhledavani"
           >Kategorie</router-link
           >-->
@@ -66,6 +67,21 @@ export default {
 </script>
 
 <style>
+.nav-button{
+  color: white;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  font-weight: normal;
+  
+}
+
+h3{
+  color: green;
+  padding: 20px;
+  font-size: 20px !important;
+}
+
 .pozadi-detailu{
   background:rgba(255, 255, 255, 1);
   border: 2px solid green;
@@ -86,19 +102,15 @@ export default {
 .hlavni {
   position: relative;
 }
+
 .menu {
   margin-top: 40px auto;
   position: relative;
   bottom: 0;
 }
 
-.font-size-12 {
-  font-size: 12px;
-}
 
-.border {
-  border: 3px solid black;
-}
+
 .navod {
   margin: 0 auto;
   padding: 0 auto;
@@ -106,15 +118,13 @@ export default {
 
 .postup {
   padding: 16px 0 8px 0;
-  border-bottom: 3px solid darkgreen;
+  border-bottom: 3px solid green;
 }
 
 .ingredience {
-  border-bottom: 3px solid darkgreen;
+  border-bottom: 3px solid green;
   padding: 0px 0 8px 0;
 }
-
-
 
 .porce {
   padding-top: 5px;
