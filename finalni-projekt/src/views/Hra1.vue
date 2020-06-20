@@ -50,18 +50,18 @@
       <img src="./../assets/ikony/shelf-1.svg" />
     </div>
     <div id="vysledek">
-      <div v-if="konecHry">
-        <p>{{ vysledek }}</p>
-        <button v-on:click="zacitHru">Hrát znovu?</button>
+      <div v-if="konecHry" class="row">
+        <p class="col-md-8 mt-auto">{{ vysledek }}</p>
+        <button style="margin: 10px 0 0 0 " class="btn btn-primary" v-on:click="zacitHru">Hrát znovu?</button>
       </div>
       <div id="prehled" v-else>
-        <p id="body">Počet bodů: {{ pocetBodu }}</p>
-        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>
+        <p id="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
+<!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
         <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
         <!-- vyřešit sklonovani -->
       </div>
     </div>
-    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>
+<!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
   </div>
 </template>
 
@@ -177,7 +177,7 @@ export default {
         if (this.jidlo1.zdrave) {
           this.pocetBodu++;
         } else {
-          this.pocetChyb++;
+          this.pocetChyb;
         }
         this.vratIkonu1();
         this.jidlo1.posunOsaY = 0;
@@ -329,11 +329,13 @@ export default {
 }
 
 #vysledek {
-  border: 2px solid blue;
   font-size: 30px;
-  padding-right: 30px;
-  padding-left: 30px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
   font-weight: bold;
+  background: white;
 }
 
 #body {

@@ -9,7 +9,7 @@
     />
     <div v-else>
       <div
-        class=" bg img-fluid padding-container d-flex container mx-auto okno"
+        class=" padding-container d-flex container mx-auto okno"
       >
         <tvojeRecepty
           v-if="vybrano"
