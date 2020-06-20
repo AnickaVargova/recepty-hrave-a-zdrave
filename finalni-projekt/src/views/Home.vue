@@ -4,20 +4,21 @@
     
       <div class="row justify-content-center mt-5">
           
-        <div class="col-md-6 pozadi">
+        <div class="col-md-6 pozadi justify-content-center">
             <div class="hlavicka">
             <h1 class="text-center mt-4">Pojď si s námi hrát a vařit!</h1>
             <p class="text-center">Vyber si ze dvou her a vyhledávání receptů!</p>
           </div>
           
-            <router-link to="/hra1"><button class="btn btn-primary">CHYŤ SI SVÉ JÍDLO</button></router-link>
-     
-          
-            <router-link to="/hra2"><button class="btn btn-outline-secondary">NA CO MÁŠ CHUŤ?</button></router-link>
-         
-   
+            <div class="row justify-content-center mb-3">
+                <router-link to="/hra1"><button class="btn btn-primary">CHYŤ SI SVÉ JÍDLO</button></router-link>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <router-link to="/hra2"><button class="btn btn-outline-secondary">NA CO MÁŠ CHUŤ?</button></router-link>
+            </div>
+            <div class="row justify-content-center mb-3">
             <router-link to="/vyhledavani"> <button class="btn btn-outline-secondary">VYHLEDÁVÁNÍ RECEPTŮ</button></router-link>
-          
+            </div>
         </div>
       </div>
     </div>
@@ -53,10 +54,9 @@ h1{
 
 #app .btn-primary {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  border: darkgrey;
+    border: 1.5px solid green;
   border-radius: 10px;
   display: block;
-  margin: 40px auto;
   padding: 18px;
   background-color: green;
   color: white;
@@ -71,24 +71,21 @@ h1{
 
 #app a .btn-primary:hover {
   text-decoration: none;
-  font-weight: 600;
 }
 
 #app .btn-primary:hover,
 #app .btn-primary:active {
   color: white;
- border: 3px solid darkgreen;
-  background-color: darkgreen;
-  transition-duration: 0.1s;
+ border: 1.5px solid #049e04;
   text-decoration: none;
+    background: darkgreen;
 }
 
 #app .btn-outline-secondary {
   box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.1);
-  border: 1.5px solid green;
+  border: 1.5px solid green ;
   border-radius: 10px;
   display: block;
-  margin: 40px auto;
   padding: 18px;
   background-color: white;
   width: 220px;
@@ -100,16 +97,16 @@ h1{
 
 #app .btn-outline-secondary:hover,
 #app .btn-outline-secondary:active {
-  border: 3px solid green;
+  border: 1.5px solid #049e04;
   transition-duration: 0.1s;
-  font-weight: 600;
   text-decoration: none;
+    background:green ;
 }
 
 #app a .btn-outline-secondary:hover,
 #app a .btn-outline-secondary:active {
-  color: green;
   text-decoration: none;
+    color: white;
 }
 
 #app a:hover,
