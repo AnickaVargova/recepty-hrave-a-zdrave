@@ -88,14 +88,14 @@ export default [{
         aktivni: false,
         zasednuti: false,
     },
-    {
+    /*{
         id: 12,
         klicoveSlovo: 1,
         jmeno: "hrášek",
         ikona: 'peas.png',
         aktivni: false,
         zasednuti: false,
-    },
+    },*/
     {
         id: 13,
         klicoveSlovo: 77,
@@ -122,7 +122,7 @@ export default [{
         zasednuti: false,
 
     },*/
-    {
+   /* {
         id: 16,
         klicoveSlovo: 20,
         jmeno: "květák",
@@ -130,7 +130,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 17,
         klicoveSlovo: 21,
@@ -140,7 +140,7 @@ export default [{
         zasednuti: false,
 
     },
-    {
+    /*{
         id: 18,
         klicoveSlovo: 58,
         jmeno: "ořechy",
@@ -148,7 +148,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 19,
         klicoveSlovo: 12,
@@ -213,7 +213,7 @@ export default [{
         zasednuti: false,
 
     },
-    {
+   /* {
         id: 26,
         klicoveSlovo: 48,
         jmeno: "dýně",
@@ -221,7 +221,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     /*{
         id: 27,
         klicoveSlovo: 52,
