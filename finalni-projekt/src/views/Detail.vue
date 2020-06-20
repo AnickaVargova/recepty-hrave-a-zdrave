@@ -1,45 +1,43 @@
 <template>
-  <div class="hlavni">
-    <div class="container light-green padding-bottom">
-      <div class="nadpis">
-        <h2 class="font-size-30 dark-green">{{ vybraneRecepty[i].nazev }}</h2>
-      </div>
-      <div class="fotka">
-        <img
-          v-bind:src="require(`../assets/images/${vybraneRecepty[i].obrazek}`)"
-          v-bind:alt="vybraneRecepty[i].nazev"
-          id="fotka"
-          class="img-fluid rounded"
-        />
-      </div>
-    </div>
-    <div class="container padding-bottom">
-      <h3 class="font-size-20 dark-green postup">Postup</h3>
+  <div class="okno container">
+    <div class="row justify-content-center mt-5">
+      <div class="nadpis col-md-6 pozadi-detailu">
+        <h2 class="">{{ vybraneRecepty[i].nazev }}</h2>
+
+        <div class="fotka">
+          <img
+            v-bind:src="require(`../assets/images/${vybraneRecepty[i].obrazek}`)"
+            v-bind:alt="vybraneRecepty[i].nazev"
+            id="fotka"
+            class="img-fluid rounded"
+          />
+        </div>
+      
+
+      <h3 class="postup">Postup</h3>
       <div class="navod">
         <p>{{ vybraneRecepty[i].postup }}</p>
       </div>
       <div>
-        <h3 class="font-size-20 dark-green ingredience">Ingredience</h3>
+        <h3 class=" ingredience">Ingredience</h3>
       </div>
-      <div class="bila">
+      <div class="">
         <p class="porce">Počet porcí: {{ vybraneRecepty[i].pocetPorci }}</p>
         <ul>
           <li
             v-for="(ingredience, index) in vybraneRecepty[i].ingredience"
             v-bind:key="index"
-          >
-            {{ ingredience }}
-          </li>
+          >{{ ingredience }}</li>
         </ul>
       </div>
-    </div>
-    <div class="menu container light-green">
-      <div class="row d-flex">
-        <button
-          class="col-4 flex-fill border text-center dark-green font-weight-bold"
-          v-on:click="zpetNaVyber"
-          >Zpět</button >
-        <!-- <router-link
+
+      <div class="menu container">
+        <div class="row d-flex">
+          <button
+            class="col-4 flex-fill border text-center font-weight-bold"
+            v-on:click="zpetNaVyber"
+          >Zpět</button>
+          <!-- <router-link
           class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold"
           to="/hra2"
           >Vyber recept</router-link
@@ -48,17 +46,19 @@
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/vyhledavani"
           >Kategorie</router-link
-        > -->
+          >-->
+        </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
 <script>
 export default {
   props: ["vybraneRecepty", "i"],
-  methods:{
-    zpetNaVyber(){
+  methods: {
+    zpetNaVyber() {
       this.$emit("zpetNaVyber");
     }
   }
@@ -66,6 +66,23 @@ export default {
 </script>
 
 <style>
+.pozadi-detailu{
+  background:rgba(255, 255, 255, 1);
+  border: 2px solid green;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  
+
+}
+.fotka img {
+  width: 100%;
+  display: block;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+
 .hlavni {
   position: relative;
 }
@@ -97,15 +114,7 @@ export default {
   padding: 0px 0 8px 0;
 }
 
-.padding-bottom {
-  padding-bottom: 40px;
-}
-.padding-top {
-  padding-top: 20px;
-}
-.light-green {
-  background-color: lightgreen;
-}
+
 
 .porce {
   padding-top: 5px;
@@ -114,27 +123,16 @@ export default {
   margin-bottom: 10px;
 }
 
-.font-size-20 {
-  font-size: 20px;
-}
-
 .odstavec {
   margin: 30px auto;
   display: block;
 }
 
-.font-size-30 {
-  font-size: 30px;
-}
-
-.dark-green {
-  color: darkgreen;
-}
 h2 {
   margin: auto;
   padding: 20px;
   text-align: center;
-  display: block;
+  color: green;
+  font-size: 30px;
 }
-
 </style>

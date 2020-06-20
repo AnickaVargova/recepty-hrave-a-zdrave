@@ -1,58 +1,56 @@
 <template>
   <div class="container">
-    
-    <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
-    <div v-else>
+    <div class="col-md-10 mx-auto">
+      <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+      <div v-else>
+        <div class="pozadi col-md-10 mx-auto">
+          <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
+          <form>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="najdi recept"
+                v-model="klicoveSlovo"
+                v-on:keydown.enter="vyberReceptySlovo"
+              />
+            </div>
+          </form>
 
- <div class="pozadi">
+          <div class="d-flex ">
+            <label for="kategorie">Vyber kategorii:</label>
+            <select
+              name="kategorie"
+              v-model.number="kategorieId"
+              id="kategorie"
+              v-on:click="vyberReceptyKategorie"
+            >
+              <option value="56">Polévky</option>
+              <option value="22">Maso</option>
+              <option value="85">Vegetariánské</option>
+              <option value="86">Hlavní jídla</option>
+              <option value="87">Předkrmy</option>
+              <option value="88">Snídaně</option>
+              <option value="71">Saláty</option>
+              <option value="89">Svačiny</option>
+              <option value="90">Pomazánky</option>
+              <option value="91">Dezerty</option>
+              <option value="25">Ryby</option>
+            </select>
+            
+          </div>
+          <label for="vyber-slovo"></label>
 
-   <h1 class="mt-4 mb-4 ml-4">Vyhledávání receptů</h1>
-    <form>
-      <div class="input-group">  
-       <input type="text" class="form-control" placeholder="najdi recept" aria-label="" v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
-          <button type="submit"><i class="lupa"></i>
-          </button>
-         
-          
-      </div>
-    </form>
-  
-      <div id="vyber-kategorie">
-        <label for="kategorie">Vyber kategorii:</label>
-        <select
-          name="kategorie"
-          v-model.number="kategorieId"
-          id="kategorie"
-          v-on:click="vyberReceptyKategorie"
-        >
-          <option value="56">Polévky</option>
-          <option value="22">Maso</option>
-          <option value="85">Vegetariánské</option>
-          <option value="86">Hlavní jídla</option>
-          <option value="87">Předkrmy</option>
-          <option value="88">Snídaně</option>
-          <option value="71">Saláty</option>
-          <option value="89">Svačiny</option>
-          <option value="90">Pomazánky</option>
-          <option value="91">Dezerty</option>
-          <option value="25">Ryby</option>
-        </select>
+          <p v-if="oznameni">Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:</p>
 
-        <label for="vyber-slovo">Klíčové slovo:</label>
-       
-        <p v-if="oznameni">
-          Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
-        </p>
-
-        <receptyVyhledavani
-          v-bind:vybraneRecepty="vybraneRecepty"
-          v-on:prejdiNaDetail="prejdiNaDetail($event)"
-          class="col-md-10 mx-auto"
-        />
+          <receptyVyhledavani
+            v-bind:vybraneRecepty="vybraneRecepty"
+            v-on:prejdiNaDetail="prejdiNaDetail($event)"
+            class="col-md-12 mx-auto"
+          />
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -62,12 +60,10 @@ import klicovaSlova from "./../assets/klicovaSlova.js";
 import ReceptyVyhledavani from "./../components/ReceptyVyhledavani.vue";
 import Detail from "./Detail.vue";
 
-
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
-    detail: Detail,
-    
+    detail: Detail
   },
 
   data() {
@@ -78,7 +74,7 @@ export default {
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
-      oznameni: false,
+      oznameni: false
     };
   },
 
@@ -98,21 +94,18 @@ export default {
         vyberNahodneRecepty();
       }
 
-      this.vybraneRecepty = this.recepty.filter((recept) =>
+      this.vybraneRecepty = this.recepty.filter(recept =>
         recept.vyhledavaniCisla.includes(this.klicoveId)
       );
     },
 
     vyberReceptyKategorie() {
-      
-      this.vybraneRecepty = this.recepty.filter((recept) =>
+      this.vybraneRecepty = this.recepty.filter(recept =>
         recept.vyhledavaniCisla.includes(this.kategorieId)
       );
-      
     },
 
     vyberNahodneRecepty() {
-
       for (let i = 0; i < 5; i++) {
         let nahodnyRecept = this.recepty[
           Math.floor(Math.random() * this.recepty.length)
@@ -124,36 +117,30 @@ export default {
     },
 
     zkratPostup() {
-
       for (let item2 of this.recepty) {
         item2.kratky =
           item2.postup
             .split(" ")
-            .slice(0, 15)
+            .slice(0, 13)
             .join(" ") + "...";
       }
-    },
+    }
   },
 
   created() {
-
     this.zkratPostup();
     this.vyberNahodneRecepty();
-  },
+  }
 };
 </script>
 
 <style>
-.lupa{
-
-background-image: url("./../assets/ikony/search.png");
-}
-.btn-default{
+.btn-default {
   width: 100px;
   padding: 12.5px;
 }
 #kategorie {
-  font-size: 20px;
+  right: 20px;
 }
 
 #vyber-kategorie {
