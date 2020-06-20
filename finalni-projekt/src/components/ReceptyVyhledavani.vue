@@ -43,6 +43,7 @@ export default {
   margin: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   height: 150px;
+  cursor: pointer;
 }
 .recept-item img {
   width: 100%;
@@ -61,6 +62,7 @@ export default {
   margin: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   height: 140px;
+  cursor: pointer;
 }
 .recept-item img {
   width: 100%;
