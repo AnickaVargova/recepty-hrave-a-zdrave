@@ -1,25 +1,23 @@
 <template>
-  <div class="okno bg img-flud container">
+  <div class="container">
     
     <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
     <div v-else>
 
- <div class="container">
+ <div class="pozadi">
+
+   <h1 class="mt-4 mb-4 ">Vyhledávání receptů</h1>
     <form>
       <div class="input-group">  
        <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
         v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
-          <button class=" btn btn-default" type="submit">
-          <i class="oi oi-magnifying-glass"></i></button>
+          <button type="submit"><i class="lupa"></i>
+          </button>
          
           
       </div>
     </form>
-  </div>
-
-      <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
-        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
-
+  
       <div id="vyber-kategorie">
         <label for="kategorie">Vyber kategorii:</label>
         <select
@@ -54,7 +52,7 @@
       </div>
     </div>
   </div>
-  
+  </div>
 </template>
 
 <script>
@@ -145,9 +143,9 @@ export default {
 </script>
 
 <style>
-.glyphicon-search{
-font-size: 20px;
-background-image: url("./../assets/images/navrhpozadi2.jpg");
+.lupa{
+
+background-image: url("./../assets/ikony/search.png");
 }
 .btn-default{
   width: 100px;
