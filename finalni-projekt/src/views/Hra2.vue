@@ -5,6 +5,7 @@
       v-bind:i="i"
       v-if="detailViditelny"
       id="detail"
+      v-on:zpetNaVyber="zpetNaVyber"
     />
     <div v-else>
       <div
@@ -14,11 +15,9 @@
           v-if="vybrano"
           v-bind:vybraneRecepty="vybraneRecepty"
           v-bind:vybrano="vybrano"
-          v-on:chciZpet="zviditelni"
           v-on:hratZnovu="hratZnovu"
           v-on:prejdiNaDetail="prejdiNaDetail($event)"
         />
-        <!-- tlacitko hrat znovu nefunguje, jak ma -->
 
         <div v-else class="margin">
           <h2 class="mas-chut">Na co máš chuť?</h2>
@@ -40,12 +39,15 @@
           </div>
           <div class="d-flex flex-row-reverse">
             <button class="hotovo" v-on:click="srovnejPole">
-              PŘEJÍT NA VÝBĚR RECEPTU
+              HOTOVO
             </button>
           </div>
         </div>
       </div>
     </div>
+    <button class="rozcestnik">
+      <router-link to="/" class="odkaz">DOMŮ</router-link>
+    </button>
   </div>
 </template>
 
@@ -77,31 +79,24 @@ export default {
     klikJidlo(index) {
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
-      // console.log(this.vybraneJidlo);
+      console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
-        // upravit klicoveSlovo na pravdepodobne varianty
         for (let slovo of this.vybraneJidlo.klicoveSlovo)
           this.vybranePole.push(slovo);
       }
-      // console.log(this.vybranePole);
+      console.log(this.vybranePole);
     },
 
     srovnejPole() {
       this.vybraneRecepty = [];
 
       for (let item2 of this.recepty) {
-        item2.kratky =
-          item2.postup
-            .split(" ")
-            .slice(0, 6)
-            .join(" ") + "...";
-
         item2.shody = 0;
         for (let item1 of this.vybranePole) {
           if (item2.vyhledavaniCisla.includes(item1)) {
             item2.shody++;
-            // console.log("shoda nalezena " + item2.nazev);
+            console.log("shoda nalezena " + item2.nazev);
             if (!this.vybraneRecepty.includes(item2)) {
               this.vybraneRecepty.push(item2);
               this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
@@ -109,32 +104,25 @@ export default {
               //tady je omezeni delky pole
               this.vybraneRecepty = prvniRecepty;
             }
-            // console.log(this.vybranePole);
           }
         }
       }
-
-      // console.log(this.vybraneRecepty.length);
-
-      // //nahodne recepty na doplneni do poctu, nemusi to tam byt
-      // for (let k = 0; k < 4; k++) {
-      //   let i = Math.floor(Math.random() * this.recepty.length);
-      //   if (
-      //     this.vybraneRecepty.length < 4 &&
-      //     !this.vybraneRecepty.includes(this.recepty[i])
-      //   ) {
-      //     this.vybraneRecepty.push(this.recepty[i]);
-      //   }
-      // }
-
-      // console.log(this.vybraneRecepty);
       this.vybrano = true;
     },
 
-    zviditelni() {
-      this.vybrano = false;
-    },
+   
+    // //nahodne recepty na doplneni do poctu, nemusi to tam byt
+    // for (let k = 0; k < 4; k++) {
+    //   let i = Math.floor(Math.random() * this.recepty.length);
+    //   if (
+    //     this.vybraneRecepty.length < 4 &&
+    //     !this.vybraneRecepty.includes(this.recepty[i])
+    //   ) {
+    //     this.vybraneRecepty.push(this.recepty[i]);
+    //   }
+    // }
 
+   
     hratZnovu() {
       this.vybrano = false;
       this.vybranePole = [];
@@ -150,6 +138,23 @@ export default {
       this.detailViditelny = true;
       console.log(this.i);
     },
+
+    zkratPostup() {
+      for (let item2 of this.recepty) {
+        item2.kratky =
+          item2.postup
+            .split(" ")
+            .slice(0, 6)
+            .join(" ") + "...";
+      }
+    },
+
+    zpetNaVyber() {
+      this.detailViditelny = false;
+    },
+  },
+  created() {
+    this.zkratPostup();
   },
 };
 </script>

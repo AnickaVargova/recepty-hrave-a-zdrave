@@ -61,6 +61,7 @@
         <!-- vyřešit sklonovani -->
       </div>
     </div>
+    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>
   </div>
 </template>
 

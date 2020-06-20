@@ -90,7 +90,7 @@ export default [
     { id: 88, jmeno: 'snídaně' },
     { id: 89, jmeno: 'svačina' },
     { id: 90, jmeno: 'pomazánka' },
-    { id: 91, jmeno: '' },
+    { id: 91, jmeno: 'dezert' },
     { id: 92, jmeno: '' },
     { id: 93, jmeno: '' },
     { id: 94, jmeno: '' },

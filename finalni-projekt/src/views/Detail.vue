@@ -35,12 +35,11 @@
     </div>
     <div class="menu container light-green">
       <div class="row d-flex">
-        <router-link
+        <button
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
-          to="/tvojeRecepty"
-          >?Zpět?</router-link
-        >
-        <router-link
+          v-on:click="zpetNaVyber"
+          >Zpět</button >
+        <!-- <router-link
           class="col-4 flex-fill border text-center font-size-12 dark-green font-weight-bold"
           to="/hra2"
           >Vyber recept</router-link
@@ -49,7 +48,7 @@
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/vyhledavani"
           >Kategorie</router-link
-        >
+        > -->
       </div>
     </div>
   </div>
@@ -58,6 +57,11 @@
 <script>
 export default {
   props: ["vybraneRecepty", "i"],
+  methods:{
+    zpetNaVyber(){
+      this.$emit("zpetNaVyber");
+    }
+  }
 };
 </script>
 
