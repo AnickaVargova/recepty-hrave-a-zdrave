@@ -26,7 +26,7 @@
           
             <div class="row w-100 justify-content-center mx-auto ">
               <div
-                class="obalObrazek col-2"
+                class="obalObrazek col"
                 v-for="(item, index) in ikonyZakladni"
                 v-bind:key="index"
                 v-on:click="klikJidlo(index)"
@@ -175,10 +175,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid white;
+    border: 2px solid white;
     background-color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border: darkgrey;
     border-radius: 10px;
     margin: 15px;
     max-width: 120px !important;

@@ -54,7 +54,7 @@ h1{
 
 #app .btn-primary {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  border: darkgrey;
+    border: 1.5px solid green;
   border-radius: 10px;
   display: block;
   padding: 18px;
@@ -100,13 +100,13 @@ h1{
   border: 1.5px solid #049e04;
   transition-duration: 0.1s;
   text-decoration: none;
-    background:#049e04 ;
+    background:green ;
 }
 
 #app a .btn-outline-secondary:hover,
 #app a .btn-outline-secondary:active {
-  color: green;
   text-decoration: none;
+    color: white;
 }
 
 #app a:hover,
