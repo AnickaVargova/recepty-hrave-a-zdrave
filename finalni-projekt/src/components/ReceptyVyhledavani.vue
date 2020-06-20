@@ -1,18 +1,20 @@
 <template>
   <div>
     <div v-for="(recept, index) in vybraneRecepty" v-bind:key="index">
-      <div class="zacatek">
-        <div class="obrazek">
-          <img
-            v-on:click="prejdiNaDetail(index)"
-            v-bind:src="require(`../assets/images/${recept.obrazek}`)"
-            v-bind:alt="recept.nazev"
-            class="align-self-center mr-3 obrazek img-fluid rounded"
-          />
-        </div>
-        <div id="recept" v-on:click="prejdiNaDetail(index)">
-          <h3>{{ recept.nazev }}</h3>
-          <p>{{ recept.kratky }}</p>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              v-on:click="prejdiNaDetail(index)"
+              v-bind:src="require(`../assets/images/${recept.obrazek}`)"
+              v-bind:alt="recept.nazev"
+              class=" obrazek-vyhledavani align-self-center img-fluid"
+            />
+          </div>
+          <div class="col-md-9" v-on:click="prejdiNaDetail(index)">
+            <h3>{{ recept.nazev }}</h3>
+            <p>{{ recept.kratky }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -28,8 +30,8 @@ export default {
   methods: {
     prejdiNaDetail(index) {
       this.$emit("prejdiNaDetail", index);
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -48,8 +50,7 @@ export default {
   margin: 0;
 }
 
-.recept {
-  display: block;
+.obrazek-vyhledavani{
+  max-height: 100px;
 }
-
 </style>

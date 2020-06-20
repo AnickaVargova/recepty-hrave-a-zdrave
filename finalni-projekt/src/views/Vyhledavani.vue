@@ -9,7 +9,7 @@
    <h1 class="mt-4 mb-4 ">Vyhledávání receptů</h1>
     <form>
       <div class="input-group">  
-       <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
+       <input type="text" class="form-control" placeholder="najdi recept" aria-label="" v-model="klicoveSlovo"
         v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
           <button type="submit"><i class="lupa"></i>
           </button>
