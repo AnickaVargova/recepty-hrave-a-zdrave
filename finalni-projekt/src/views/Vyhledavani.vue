@@ -16,7 +16,7 @@
               />
             </div>
           </form>
-<!--
+
           <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  
+  </div>
 </template>
 
 <script>
