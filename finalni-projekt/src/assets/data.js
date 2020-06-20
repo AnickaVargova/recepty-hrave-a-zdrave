@@ -17,7 +17,7 @@ export default [{
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'maso'],
         kategorieCisla: [2, 4],
-        postup: 'Maso osolíme z obou stran, položíme na rozpálený gril a ogrilujeme z obou stran. Hotové maso nakrájíme na plátky. Rajčata nakrájíme na plátky, papriku na nudličky. Slaninu ogrilujeme dozlatova. Na polovinu každé tortilly položíme část rajčat, masa, papriky a koriandr. Přidáme část slaniny a plátek sýra a každou tortillu překlopíme napůl. Takto připravené tortilly položíme na gril a grilujeme 2 minuty.',
+        postup: 'Maso osolíme z&nbsp;obou stran, položíme na rozpálený gril a ogrilujeme z obou stran. Hotové maso nakrájíme na plátky. Rajčata nakrájíme na plátky, papriku na nudličky. Slaninu ogrilujeme dozlatova. Na polovinu každé tortilly položíme část rajčat, masa, papriky a koriandr. Přidáme část slaniny a plátek sýra a každou tortillu překlopíme napůl. Takto připravené tortilly položíme na gril a grilujeme 2 minuty.',
         ingredience: ['380 g kuřecích řízků', '70 g slaniny nakrájené na plátky', '4 kukuřičné tortilly', '4 plátky sýra čedar nebo gouda', '2 lžíce olivového oleje', '300 g rajčat', '100 g červené papriky', '4 lžíce lístků koriandru', 'sůl'],
         obrazek: 'quesadillas.jpg',
         vyhledavani: ['kuře', 'rajčata', 'papriky', 'tortilly', 'slanina', 'sýr', 'koriandr'],
