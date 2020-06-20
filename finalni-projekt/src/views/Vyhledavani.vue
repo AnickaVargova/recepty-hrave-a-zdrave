@@ -131,7 +131,7 @@ export default {
         item2.kratky =
           item2.postup
             .split(" ")
-            .slice(0, 15)
+            .slice(0, 12)
             .join(" ") + "...";
       }
     },
