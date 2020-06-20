@@ -1,8 +1,9 @@
 <template>
-  <div class="okno container-fluid bg img-fluid">
-     <div class="row">
+  <div class="container-fluid">
+     <div class="row"></div>
+      <div class="row">
        <div class="col-md-12 text-center mt-4">
-         <h1>Nadpis H1</h1>
+         <h1>Vaření pro děti</h1>
        </div>
      </div>
 
@@ -25,26 +26,13 @@ export default {
 }
 </script>
 <style>
-
-.odkaz{
-  color:white;
-  font-weight: 600;
-}
-.odkaz:hover,
-.odkaz:active{
-  text-decoration:none;
-  color: white;
-}
-.bg{
-  background-image: url("./../assets/images/navrhpozadi2.jpg");
-  height: auto;
-  margin: auto;
-  opacity: 1;
+.bg {
+    background-image: url("./../assets/images/navrhpozadi2.jpg");
+    height: auto;
+    margin: auto;
+    opacity: 1;
 }
 
-.prazde-misto2{
-  height:300px;
-}
 
 #app .btn-primary{
 box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
