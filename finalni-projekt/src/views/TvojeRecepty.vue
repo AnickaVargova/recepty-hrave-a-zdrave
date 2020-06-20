@@ -40,9 +40,9 @@
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/vyhledavani"
           >Vyhledávání receptů</router-link
-        >-->
-      </div>
-    </div>
+        > -->
+      <!-- </div>
+    </div> -->
   </div>
 </template>
 

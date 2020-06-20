@@ -155,6 +155,7 @@ export default {
   },
   created() {
     this.zkratPostup();
+    this.hratZnovu();
   }
 };
 </script>
