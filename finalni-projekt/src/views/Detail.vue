@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-4 mb-4">
+    <div class="row justify-content-center mt-5 mb-4">
       <div class="nadpis col-md-10 pozadi-detailu">
         <h2 class="">{{ vybraneRecepty[i].nazev }}</h2>
 

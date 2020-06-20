@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-md-10 mx-auto">
       <div class="pozadi pb-4 col-md-10 mx-auto">
-        <h1 class="mt-4 mb-4 pt-4 text-center">Máš chuť na tato jídla</h1>
+        <h1 class="mt-5 mb-4 pt-4 text-center">Máš chuť na tato jídla</h1>
 
         <div
           v-for="(recept, index) in vybraneRecepty"

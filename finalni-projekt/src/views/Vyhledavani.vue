@@ -1,12 +1,12 @@
 <template>
-  <div class="container mt-4">
+  <div class="container mt-5">
     <div class="col-md-10 mx-auto">
       <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
-          <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
-        
-            <div class="input-group">
+          <h1 class="mt-4 pt-4 mb-4 text-center">Vyhledávání receptů</h1>
+          
+            <div class="input-group p-0 col-md-12 mx-auto">
               <input
                 type="text"
                 class="form-control"
@@ -16,8 +16,8 @@
               />
             </div>
           
-
-          <!-- <div class="d-flex form-group col-md-8 ">
+<!--
+          <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
               name="kategorie"

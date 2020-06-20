@@ -16,22 +16,22 @@ export default [{
         zasednuti: false,
 
     },
-    {
+   /* {
         id: 3,
         klicoveSlovo: 2,
         jmeno: "pórek",
         ikona: 'leek.png',
         aktivni: false,
         zasednuti: false,
-    },
-    {
+    },*/
+    /*{
         id: 4,
         klicoveSlovo: 36,
         jmeno: "jablka",
         ikona: 'apple.png',
         aktivni: false,
         zasednuti: false,
-    },
+    },*/
     {
         id: 5,
         klicoveSlovo: 5,
@@ -104,7 +104,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
     },
-    {
+   /* {
         id: 14,
         klicoveSlovo: 65,
         jmeno: "ananas",
@@ -112,8 +112,8 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
-    {
+    },*/
+    /*{
         id: 15,
         klicoveSlovo: 16,
         jmeno: "olivy",
@@ -121,7 +121,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 16,
         klicoveSlovo: 20,
@@ -195,7 +195,7 @@ export default [{
         zasednuti: false,
 
     },
-    {
+  /*  {
         id: 24,
         klicoveSlovo: 43,
         jmeno: "mořské plody",
@@ -203,7 +203,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 25,
         klicoveSlovo: 45,
@@ -222,7 +222,7 @@ export default [{
         zasednuti: false,
 
     },
-    {
+    /*{
         id: 27,
         klicoveSlovo: 52,
         jmeno: "banán",
@@ -230,7 +230,7 @@ export default [{
         aktivni: false,
         zasednuti: false,
 
-    },
+    },*/
     {
         id: 28,
         klicoveSlovo: 56,
