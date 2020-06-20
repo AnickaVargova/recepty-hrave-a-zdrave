@@ -2,18 +2,18 @@
   <div>
     <div v-for="(recept, index) in vybraneRecepty" v-bind:key="index">
       
-        <div class="row bila">
-          <div class="col-md-3 ">
+        <div class="row bila recept-item overflow-hidden">
+          <div class="col-md-3 col-4 p-0">
             <img
               v-on:click="prejdiNaDetail(index)"
               v-bind:src="require(`../assets/images/${recept.obrazek}`)"
               v-bind:alt="recept.nazev"
-              class=" obrazek-vyhledavani img-fluid"
+              class=""
             />
           </div>
-          <div class="col-md-9" v-on:click="prejdiNaDetail(index)">
-            <h3>{{ recept.nazev }}</h3>
-            <p>{{ recept.kratky }}</p>
+          <div class="col-md-9 col-8 " v-on:click="prejdiNaDetail(index)">
+            <h4 class="mt-2">{{ recept.nazev }}</h4>
+            <p class="">{{ recept.kratky }}</p>
           </div>
         </div>
       </div>
@@ -36,14 +36,44 @@ export default {
 </script>
 
 <style>
+@media(max-width: 600px){
 .bila{
   background-color: white;
   border-radius: 10px;
   margin: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.2);
+  height: 150px;
+}
+.recept-item img {
+  width: 100%;
+  display: block;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 7px;
 }
 
-.obrazek-vyhledavani{
-  max-height: 100px;
 }
+
+@media(min-width:600px) {
+  .bila{
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.2);
+  height: 140px;
+}
+.recept-item img {
+  width: 100%;
+  display: block;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.bila h4{
+  margin: 10px auto;
+}
+}
+
+
 </style>

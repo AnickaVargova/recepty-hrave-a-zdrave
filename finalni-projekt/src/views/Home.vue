@@ -1,12 +1,14 @@
 <template>
-  <div class="okno container-fluid ">
+  <div class="okno container-fluid">
     
     
       <div class="row justify-content-center mt-5">
+          
         <div class="col-md-6 pozadi">
-          <h1 class="text-center mt-4">Nadpis H1</h1>
-          <p class="text-center">tady bude popisek</p>
-
+            <div class="hlavicka">
+            <h1 class="text-center mt-4">NADPIS H1</h1>
+            <p class="text-center">tady bude popisek</p>
+          </div>
           <button class="btn btn-primary">
             <router-link to="/hra1">CHYŤ SI SVÉ JÍDLO</router-link>
           </button>
@@ -27,14 +29,16 @@ export default {};
 </script>
 <style>
 
+
+
 h1{
-  color: green;
-  
+  color: darkgreen;
+
 }
 
 .pozadi{
-  background:rgba(255, 255, 255, 0.7);
-  border: 2px solid green;
+  background:rgba(255, 255, 255, 0.9);
+  border: 2px solid darkgreen;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   
@@ -46,8 +50,6 @@ h1{
   margin: auto;
   opacity: 1;
 }
-
-
 
 #app .btn-primary {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.4);
