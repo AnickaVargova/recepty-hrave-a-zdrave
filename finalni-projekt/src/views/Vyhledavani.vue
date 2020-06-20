@@ -4,6 +4,19 @@
     <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
     <div v-else>
 
+ <div class="container">
+    <form>
+      <div class="input-group">  
+       <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
+        v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
+          <button class=" btn btn-default" type="submit">
+          <i class="oi oi-magnifying-glass"></i></button>
+         
+          
+      </div>
+    </form>
+  </div>
+
       <input type="text" class="form-control" placeholder="" aria-label="" v-model="klicoveSlovo"
         v-on:keydown.enter="vyberReceptySlovo" aria-describedby="basic-addon1">
 
@@ -41,6 +54,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -131,10 +145,14 @@ export default {
 </script>
 
 <style>
-.input {
-
+.glyphicon-search{
+font-size: 20px;
+background-image: url("./../assets/images/navrhpozadi2.jpg");
 }
-
+.btn-default{
+  width: 100px;
+  padding: 12.5px;
+}
 #kategorie {
   font-size: 20px;
 }

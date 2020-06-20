@@ -1,20 +1,20 @@
 <template>
-  <div class="okno container bg img-fluid">
-     <div class="prazde-misto ">
+  <div class="okno container-fluid bg img-fluid">
+     <div class="row">
+       <div class="col-md-12 text-center mt-4">
+         <h1>Nadpis H1</h1>
+       </div>
      </div>
 
      <div class="">
        <div class="">
-      <button class="rozcestnik"><router-link to="/hra1" class="odkaz">CHYŤ SI SVÉ JÍDLO</router-link></button> 
-      <button class="rozcestnik"><router-link to="/hra2" class="odkaz">NA CO MÁŠ CHUŤ?</router-link></button> 
-      <button class="rozcestnik"><router-link to="/vyhledavani" class="odkaz">VYHLEDÁVÁNÍ RECEPTŮ</router-link></button>
+      <button class="btn btn-primary"><router-link to="/hra1">CHYŤ SI SVÉ JÍDLO</router-link></button> 
+      <button class="btn btn-outline-secondary"><router-link to="/hra2">NA CO MÁŠ CHUŤ?</router-link></button> 
+      <button class="btn btn-outline-secondary"><router-link to="/vyhledavani">VYHLEDÁVÁNÍ RECEPTŮ</router-link></button>
      </div>
       
     </div>
 
-    <div class="prazde-misto2">
-    </div>
-   
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
   height:300px;
 }
 
-.rozcestnik{
+#app .btn-primary{
 box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9);
 border:darkgrey;
 border-radius: 10px;
@@ -56,11 +56,42 @@ padding: 18px;
 background-color:green;
 color: white;
 }
-.rozcestnik:hover,
-.rozcestnik:active{
+
+#app .btn-primary a {
+ color: white;  
+}
+
+
+#app .btn-primary a:hover {
+ text-decoration: none;  
+}
+
+#app .btn-primary:hover,
+#app .btn-primary:active{
  color:white;
  border: 2px solid white;
  background-color: darkgreen;
+ transition-duration: 0.1s;
+ text-decoration: none;
+}
+
+#app .btn-outline-secondary{
+/* box-shadow: 10px 10px 38px 0px rgba(0,0,0,0.9); */
+border:green;
+border-radius: 10px;
+display: block;
+margin: 40px auto;
+padding: 18px;
+color: black;
+}
+
+#app .btn-outline-secondary a {
+ color: black;  
+}
+
+#app .btn-outline-secondary:hover,
+#app .btn-outline-secondary:active{
+border: 2px solid green;
  transition-duration: 0.1s;
 }
 
