@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="col-md-10 mx-auto">
-      <detail v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+      <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
           <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
@@ -17,13 +17,14 @@
             </div>
           </form>
 
-          <div class="d-flex ">
-            <label for="kategorie">Vyber kategorii:</label>
+          <div class="d-flex form-group col-md-8 ">
+            <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
               name="kategorie"
               v-model.number="kategorieId"
               id="kategorie"
               v-on:click="vyberReceptyKategorie"
+              class="form-control col-md-4"
             >
               <option value="56">Polévky</option>
               <option value="22">Maso</option>
@@ -52,6 +53,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -74,7 +76,9 @@ export default {
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
-      oznameni: false
+      oznameni: false,
+      detail: false,
+      i:0,
     };
   },
 
@@ -124,7 +128,17 @@ export default {
             .slice(0, 13)
             .join(" ") + "...";
       }
-    }
+    },
+
+     prejdiNaDetail(idx) {
+      this.i = idx;
+      this.detail = true;
+      console.log(this.i);
+    },
+    zpetNaVyber() {
+      this.detail = false;
+    },
+
   },
 
   created() {

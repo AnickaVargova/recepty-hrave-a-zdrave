@@ -9,7 +9,7 @@
     />
     <div v-else>
       <div
-        class=" padding-container d-flex container mx-auto okno"
+        class=" bg img-fluid padding-container d-flex container mx-auto okno"
       >
         <tvojeRecepty
           v-if="vybrano"
@@ -28,7 +28,10 @@
                 v-for="(item, index) in ikonyZakladni"
                 v-bind:key="index"
                 v-on:click="klikJidlo(index)"
-                v-bind:class="{ zvyraznene: item.aktivni }"
+                v-bind:class="{
+                  zvyraznene: item.aktivni,
+                  zasednuti: item.zasednuti,
+                }"
               >
                 <img
                   v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
@@ -67,51 +70,114 @@ export default {
       ikonyZakladni: ikonyZakladni,
       vybranyIndex: 0,
       vybraneJidlo: ikonyZakladni[this.vybranyIndex],
-      vybranePole: [],
+      vybranaCisla: [],
       recepty: recepty,
       vybraneRecepty: [],
       vybrano: false,
       i: 0,
       detailViditelny: false,
+      omezenePole: [],
+      polePodobnych: [],
     };
   },
+
   methods: {
     klikJidlo(index) {
+
+      console.log(this.vybraneRecepty);
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
-      console.log(this.vybraneJidlo);
+      this.vybraneRecepty= this.recepty.filter(recept=>recept.vyhledavaniCisla.includes(this.vybraneJidlo.klicoveSlovo));
+      // console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
-      if (this.vybraneJidlo.aktivni) {
-        
-          this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
+      this.omezenePole.push(this.vybraneJidlo);
+      // console.log(this.omezenePole);
+
+    for(let item of this.ikonyZakladni){
+      if (!this.omezenePole.includes(item)){
+        item.zasednuti=true;
       }
-      console.log(this.vybranePole);
+
+    }
+
+    // this.vybraneJidlo.zasednuti=true;
+      if (this.vybraneJidlo.aktivni) {
+
+          this.vybranaCisla.push(this.vybraneJidlo.klicoveSlovo);
+      }
+      // for(let item of this.vybranaCisla){
+      // this.vybraneRecepty=this.vybraneRecepty.filter(recept=>recept.vyhledavaniCisla.includes(this.item));
+      // }
+
+     
+     console.log(this.vybranaCisla);
+
+    this.srovnejPole();
+
+    for(let item1 of this.ikonyZakladni){
+      for(let item2 of this.vybraneRecepty){
+        if (item2.vyhledavaniCisla.includes(item1.klicoveSlovo)){
+          item1.zasednuti=false;
+        }
+        else {
+          item2.zasednuti=true;
+        }
+
+      }
+    }
+
+    
+
+      console.log(this.vybraneRecepty);
+      // console.log(omezeneRecepty);
     },
 
     srovnejPole() {
-      this.vybraneRecepty = [];
+      // this.vybraneRecepty = [];
 
       for (let item2 of this.recepty) {
-        item2.shody = 0;
-        for (let item1 of this.vybranePole) {
-          if (item2.vyhledavaniCisla.includes(item1)) {
-            item2.shody++;
-            console.log("shoda nalezena " + item2.nazev);
-            if (!this.vybraneRecepty.includes(item2)) {
-              this.vybraneRecepty.push(item2);
-              this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
-              let prvniRecepty = this.vybraneRecepty.slice(0, 8);
-              //tady je omezeni delky pole
-              this.vybraneRecepty = prvniRecepty;
-            }
-          }
-        }
-      }
-      this.vybrano = true;
-      console.log(this.vybraneRecepty);
-    },
 
+
+          this.vybraneRecepty.filter(recept=> {
+
+            let pocet = this.vybranaCisla.length;
+            let shoda = 0;
+            for(let item of this.vybranaCisla) {
+              if(recept.vyhledavaniCisla.includes(item)) {
+                shoda++
+              }
+            }
+
+            if(shoda === pocet ) {
+              return true;
+            }
+            return false;
+          });
+
+
+
+        // item2.shody = 0;
+        //for(let item of this.vybranaCisla)
+          // if (item2.vyhledavaniCisla.includes(item)) {
+            // item2.shody++;
+            // console.log("shoda nalezena " + item2.nazev);
+            
+              
+              //this.vybraneRecepty.filter(recept=>recept.vyhledavaniCisla.includes(item));
+              // this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
+              // let prvniRecepty = this.vybraneRecepty.slice(0, 8);
+              // //tady je omezeni delky pole
+              // this.vybraneRecepty = prvniRecepty;
+            // }
+          }
+          
+          
+          console.log(this.vybraneRecepty);
+        },
    
+      // this.vybrano = true;
+    
+
     // //nahodne recepty na doplneni do poctu, nemusi to tam byt
     // for (let k = 0; k < 4; k++) {
     //   let i = Math.floor(Math.random() * this.recepty.length);
@@ -123,10 +189,9 @@ export default {
     //   }
     // }
 
-   
     hratZnovu() {
       this.vybrano = false;
-      this.vybranePole = [];
+      this.vybranaCisla = [];
       this.vybraneRecepty = [];
 
       for (let item of ikonyZakladni) {
@@ -156,7 +221,8 @@ export default {
   },
   created() {
     this.zkratPostup();
-  },
+  }
+  
 };
 </script>
 
@@ -286,8 +352,12 @@ export default {
   border: 4px solid green;
 }
 
-.zvyraznene {
+/* .zvyraznene {
   border: 4px solid green;
   background-color: lightgreen;
+} */
+
+.zasednuti {
+  background-color: grey;
 }
 </style>
