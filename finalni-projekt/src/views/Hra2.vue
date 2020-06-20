@@ -178,8 +178,8 @@ export default {
     border: 2px solid white;
     background-color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 15px;
+    border-radius: 7px;
+    margin: 10px;
     max-width: 120px !important;
     padding: 10px 5px !important;
     cursor: pointer;
@@ -191,7 +191,7 @@ export default {
     color: green;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
-    border-radius: 10px;
+    border-radius: 7px;
     width: 400px;
     margin: 20px auto 20px;
   }

@@ -5,24 +5,24 @@
         Máš chuť na tato jídla
       </h1>
 
-      <div
-        v-for="(recept, index) in vybraneRecepty"
-        v-bind:key="index"
-        v-on:click="prejdiNaDetail(index)"
-        class="detail mx-auto"
-      >
-        <div class="row bila recept-item overflow-hidden">
+        <div
+          v-for="(recept, index) in vybraneRecepty"
+          v-bind:key="index"
+          v-on:click="prejdiNaDetail(index)"
+          class="detail mx-auto"
+        >
+          <div class="row bila recept-item overflow-hidden">
           <div class="col-md-3 col-4 p-0">
-            <img
-              v-bind:src="require(`../assets/images/${recept.obrazek}`)"
-              v-bind:alt="recept.nazev"
-              class
-            />
-            <div class="col-md-9 col-8">
-              <h3 class>{{ recept.nazev }}</h3>
-              <p class>{{ recept.kratky }}</p>
+              <img
+                v-bind:src="require(`../assets/images/${recept.obrazek}`)"
+                v-bind:alt="recept.nazev"
+                class
+              /></div>
+            <div class="col-md-9 col-8 " >
+              <h4 class>{{ recept.nazev }}</h4>
+               <p class>{{ recept.kratky }}</p>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
