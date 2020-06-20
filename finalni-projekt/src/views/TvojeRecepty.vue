@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="col-md-10 mx-auto">
-      <div class="pozadi col-md-10 mx-auto">
-        <h1 class="mt-4 mb-4">Máš chuť na tato jídla</h1>
+      <div class="pozadi pb-4 col-md-10 mx-auto">
+        <h1 class="mt-4 mb-4 pt-4 text-center">Máš chuť na tato jídla</h1>
 
         <div
           v-for="(recept, index) in vybraneRecepty"
           v-bind:key="index"
           v-on:click="prejdiNaDetail(index)"
-          class="detail col-md-8"
+          class="detail col-md-8 mx-auto"
         >
           <div class="row bila recept-item overflow-hidden">
             <div class="col-md-3 col-4 p-0">
@@ -17,13 +17,10 @@
               v-bind:alt="recept.nazev"
               class
             />
-
+            <div class="col-md-9 col-8" >
             <h3 class>{{ recept.nazev }}</h3>
-            <div class>
-              <div class>
-                <p class>{{ recept.kratky }}</p>
+               <p class>{{ recept.kratky }}</p>
               </div>
-            </div>
           </div>
         </div>
         </div>
@@ -62,51 +59,8 @@ export default {
 </script>
 
 <style>
-.mas-chut {
-  background-color: white;
-  font-weight: 600;
-  color: green;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
-  border: darkgrey;
-  border-radius: 10px;
-}
 
-@media (min-width: 1000px) {
-  .bile-pozadi {
-    width: 200px;
-    height: 150px;
-  }
-}
 
-@media (max-width: 1000px) {
-  .bile-pozadi {
-    width: 150px;
-    height: 100px;
-  }
-}
 
-.bile-pozadi {
-  background-color: white;
-  color: green;
-  border-bottom: 2px solid green;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-.obrazek {
-  max-width: 180px;
-  max-height: 120px;
-}
 
-.white {
-  background-color: white;
-  border: 3px SOLID DARKGREEN;
-  height: 200px;
-  widows: 400px;
-  margin: 15px auto;
-}
-
-p {
-  text-decoration: none;
-}
 </style>

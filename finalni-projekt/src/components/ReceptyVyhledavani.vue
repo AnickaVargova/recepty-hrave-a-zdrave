@@ -41,7 +41,7 @@ export default {
   background-color: white;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   height: 150px;
 }
 .recept-item img {
@@ -49,7 +49,7 @@ export default {
   display: block;
   height: 150px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 }
@@ -59,7 +59,7 @@ export default {
   background-color: white;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   height: 140px;
 }
 .recept-item img {
@@ -67,7 +67,7 @@ export default {
   display: block;
   height: 140px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 .bila h4{

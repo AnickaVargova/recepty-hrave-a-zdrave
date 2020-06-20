@@ -9,8 +9,10 @@
     />
     <div v-else>
       <div
-        class=" padding-container d-flex container mx-auto okno"
+        class="container mt-4"
       >
+      <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-md-6 pozadi">
         <tvojeRecepty
           v-if="vybrano"
           v-bind:vybraneRecepty="vybraneRecepty"
@@ -19,9 +21,9 @@
           v-on:prejdiNaDetail="prejdiNaDetail($event)"
         />
 
-        <div v-else class="margin">
-          <h2 class="mas-chut">Na co máš chuť?</h2>
-          <div class="ikony container">
+        <div v-else>
+          <h2>Na co máš chuť?</h2>
+          
             <div class="row w-100 justify-content-center mx-auto ">
               <div
                 class="obalObrazek col-2"
@@ -42,12 +44,14 @@
               HOTOVO
             </button>
           </div>
-        </div>
+        
+      </div>
       </div>
     </div>
     <button class="rozcestnik">
       <router-link to="/" class="odkaz">DOMŮ</router-link>
     </button>
+  </div>
   </div>
 </template>
 

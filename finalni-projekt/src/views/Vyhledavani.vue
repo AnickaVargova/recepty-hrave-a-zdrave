@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container mt-4">
     <div class="col-md-10 mx-auto">
       <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
-          <h1 class="mt-4 mb-4">Vyhledávání receptů</h1>
+          <h1 class="mt-4 pt-4 mb-4 text-center">Vyhledávání receptů</h1>
           <form>
-            <div class="input-group">
+            <div class="input-group p-0 col-md-12 mx-auto">
               <input
                 type="text"
                 class="form-control"
@@ -16,7 +16,7 @@
               />
             </div>
           </form>
-
+<!--
           <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
@@ -38,8 +38,8 @@
               <option value="91">Dezerty</option>
               <option value="25">Ryby</option>
             </select>
-            
-          </div>
+            -->
+         
           <label for="vyber-slovo"></label>
 
           <p v-if="oznameni">Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:</p>

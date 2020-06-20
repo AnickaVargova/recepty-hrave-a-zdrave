@@ -1,7 +1,7 @@
 <template>
-  <div class="okno container">
-    <div class="row justify-content-center mt-5">
-      <div class="nadpis col-md-6 pozadi-detailu">
+  <div class="container">
+    <div class="row justify-content-center mt-4 mb-4">
+      <div class="nadpis col-md-10 pozadi-detailu">
         <h2 class="">{{ vybraneRecepty[i].nazev }}</h2>
 
         <div class="fotka">
@@ -9,7 +9,7 @@
             v-bind:src="require(`../assets/images/${vybraneRecepty[i].obrazek}`)"
             v-bind:alt="vybraneRecepty[i].nazev"
             id="fotka"
-            class="img-fluid rounded"
+            class="img-fluid"
           />
         </div>
       
@@ -84,9 +84,8 @@ h3{
 
 .pozadi-detailu{
   background:rgba(255, 255, 255, 1);
-  border: 2px solid green;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.9);
-  border-radius: 10px;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   
 
 }
@@ -95,7 +94,7 @@ h3{
   display: block;
   height: 150px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 
@@ -118,11 +117,11 @@ h3{
 
 .postup {
   padding: 16px 0 8px 0;
-  border-bottom: 3px solid green;
+  border-bottom: 1.5px solid green;
 }
 
 .ingredience {
-  border-bottom: 3px solid green;
+  border-bottom: 1.5px solid green;
   padding: 0px 0 8px 0;
 }
 
