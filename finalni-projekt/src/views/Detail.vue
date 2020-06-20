@@ -2,6 +2,9 @@
   <div class="container">
     <div class="row justify-content-center mt-5 mb-4">
       <div class="nadpis col-md-10 pozadi-detailu">
+         <button v-on:click="zpetNaVyber" id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
+                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
+              </button>
         <h2 class="">{{ vybraneRecepty[i].nazev }}</h2>
 
         <div class="fotka">
@@ -31,12 +34,7 @@
         </ul>
       </div>
 
-      <div class="menu container">
-        <div class="row d-flex">
-          <button 
-            class="nav-button col-4 flex-fill text-center font-weight-bold"
-            v-on:click="zpetNaVyber"
-          >Zpět</button>
+      
           <!--
           <router-link
           class="nav-button col-4 flex-fill text-center font-weight-bold"
