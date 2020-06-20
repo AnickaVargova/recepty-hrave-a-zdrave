@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="menu container light-green">
+   <!-- <div class="menu container light-green">
       <div class="row d-flex">
         <button
           v-on:click="hratZnovu"
@@ -40,7 +40,7 @@
           class="col-4 flex-fill border text-center dark-green font-weight-bold"
           to="/vyhledavani"
           >Vyhledávání receptů</router-link
-        >
+        >-->
       </div>
     </div>
   </div>

@@ -1,9 +1,12 @@
 <template>
-  <div class="col-md-6 mx-auto pozadi">
- <router-link to="/"><button id="schovany"><img src="./../assets/images/left-arrow.png" id="zpet"></button></router-link>
-  
-    
-    
+  <div class="col-md-6 mx-auto pozadi position-relative">
+
+    <router-link to="/">
+      <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
+        <img src="./../assets/images/left-arrow.png" id="zpet"/>
+      </button>
+    </router-link>
+
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -12,48 +15,41 @@
       v-on:zpetNaVyber="zpetNaVyber"
     />
     <div v-else>
-      <div
-        class="container mt-4"
-      >
-      <div class="row justify-content-center mt-4 mb-4">
-        <div class="col-md-12 mx-auto">
-        <tvojeRecepty
-          v-if="vybrano"
-          v-bind:vybraneRecepty="vybraneRecepty"
-          v-bind:vybrano="vybrano"
-          v-on:hratZnovu="hratZnovu"
-          v-on:prejdiNaDetail="prejdiNaDetail($event)"
-        />
+      <div class="container mt-lg-4 mt-0">
+        <div class="row justify-content-center mt-lg-4 mt-0 mb-0 mb-lg-4">
+          <div class="col-md-12 mx-auto">
+            <tvojeRecepty
+              v-if="vybrano"
+              v-bind:vybraneRecepty="vybraneRecepty"
+              v-bind:vybrano="vybrano"
+              v-on:hratZnovu="hratZnovu"
+              v-on:prejdiNaDetail="prejdiNaDetail($event)"
+            />
 
-        <div v-else>
-          <h2>Na co máš chuť ?</h2>
-          
-            <div class="row w-100 justify-content-center mx-auto ">
-              <div
-                class="obalObrazek col-4 col-md-2"
-                v-for="(item, index) in ikonyZakladni"
-                v-bind:key="index"
-                v-on:click="klikJidlo(index)"
-                v-bind:class="{ zvyraznene: item.aktivni }"
-              >
-                <img
-                  v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
-                  v-bind:alt="item.jmeno"
-                />
+            <div v-else>
+              <h2 class="d-flex text-center">Na co máš chuť ?</h2>
+
+              <div class="row w-100 justify-content-center mx-auto">
+                <div
+                  class="obalObrazek col-4 col-md-2"
+                  v-for="(item, index) in ikonyZakladni"
+                  v-bind:key="index"
+                  v-on:click="klikJidlo(index)"
+                  v-bind:class="{ zvyraznene: item.aktivni }"
+                >
+                  <img
+                    v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
+                    v-bind:alt="item.jmeno"
+                  />
+                </div>
+                <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button>
               </div>
-              <button class="btn btn-primary hotovo" v-on:click="srovnejPole">
-              HOTOVO
-            </button>
             </div>
           </div>
-          
+        </div>
       </div>
-      </div>
+     
     </div>
-    <button class="rozcestnik">
-      <router-link to="/" class="odkaz">DOMŮ</router-link>
-    </button>
-  </div>
   </div>
 </template>
 
@@ -66,7 +62,7 @@ import Detail from "./Detail.vue";
 export default {
   components: {
     tvojeRecepty: TvojeRecepty,
-    detail: Detail,
+    detail: Detail
   },
   data() {
     return {
@@ -78,7 +74,7 @@ export default {
       vybraneRecepty: [],
       vybrano: false,
       i: 0,
-      detailViditelny: false,
+      detailViditelny: false
     };
   },
   methods: {
@@ -88,8 +84,7 @@ export default {
       console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
-        
-          this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
+        this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
       console.log(this.vybranePole);
     },
@@ -117,7 +112,6 @@ export default {
       console.log(this.vybraneRecepty);
     },
 
-   
     // //nahodne recepty na doplneni do poctu, nemusi to tam byt
     // for (let k = 0; k < 4; k++) {
     //   let i = Math.floor(Math.random() * this.recepty.length);
@@ -129,7 +123,6 @@ export default {
     //   }
     // }
 
-   
     hratZnovu() {
       this.vybrano = false;
       this.vybranePole = [];
@@ -158,35 +151,49 @@ export default {
 
     zpetNaVyber() {
       this.detailViditelny = false;
-    },
+    }
   },
   created() {
     this.zkratPostup();
-  },
+  }
 };
 </script>
 
 <style>
-
-
-@media(max-width:992px){
-  #zpet{
-    display:none;
+@media (max-width: 992px) {
+ 
+  #pozadi-zpet{
+  background:rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 3px;
+  border: 1px solid white;
   }
+  #pozadi-zpet:active {
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 7px;
 }
-
-@media(min-width:992px){
-  #zpet{
+}
+#zpet {
     height: 35px;
     width: 50px;
   }
+@media (min-width: 992px) {
+  
+
+#pozadi-zpet {
+  background-color: white;
+  position: absolute;
+  left: 50px;
+  border: 1px solid white;
 }
-#schovany{
-  background-color:white;
+
+#pozadi-zpet:hover,
+#pozadi-zpet:active {
+  background-color: green;
+  border-radius: 7px;
 }
-
-
-
+}
 .padding-container {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -225,7 +232,7 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    
+
     border-radius: 10px;
     margin: 40px 20px 15px 30px;
     padding: 16px;
@@ -235,12 +242,9 @@ export default {
   .hotovo:hover,
   .hotovo:active {
     color: white;
-   
-    
+
     transition-duration: 0.1s;
   }
-
- 
 }
 
 @media (max-width: 576px) {
@@ -291,9 +295,7 @@ export default {
     top: 3px;
   }
 
-  .prazdne-misto3 {
-    height: 150px;
-  }
+ 
 }
 
 .margin {
