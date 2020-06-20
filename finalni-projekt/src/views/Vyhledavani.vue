@@ -6,7 +6,7 @@
 
  <div class="pozadi">
 
-   <h1 class="mt-4 mb-4 ">Vyhledávání receptů</h1>
+   <h1 class="mt-4 mb-4 ml-4">Vyhledávání receptů</h1>
     <form>
       <div class="input-group">  
        <input type="text" class="form-control" placeholder="najdi recept" aria-label="" v-model="klicoveSlovo"
@@ -48,6 +48,7 @@
         <receptyVyhledavani
           v-bind:vybraneRecepty="vybraneRecepty"
           v-on:prejdiNaDetail="prejdiNaDetail($event)"
+          class="col-md-10 mx-auto"
         />
       </div>
     </div>

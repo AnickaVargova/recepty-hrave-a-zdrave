@@ -1,14 +1,14 @@
 <template>
   <div>
     <div v-for="(recept, index) in vybraneRecepty" v-bind:key="index">
-      <div class="col-md-8">
-        <div class="row recept-item">
-          <div class="col-md-3">
+      
+        <div class="row bila">
+          <div class="col-md-3 ">
             <img
               v-on:click="prejdiNaDetail(index)"
               v-bind:src="require(`../assets/images/${recept.obrazek}`)"
               v-bind:alt="recept.nazev"
-              class=""
+              class=" obrazek-vyhledavani img-fluid"
             />
           </div>
           <div class="col-md-9" v-on:click="prejdiNaDetail(index)">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
@@ -36,29 +36,14 @@ export default {
 </script>
 
 <style>
-.zacatek {
-  display: flex;
-  border: 2px solid black;
-  margin: 5px;
-  height: 20%;
-}
-
-.zacatek .obrazek {
-  flex-basis: 15%;
-  width: 100%;
-  object-fit: fill;
-  margin: 0;
+.bila{
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.2);
 }
 
 .obrazek-vyhledavani{
   max-height: 100px;
 }
-  .recept-item img {
-    width: 100%;
-    display: block;
-    height: 100px;
-    object-fit: cover;
-  }
-
-
 </style>
