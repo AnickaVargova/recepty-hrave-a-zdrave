@@ -75,7 +75,9 @@ export default {
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
-      oznameni: false
+      oznameni: false,
+      detail: false,
+      i:0,
     };
   },
 
@@ -125,7 +127,14 @@ export default {
             .slice(0, 13)
             .join(" ") + "...";
       }
-    }
+    },
+
+     prejdiNaDetail(idx) {
+      this.i = idx;
+      this.detail = true;
+      console.log(this.i);
+    },
+
   },
 
   created() {
