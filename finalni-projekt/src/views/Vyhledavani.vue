@@ -17,13 +17,14 @@
             </div>
           </form>
 
-          <div class="d-flex ">
-            <label for="kategorie">Vyber kategorii:</label>
+          <div class="d-flex form-group col-md-8 ">
+            <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
               name="kategorie"
               v-model.number="kategorieId"
               id="kategorie"
               v-on:click="vyberReceptyKategorie"
+              class="form-control col-md-4"
             >
               <option value="56">Polévky</option>
               <option value="22">Maso</option>
