@@ -1,17 +1,14 @@
 <template>
-  <div class="okno">
-    <div id="police">
-      <div id="jidlo">
+  <div class="pozadi overflow-hidden col-md-6 mx-auto mt-5">
+    <div class="police d-flex">
+      <div id="jidlo col-md-6">
         <div
           class="ikonaJidla"
           id="ikona1"
           v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
           v-on:click="priKliknuti1"
         >
-          <img
-            v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
-            alt="jídlo"
-          />
+          <img v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)" alt="jídlo" />
         </div>
         <div
           class="ikonaJidla"
@@ -19,10 +16,7 @@
           v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
           v-on:click="priKliknuti2"
         >
-          <img
-            v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
-            alt="jídlo"
-          />
+          <img v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)" alt="jídlo" />
         </div>
         <div
           class="ikonaJidla"
@@ -30,10 +24,7 @@
           v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
           v-on:click="priKliknuti3"
         >
-          <img
-            v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
-            alt="jídlo"
-          />
+          <img v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)" alt="jídlo" />
         </div>
         <div
           class="ikonaJidla"
@@ -41,27 +32,29 @@
           v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
           v-on:click="priKliknuti4"
         >
-          <img
-            v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
-            alt="jídlo"
-          />
+          <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" alt="jídlo" />
         </div>
       </div>
-      <img src="./../assets/ikony/shelf-1.svg" />
+
+      <img class="col-md-10 mx-auto shelf" src="./../assets/ikony/shelf.png" />
     </div>
     <div id="vysledek">
       <div v-if="konecHry" class="row">
         <p class="col-md-8 mt-auto">{{ vysledek }}</p>
-        <button style="margin: 10px 0 0 0 " class="btn btn-primary" v-on:click="zacitHru">Hrát znovu?</button>
+        <button
+          style="margin: 10px 0 0 0 "
+          class="btn btn-primary"
+          v-on:click="zacitHru"
+        >Hrát znovu?</button>
       </div>
       <div id="prehled" v-else>
         <p id="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
-<!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
+        <!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
         <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
         <!-- vyřešit sklonovani -->
       </div>
     </div>
-<!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
+    <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
   </div>
 </template>
 
@@ -83,14 +76,14 @@ export default {
       interval4: null,
       konecHry: false,
       minutka: 20,
-      intervalMinutka: null,
+      intervalMinutka: null
     };
   },
   computed: {
     vysledek() {
       return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
       //dodelat funkci na sklonovani: bod, body, bodu
-    },
+    }
   },
   methods: {
     vratIkonu1() {
@@ -247,33 +240,34 @@ export default {
       this.pohybujIkonou4();
       this.odectiSekundu();
       setTimeout(this.citacCasu, 20000);
-    },
+    }
   },
 
   created() {
     this.zacitHru();
-  },
+  }
 };
 </script>
 
 <style>
+.shelf {
+  z-index: 1;
+}
 #police {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   position: relative;
-  width: 80vw;
+  /*width: 80vw;*/
 }
 
-#police > img {
+/*#police > img {
   width: 80vw;
   height: 80vh;
 }
-
+*/
 #jidlo {
-  width: 80vw;
+  z-index: 2;
+ 
   display: flex;
   position: absolute;
   top: 100px;
@@ -281,16 +275,29 @@ export default {
 /* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
 
 .ikonaJidla {
-  width: 20%;
-  height: auto;
+ 
   position: absolute;
   display: flex;
   justify-content: center;
 }
-
-.ikonaJidla > img {
-  max-width: 100%;
+@media(min-width:992px){
+.ikonaJidla  {
+  margin: 3px;
+  z-index: 2;
+ width:10%;
+  height: auto;
 }
+}
+@media(max-width:992px){
+.ikonaJidla {
+  margin: 3px;
+  z-index: 2;
+ width: 100%;
+  height: auto;
+}
+}
+
+
 
 #ikona1 {
   left: 0;
@@ -314,7 +321,7 @@ export default {
   }
   .ikonaJidla {
     width: 25%;
-    max-height: 80px;
+    /*max-height: 80px;*/
   }
   .ikonaJidla > img {
     width: 80px;
@@ -324,7 +331,7 @@ export default {
 
 @media (min-width: 1000px) {
   #jidlo {
-    width: 40vw;
+    /*width: 40vw;*/
   }
 }
 

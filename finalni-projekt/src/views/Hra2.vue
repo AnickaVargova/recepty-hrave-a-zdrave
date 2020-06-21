@@ -45,9 +45,12 @@
                     v-bind:alt="item.jmeno"
                   />
                 </div>
+                <div class="d-flex justify-content-between">
                 <!-- vyhodit zobrazRecepty -->
                 <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
-                <button class="btn btn-primary hotovo" v-on:click="zobrazRecepty">HOTOVO</button>
+                <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">HOTOVO</button>
+                <button class="hrat-znovu ml-5" v-on:click="hratZnovu"><img src="./../assets/ikony/replay.png"></button>
+              </div>
               </div>
             </div>
           </div>
@@ -203,6 +206,15 @@ export default {
 </script>
 
 <style>
+.hrat-znovu{
+  border:none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 65px;
+  margin-top: 35px;
+  
+
+}
+
 .vrstva2{
   z-index: 2;
 }
