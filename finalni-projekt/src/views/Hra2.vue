@@ -36,14 +36,18 @@
                   v-for="(item, index) in ikonyZakladni"
                   v-bind:key="index"
                   v-on:click="klikJidlo(index)"
-                  v-bind:class="{ zvyraznene: item.aktivni }"
+                  
+                  v-bind:class="{ zvyraznene: item.aktivni, zasednuti:item.zasednuti }"
                 >
+                <!-- seda smazat -->
                   <img
                     v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
                     v-bind:alt="item.jmeno"
                   />
                 </div>
-                <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button>
+                <!-- vyhodit zobrazRecepty -->
+                <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
+                <button class="btn btn-primary hotovo" v-on:click="zobrazRecepty">HOTOVO</button>
               </div>
             </div>
           </div>
@@ -87,30 +91,65 @@ export default {
       if (this.vybraneJidlo.aktivni) {
         this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
-      console.log(this.vybranePole);
+      //omezovani pole-zacatek-pripadne vyhodit
+      this.srovnejPole();
+      console.log(this.vybraneRecepty);
+      for (let ikona of this.ikonyZakladni) {
+        let aa = false;
+        for (let vybranyRecept of this.vybraneRecepty) {
+          if (vybranyRecept.vyhledavaniCisla.includes(ikona.klicoveSlovo)) {
+            aa = true;
+            break;
+          } 
+        }
+        console.log(aa);
+        if (!aa) {ikona.zasednuti = true};
+      }
+      //konec
+      // console.log(this.vybranePole);
     },
 
     srovnejPole() {
       this.vybraneRecepty = [];
 
-      for (let item2 of this.recepty) {
-        item2.shody = 0;
-        for (let item1 of this.vybranePole) {
-          if (item2.vyhledavaniCisla.includes(item1)) {
-            item2.shody++;
-            console.log("shoda nalezena " + item2.nazev);
-            if (!this.vybraneRecepty.includes(item2)) {
-              this.vybraneRecepty.push(item2);
-              this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
-              let prvniRecepty = this.vybraneRecepty.slice(0, 8);
-              //tady je omezeni delky pole
-              this.vybraneRecepty = prvniRecepty;
-            }
+      //omezovani pole- pripadne vyhodit
+      for (let recept of this.recepty) {
+        let obsahujeVsechny = true;
+        for (let pole of this.vybranePole) {
+          if (!recept.vyhledavaniCisla.includes(pole)) {
+            obsahujeVsechny = false;
+            break;
           }
         }
+        if (obsahujeVsechny) {
+          this.vybraneRecepty.push(recept);
+        }
       }
-      this.vybrano = true;
+      //konec
+
+      // for (let item2 of this.recepty) {
+      //   item2.shody = 0;
+      //   for (let item1 of this.vybranePole) {
+      //     if (item2.vyhledavaniCisla.includes(item1)) {
+      //       item2.shody++;
+      //       console.log("shoda nalezena " + item2.nazev);
+      //       if (!this.vybraneRecepty.includes(item2)) {
+      //         this.vybraneRecepty.push(item2);
+      //         this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
+      //         let prvniRecepty = this.vybraneRecepty.slice(0, 8);
+      //         //tady je omezeni delky pole
+      //         this.vybraneRecepty = prvniRecepty;
+      //       }
+      //     }
+      //   }
+      // }
+      //TODO: MV
+      //  
       console.log(this.vybraneRecepty);
+    },
+
+    zobrazRecepty() {
+      this.vybrano = true;
     },
 
     // //nahodne recepty na doplneni do poctu, nemusi to tam byt
@@ -131,6 +170,8 @@ export default {
 
       for (let item of ikonyZakladni) {
         item.aktivni = false;
+        //MV
+        item.zasednuti = false;
       }
     },
 
@@ -320,4 +361,6 @@ export default {
   border: 2px solid green;
   background-color: lightgreen;
 }
+
+.zasednuti {background-color:grey};
 </style>

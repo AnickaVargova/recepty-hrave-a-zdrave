@@ -6,7 +6,7 @@
         <div class="col-md-6 pozadi justify-content-center">
             <div class="hlavicka">
             <h1 class="text-center mt-4">Pojď si s námi hrát a vařit!</h1>
-            <p class="text-center">Vyber si ze dvou her a vyhledávání receptů!</p>
+            <p class="text-center">Vyber si ze dvou her a vyhledávání receptů.</p>
           </div>
           
             <div class="row justify-content-center mb-3">

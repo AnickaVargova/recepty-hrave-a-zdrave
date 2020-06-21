@@ -6,7 +6,7 @@
           <img src="./../assets/images/left-arrow.png" id="zpet" />
         </button>
      
-      <h1 class="mt-0 mb-4 pt-4 text-center col-md-12">Máš chuť na tato jídla</h1>
+      <h1 class="mt-0 mb-4 pt-4 text-center col-md-12">Máš chuť na tato jídla:</h1>
 
       <div
         v-for="(recept, index) in vybraneRecepty"
