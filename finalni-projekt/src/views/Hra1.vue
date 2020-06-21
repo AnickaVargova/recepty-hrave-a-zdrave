@@ -1,7 +1,7 @@
 <template>
-  <div class="pozadi overflow-hidden col-md-6 mx-auto mt-5">
-    <div class="police d-flex">
-      <div id="jidlo col-md-10 mx-auto">
+  <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
+    <div class="police">
+      <div class="jidlo col-md-10 mx-auto">
         <div
           class="ikonaJidla"
           id="ikona1"
@@ -36,26 +36,30 @@
         </div>
       </div>
 
-      <img class="col-md-10 mx-auto shelf" src="./../assets/ikony/shelf.png" />
+      <img class="shelf col-md-10 mx-auto" src="./../assets/ikony/shelf.png" />
     </div>
-    <div id="vysledek">
-      <div v-if="konecHry" class="row">
-        <p class="col-md-8 mt-auto">{{ vysledek }}</p>
+
+
+    
+      <div class="vysledek col-12 mx-auto m-0" v-if="konecHry" >
+        <p class="">{{ vysledek }}</p>
         <button
           style="margin: 10px 0 0 0 "
-          class="btn btn-primary"
+          class="btn btn-primary m-1"
           v-on:click="zacitHru"
         >Hrát znovu?</button>
       </div>
-      <div id="prehled" v-else>
-        <p id="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
-        <!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
-        <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
-        <!-- vyřešit sklonovani -->
-      </div>
+    
+    <div class="prehled col-12 mx-auto" v-else>
+      <p class="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
+      <br />
+      <!--        <p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
+      <div class="minutka">Zbývá ti {{ minutka }} vteřin</div>
+      <!-- vyřešit sklonovani -->
     </div>
-    <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
   </div>
+
+  <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
 </template>
 
 <script>
@@ -252,8 +256,9 @@ export default {
 <style>
 .shelf {
   z-index: 1;
+  display: block;
 }
-#police {
+.police {
   /*display: flex;
   justify-content: center;*/
   position: relative;
@@ -265,11 +270,10 @@ export default {
   height: 80vh;
 }
 */
-#jidlo {
+.jidlo {
   z-index: 2;
-
   display: flex;
-  position: absolute;
+  position: relative;
   top: 100px;
 }
 /* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
@@ -278,83 +282,52 @@ export default {
   position: absolute;
   display: flex;
   justify-content: center;
-}
-@media (min-width: 992px) {
-  .ikonaJidla {
-    margin: 3px;
-    z-index: 2;
-    width: 10%;
-    height: auto;
-  }
-}
-@media (max-width: 992px) {
-  .ikonaJidla {
-    margin: 3px;
-    z-index: 2;
-    width: 100%;
-    height: auto;
-  }
+  margin: 3px;
+  z-index: 2;
 }
 
 #ikona1 {
-  left: 0;
+  left: 7%;
 }
 
 #ikona2 {
-  left: 25%;
+  left: 37.5%;
 }
 
 #ikona3 {
-  left: 50%;
+  left: 62.5%;
 }
 
 #ikona4 {
-  left: 75%;
+  left: 80%;
 }
 
-@media (min-width: 700px) {
-  #jidlo {
-    top: 0;
-  }
-  .ikonaJidla {
-    width: 25%;
-    /*max-height: 80px;*/
-  }
-  .ikonaJidla > img {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media (min-width: 1000px) {
-  #jidlo {
-    /*width: 40vw;*/
-  }
-}
-
-#vysledek {
-  font-size: 30px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+.vysledek {
+  z-index: 3;
   font-weight: bold;
   background: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-#body {
+.body {
   color: green;
 }
 
-#chyby {
+.chyby {
   color: red;
 }
 
-#prehled {
-  position: relative;
+.prehled {
+  /* display: flex;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;*/
+  z-index: 3;
+  background-color: white;
 }
 
-#minutka {
+.minutka {
   position: absolute;
   bottom: 0;
   right: 0;

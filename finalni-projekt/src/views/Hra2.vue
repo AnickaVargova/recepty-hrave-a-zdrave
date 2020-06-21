@@ -244,6 +244,7 @@ export default {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
     left: 3px;
+    top: 25px;
     border: 1px solid white;
   }
   #pozadi-zpet:active {
@@ -252,6 +253,22 @@ export default {
     border-radius: 7px;
   }
 }
+
+@media(max-width){
+ #pozadi-zpet {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 0px;
+    border: none;
+  }
+  #pozadi-zpet:active {
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 7px;
+  }
+}
+
+
 #zpet {
   height: 35px;
   width: 50px;
@@ -261,7 +278,7 @@ export default {
     background-color: white;
     position: absolute;
     left: 50px;
-    border: 1px solid white;
+    border:none;
   }
 
   #pozadi-zpet:hover,
