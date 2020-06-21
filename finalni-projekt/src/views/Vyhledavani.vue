@@ -9,14 +9,14 @@
         <div class="col-md-12 mx-auto">
 
            <router-link to="/">
-              <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
+              <button id="pozadi-zpet" class="mt-4  mb-0">
                  <img src="./../assets/ikony/arrow.png" id="zpet"/>
               </button>
             </router-link>
             
-          <h1 class=" pt-4 mb-4 text-center">Vyhledávání receptů</h1>
+          <h1 class=" pt-4 mb-4 pl-5 pr-5 text-center">Vyhledávání receptů</h1>
           
-            <div class="input-group p-0 col-md-12 mx-auto">
+            <div class="input-group p-0 col-md-12 mx-auto stin-inputu">
               <input
                 type="text"
                 class="form-control"
@@ -62,7 +62,8 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  
   
 </template>
 
@@ -169,6 +170,9 @@ export default {
 </script>
 
 <style>
+.stin-inputu{
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
+}
 .btn-default {
   width: 100px;
   padding: 12.5px;

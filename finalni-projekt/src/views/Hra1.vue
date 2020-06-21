@@ -6,7 +6,7 @@
     </div>
 
     <router-link to="/">
-      <button id="zpet-hra1" class="mt-lg-4 mt-0 mb-0">
+      <button id="zpet-hra1" class="mt-4 mb-0 ml-lg-2">
         <img src="./../assets/ikony/arrow.png" id="zpet" />
       </button>
     </router-link>

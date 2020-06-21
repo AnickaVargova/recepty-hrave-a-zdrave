@@ -29,7 +29,7 @@
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
-                  class="obalObrazek col-4 col-md-2"
+                  class="obalObrazek col-3 col-s-1 col-md-3 col-lg-2"
                   v-for="(item, index) in ikonyZakladni"
                   v-bind:key="index"
                   v-on:click="klikJidlo(index,item)"
@@ -44,7 +44,7 @@
                     v-bind:alt="item.jmeno"
                   />
                 </div>
-                <div class="d-flex flex-row-reverse justify-content-between">
+                <div class="d-flex flex-row-reverse justify-content-between mt-md-0 pt-md-0">
                 <!-- vyhodit zobrazRecepty -->
                 <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
                 <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">HOTOVO</button>
@@ -219,18 +219,7 @@ export default {
 </script>
 
 <style>
-.hrat-znovu{
-  border:none;
-  background: rgba(255, 255, 255, 0.1);
-  height: 70px;
-  margin-top: 35px;
-}
 
-.hrat-znovu:hover,
-.hrat-znovu:active{
-    background-color: green;
-    border-radius: 7px;
-}
 .vrstva2{
   z-index: 2;
 }
@@ -334,7 +323,7 @@ export default {
   padding-left: 0 !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 780px) {
   .obalObrazek {
     display: flex;
     justify-content: center;
@@ -348,6 +337,7 @@ export default {
     padding: 10px 5px !important;
     cursor: pointer;
   }
+
 
   .obalObrazek.zasednuti{
     cursor: default;
@@ -372,7 +362,7 @@ export default {
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
-    margin: 40px 20px 15px 30px;
+    margin: 10px 8px 15px 30px;
     padding: 16px;
     background-color: green;
     color: white;
@@ -382,9 +372,21 @@ export default {
     color: white;
     transition-duration: 0.1s;
   }
+  .hrat-znovu{
+  border:none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 70px;
+  margin: 10px 20px 15px 30px;
 }
 
-@media (max-width: 576px) {
+.hrat-znovu:hover,
+.hrat-znovu:active{
+    background-color: green;
+    border-radius: 7px;
+}
+}
+
+@media (max-width: 780px) {
   .obalObrazek {
     display: flex;
     justify-content: center;
@@ -422,10 +424,11 @@ export default {
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
     border-radius: 10px;
-    margin: auto;
+    margin: 7px;
     padding: 7px;
     font-weight: bold;
   }
+  
 
   .hotovo:active {
     border: 3px solid green;
@@ -435,6 +438,18 @@ export default {
     position: relative;
     top: 3px;
   }
+  .hrat-znovu{
+  border:none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 70px;
+  margin: 7px;
+}
+
+
+.hrat-znovu:active{
+    background-color: green;
+    border-radius: 7px;
+}
 }
 
 .margin {

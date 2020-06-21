@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  
     <div class="mx-auto">
       
         <button v-on:click="hratZnovu" id="pozadi-zpet" class="vrstva1 mt-4 mb-0">
           <img src="./../assets/ikony/arrow.png" id="zpet" />
         </button>
      
-      <h1 class="mt-0 mb-4 pt-4 text-center col-md-12">Máš chuť na tato jídla:</h1>
+      <h1 class="mt-0 pb-3 pr-5 pl-5 pt-4 text-center col-md-12">Máš chuť na tato jídla:</h1>
 
       <div
         v-for="(recept, index) in vybraneRecepty"
@@ -46,7 +46,7 @@
     >-->
     <!-- </div>
     </div>-->
-  </div>
+  
 </template>
 
 <script>
