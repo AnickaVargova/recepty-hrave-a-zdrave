@@ -1,12 +1,12 @@
 <template>
-  <div class="container mt-5">
+  <div class="okno p-0 container-fluid mt-5">
    
 
-    <div class="col-md-10 mx-auto">
+    <div class="col-lg-6 pozadi mx-auto">
       
       <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
-        <div class="pozadi col-md-10 mx-auto">
+        <div class="col-md-12 mx-auto">
 
            <router-link to="/">
               <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">

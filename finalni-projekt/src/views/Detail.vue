@@ -105,9 +105,6 @@ h3{
   position: relative;
   bottom: 0;
 }
-
-
-
 .navod {
   margin: 0 auto;
   padding: 0 auto;

@@ -1,5 +1,5 @@
 <template>
-  <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-5 mt-0">
     <div v-if="ukazInstrukce">
       <div>
         <b-button @click="ukazInstrukce = !ukazInstrukce">Začít hru</b-button>

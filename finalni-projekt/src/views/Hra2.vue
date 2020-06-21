@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 mx-auto pozadi position-relative">
+  <div class="col-lg-6 mx-auto pozadi position-relative">
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -258,8 +258,8 @@ export default {
   #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: -20px;
-    top: 25px;
+    left: 0px;
+    top: 0px;
     border: 1px solid white;
   }
   #pozadi-zpet:active {
@@ -274,7 +274,7 @@ export default {
  #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: -20px;
+    left: 0px;
     border: none;
   }
   #pozadi-zpet:active {
@@ -293,7 +293,7 @@ export default {
   #pozadi-zpet {
     background-color: white;
     position: absolute;
-    left: 50px;
+    left: 0px;
     border:none;
   }
 
