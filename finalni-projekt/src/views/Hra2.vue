@@ -9,7 +9,7 @@
     />
     <div v-else>
       <div class="container mt-lg-4 mt-0">
-        <div class="row justify-content-center mt-lg-4 mt-0 mb-0 mb-lg-4">
+        <div class="row justify-content-center mt-lg-4 mt-0 mb-lg-4">
           <div class="col-md-12 mx-auto">
             <tvojeRecepty
               v-if="vybrano"
@@ -21,11 +21,11 @@
 
             <div v-else>
               <router-link to="/">
-                <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
-                  <img src="./../assets/images/left-arrow.png" id="zpet" />
+                <button id="pozadi-zpet" class="vrstva1 mt-4 mb-0">
+                  <img src="./../assets/ikony/arrow.png" id="zpet" />
                 </button>
               </router-link>
-              <h2 class="vrstva2">Na co máš chuť ?</h2>
+              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">Na co máš chuť ?</h1>
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
@@ -236,16 +236,18 @@ export default {
 }
 
 .vrstva1 {
-  z-index: 1;
+  z-index: 4;
 }
 
-@media (max-width: 992px) {
+
+/*@media (max-width: 992px) {
   #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
     left: 0px;
     top: 25px;
     border: 1px solid white;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -260,7 +262,8 @@ export default {
     position: absolute;
     left: 0px;
     top: 0px;
-    border: 1px solid white;
+    border: 0.1px solid white;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -276,6 +279,7 @@ export default {
     position: absolute;
     left: 0px;
     border: none;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -302,7 +306,29 @@ export default {
     background-color: green;
     border-radius: 7px;
   }
+}*/
+ #pozadi-zpet {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    border-radius: 7px;
+  }
+  #pozadi-zpet:active,
+  #pozadi-zpet:hover {
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 7px;
+  }
+
+
+#zpet {
+  height: 35px;
+  width: 50px;
 }
+
+
 .padding-container {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -345,7 +371,7 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 40px 20px 15px 30px;
     padding: 16px;
     background-color: green;

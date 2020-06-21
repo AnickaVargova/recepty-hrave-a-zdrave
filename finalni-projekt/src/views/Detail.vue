@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-5 mb-4">
+    <div class="row justify-content-center mt-lg-5 mt-0 mb-4">
       <div class="nadpis col-md-10 pozadi-detailu">
          <button v-on:click="zpetNaVyber" id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
-                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
+                 <img src="./../assets/ikony/arrow.png" id="zpet"/>
               </button>
-        <h2 class="">{{ vybraneRecepty[i].nazev }}</h2>
+        <h2 class="wrap">{{ vybraneRecepty[i].nazev }}</h2>
 
         <div class="fotka">
           <img
@@ -65,6 +65,11 @@ export default {
 </script>
 
 <style>
+
+  .wrap{
+    padding: 30px;
+  
+}
 .nav-button{
   color: white;
   background-color: green;

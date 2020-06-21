@@ -1,8 +1,8 @@
 <template>
-  <div class="okno p-0 container-fluid mt-5">
+  <div class="okno p-0 container-fluid mt-lg-4 mt-0">
    
 
-    <div class="col-lg-6 pozadi mx-auto">
+    <div class="col-lg-6 mt-lg-4 mt-0 pozadi mx-auto">
       
       <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
@@ -10,11 +10,11 @@
 
            <router-link to="/">
               <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
-                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
+                 <img src="./../assets/ikony/arrow.png" id="zpet"/>
               </button>
             </router-link>
             
-          <h1 class="mt-4 pt-4 mb-4 text-center">Vyhledávání receptů</h1>
+          <h1 class=" pt-4 mb-4 text-center">Vyhledávání receptů</h1>
           
             <div class="input-group p-0 col-md-12 mx-auto">
               <input

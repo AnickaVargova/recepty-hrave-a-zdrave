@@ -2,8 +2,8 @@
   <div class="container">
     <div class="mx-auto">
       
-        <button v-on:click="hratZnovu" id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
-          <img src="./../assets/images/left-arrow.png" id="zpet" />
+        <button v-on:click="hratZnovu" id="pozadi-zpet" class="vrstva1 mt-4 mb-0">
+          <img src="./../assets/ikony/arrow.png" id="zpet" />
         </button>
      
       <h1 class="mt-0 mb-4 pt-4 text-center col-md-12">Máš chuť na tato jídla:</h1>
