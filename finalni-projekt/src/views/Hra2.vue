@@ -1,8 +1,5 @@
 <template>
   <div class="col-md-6 mx-auto pozadi position-relative">
-
-  
-
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -24,10 +21,10 @@
 
             <div v-else>
               <router-link to="/">
-      <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
-        <img src="./../assets/images/left-arrow.png" id="zpet"/>
-      </button>
-    </router-link>
+                <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
+                  <img src="./../assets/images/left-arrow.png" id="zpet" />
+                </button>
+              </router-link>
               <h2 class="vrstva2">Na co máš chuť ?</h2>
 
               <div class="row w-100 justify-content-center mx-auto">
@@ -35,11 +32,13 @@
                   class="obalObrazek col-4 col-md-2"
                   v-for="(item, index) in ikonyZakladni"
                   v-bind:key="index"
-                  v-on:click="klikJidlo(index)"
-                  
-                  v-bind:class="{ zvyraznene: item.aktivni, zasednuti:item.zasednuti }"
+                  v-on:click="klikJidlo(index,item)"
+                  v-bind:class="{
+                    zvyraznene: item.aktivni,
+                    zasednuti: item.zasednuti,
+                  }"
                 >
-                <!-- seda smazat -->
+                  <!-- seda smazat -->
                   <img
                     v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
                     v-bind:alt="item.jmeno"
@@ -47,13 +46,17 @@
                 </div>
                 <!-- vyhodit zobrazRecepty -->
                 <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
-                <button class="btn btn-primary hotovo" v-on:click="zobrazRecepty">HOTOVO</button>
+                <button
+                  class="btn btn-primary hotovo"
+                  v-on:click="zobrazRecepty"
+                >
+                  HOTOVO
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-     
     </div>
   </div>
 </template>
@@ -67,7 +70,7 @@ import Detail from "./Detail.vue";
 export default {
   components: {
     tvojeRecepty: TvojeRecepty,
-    detail: Detail
+    detail: Detail,
   },
   data() {
     return {
@@ -79,11 +82,12 @@ export default {
       vybraneRecepty: [],
       vybrano: false,
       i: 0,
-      detailViditelny: false
+      detailViditelny: false,
     };
   },
   methods: {
-    klikJidlo(index) {
+    klikJidlo(index,item) {
+      if(item.zasednuti){return};
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
       console.log(this.vybraneJidlo);
@@ -91,19 +95,33 @@ export default {
       if (this.vybraneJidlo.aktivni) {
         this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
+
+      console.log(this.vybranePole);
+      if (!this.vybraneJidlo.aktivni) {
+        this.vybranePole = this.vybranePole.filter(
+          (item) => item !== this.vybraneJidlo.klicoveSlovo
+        );
+      }
+
+      console.log(this.vybranePole);
       //omezovani pole-zacatek-pripadne vyhodit
       this.srovnejPole();
       console.log(this.vybraneRecepty);
       for (let ikona of this.ikonyZakladni) {
         let aa = false;
+
         for (let vybranyRecept of this.vybraneRecepty) {
           if (vybranyRecept.vyhledavaniCisla.includes(ikona.klicoveSlovo)) {
             aa = true;
             break;
-          } 
+          }
         }
+        // }
+
         console.log(aa);
-        if (!aa) {ikona.zasednuti = true};
+        if (!aa) {
+          ikona.zasednuti = true;
+        }
       }
       //konec
       // console.log(this.vybranePole);
@@ -115,8 +133,8 @@ export default {
       //omezovani pole- pripadne vyhodit
       for (let recept of this.recepty) {
         let obsahujeVsechny = true;
-        for (let pole of this.vybranePole) {
-          if (!recept.vyhledavaniCisla.includes(pole)) {
+        for (let cislo of this.vybranePole) {
+          if (!recept.vyhledavaniCisla.includes(cislo)) {
             obsahujeVsechny = false;
             break;
           }
@@ -144,7 +162,7 @@ export default {
       //   }
       // }
       //TODO: MV
-      //  
+      //
       console.log(this.vybraneRecepty);
     },
 
@@ -193,57 +211,54 @@ export default {
 
     zpetNaVyber() {
       this.detailViditelny = false;
-    }
+    },
   },
   created() {
     this.zkratPostup();
     this.hratZnovu();
-  }
+  },
 };
 </script>
 
 <style>
-.vrstva2{
+.vrstva2 {
   z-index: 2;
 }
 
-.vrstva1{
+.vrstva1 {
   z-index: 1;
 }
 
 @media (max-width: 992px) {
- 
-  #pozadi-zpet{
-  background:rgba(255, 255, 255, 0.1);
-  position: absolute;
-  left: 3px;
-  border: 1px solid white;
+  #pozadi-zpet {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 3px;
+    border: 1px solid white;
   }
   #pozadi-zpet:active {
-  background-color: green;
-  border: 1px solid green;
-  border-radius: 7px;
-}
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 7px;
+  }
 }
 #zpet {
-    height: 35px;
-    width: 50px;
-  }
+  height: 35px;
+  width: 50px;
+}
 @media (min-width: 992px) {
-  
+  #pozadi-zpet {
+    background-color: white;
+    position: absolute;
+    left: 50px;
+    border: 1px solid white;
+  }
 
-#pozadi-zpet {
-  background-color: white;
-  position: absolute;
-  left: 50px;
-  border: 1px solid white;
-}
-
-#pozadi-zpet:hover,
-#pozadi-zpet:active {
-  background-color: green;
-  border-radius: 7px;
-}
+  #pozadi-zpet:hover,
+  #pozadi-zpet:active {
+    background-color: green;
+    border-radius: 7px;
+  }
 }
 .padding-container {
   padding-right: 0 !important;
@@ -263,6 +278,10 @@ export default {
     max-width: 120px !important;
     padding: 10px 5px !important;
     cursor: pointer;
+  }
+
+  .obalObrazek.zasednuti{
+    cursor: default;
   }
 
   .mas-chut {
@@ -293,7 +312,6 @@ export default {
   .hotovo:hover,
   .hotovo:active {
     color: white;
-
     transition-duration: 0.1s;
   }
 }
@@ -310,6 +328,10 @@ export default {
     border-radius: 10px;
     margin: 7px;
     cursor: pointer;
+  }
+
+  .obalObrazek.zasednuti{
+    cursor: default;
   }
 
   .mas-chut {
@@ -345,15 +367,15 @@ export default {
     position: relative;
     top: 3px;
   }
-
- 
 }
 
 .margin {
   margin: auto;
 }
 
-.obalObrazek:hover {
+
+.obalObrazek:hover:not(.zasednuti) {
+
   border: 2px solid green;
 }
 
@@ -362,5 +384,7 @@ export default {
   background-color: lightgreen;
 }
 
-.zasednuti {background-color:grey};
+.zasednuti {
+  background-color: lightgrey;
+}
 </style>

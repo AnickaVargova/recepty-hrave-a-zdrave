@@ -22,7 +22,7 @@
                 class="form-control"
                 placeholder="najdi recept"
                 v-model="klicoveSlovo"
-                v-on:keydown.enter="vyberReceptySlovo"
+                v-on:input="vyberReceptySlovo"
               />
             </div>
           
