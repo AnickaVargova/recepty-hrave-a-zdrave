@@ -1,19 +1,15 @@
 <template>
   <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
-    <div v-if="ukazInstrukce">
-      <div>
-        <b-button @click="ukazInstrukce = !ukazInstrukce">Začít hru</b-button>
-
-        <b-modal v-model="ukazInstrukce">Kliknutím na zdravé jídlo se ti přičte bod.</b-modal>
-      </div>
+    <div class="instrukce" v-if="ukazInstrukce">
+      <p>Kliknutím na zdravé jídlo se ti přičte bod</p>
+      <button @click="stiskOK">Zacni hrrraaaat</button>
     </div>
 
-            <router-link to="/">
-              <button id="zpet-hra1" class="mt-lg-4 mt-0 mb-0">
-                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
-              </button>
-            </router-link>
-
+    <router-link to="/">
+      <button id="zpet-hra1" class="mt-lg-4 mt-0 mb-0">
+        <img src="./../assets/images/left-arrow.png" id="zpet" />
+      </button>
+    </router-link>
 
     <div class="police mx-auto">
       <div class="jidlo">
@@ -23,7 +19,10 @@
           v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
           v-on:click="priKliknuti1"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)" alt="jídlo" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -31,7 +30,10 @@
           v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
           v-on:click="priKliknuti2"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)" alt="jídlo" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -39,7 +41,10 @@
           v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
           v-on:click="priKliknuti3"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)" alt="jídlo" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
+            alt="jídlo"
+          />
         </div>
         <div
           class="ikonaJidla"
@@ -47,19 +52,26 @@
           v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
           v-on:click="priKliknuti4"
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" alt="jídlo" />
+          <img
+            v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
+            alt="jídlo"
+          />
         </div>
       </div>
     </div>
     <div class="hlasky">
-
-      <div class="vysledek col-12 mx-auto m-0 d-flex align-items-center pt-2" v-if="konecHry">
+      <div
+        class="vysledek col-12 mx-auto m-0 d-flex align-items-center pt-2"
+        v-if="konecHry"
+      >
         <h2 class="vysledek-text">{{ vysledek }}</h2>
         <button
           style="margin: 0 0 8px 0 "
           class="btn btn-primary"
           v-on:click="zacitHru"
-        >Hrát znovu?</button>
+        >
+          Hrát znovu?
+        </button>
       </div>
       <!--<p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
 
@@ -67,9 +79,7 @@
         <h3 class="body mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
         <p class="minutka">Zbývá ti {{ minutka }} vteřin</p>
       </div>
-
     </div>
-
   </div>
 
   <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
@@ -94,14 +104,14 @@ export default {
       interval4: null,
       konecHry: false,
       minutka: 20,
-      intervalMinutka: null
+      intervalMinutka: null,
     };
   },
   computed: {
     vysledek() {
       return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
       //dodelat funkci na sklonovani: bod, body, bodu
-    }
+    },
   },
   methods: {
     vratIkonu1() {
@@ -247,65 +257,78 @@ export default {
 
     zacitHru() {
       // this.ukazInstrukce=true;
-      this.pocetBodu = 0;
-      this.pocetChyb = 0;
-      this.konecHry = false;
-      this.vratIkonu1();
-      this.vratIkonu2();
-      this.vratIkonu3();
-      this.vratIkonu4();
+
       this.pohybujIkonou1();
       this.pohybujIkonou2();
       this.pohybujIkonou3();
       this.pohybujIkonou4();
       this.odectiSekundu();
       setTimeout(this.citacCasu, 20000);
-    }
+    },
+
+    stiskOK() {
+      this.ukazInstrukce = false;
+      this.zacitHru();
+    },
   },
 
   created() {
-    this.zacitHru();
-  }
+    this.pocetBodu = 0;
+    this.pocetChyb = 0;
+    this.konecHry = false;
+    this.vratIkonu1();
+    this.vratIkonu2();
+    this.vratIkonu3();
+    this.vratIkonu4();
+  },
 };
 </script>
 
 <style>
-
-.vysledek-text{
-  font-size:25px;
+.instrukce {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  top: calc(50% - 75px);
+  left: calc(50% - 200px);
+  z-index: 100;
+  background-color: lightgreen;
 }
-#zpet-hra1{
-  z-index:1;
-  
-    background-color: white;
-    position: absolute;
-    left:3px;
-    top: 8px;
-    background-color: tan;
-    border-radius:7px;
-    border:none;
-  }
+.vysledek-text {
+  font-size: 25px;
+}
+#zpet-hra1 {
+  z-index: 1;
 
-  #zpet-hra1:hover,
-  #zpet-hra1:active {
-    background-color: green;
-    border-radius: 7px;
+  background-color: white;
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  background-color: tan;
+  border-radius: 7px;
+  border: none;
+}
+
+#zpet-hra1:hover,
+#zpet-hra1:active {
+  background-color: green;
+  border-radius: 7px;
 }
 
 .prehled h3,
-.prehled p{
-  font-size:20px;
+.prehled p {
+  font-size: 20px;
   padding: 8px;
   justify-content: space-between;
   flex-basis: 50%;
   margin: 3px;
 }
-.prehled{
+.prehled {
   display: flex;
 }
 
 .shelf {
-/*  z-index: 1;*/
+  /*  z-index: 1;*/
   display: block;
 }
 .police {
@@ -322,9 +345,9 @@ export default {
 }
 */
 .jidlo {
- /* z-index: 2;*/
+  /* z-index: 2;*/
   position: relative;
-  background-image: url("./../assets/ikony/shelf.png");
+  /* background-image: url("./../assets/ikony/shelf.png"); */
   background-repeat: no-repeat;
   padding-bottom: 100%;
   width: 100%;
