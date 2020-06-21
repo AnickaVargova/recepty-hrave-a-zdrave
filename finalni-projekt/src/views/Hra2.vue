@@ -222,12 +222,15 @@ export default {
 .hrat-znovu{
   border:none;
   background: rgba(255, 255, 255, 0.1);
-  height: 65px;
+  height: 70px;
   margin-top: 35px;
-  
-
 }
 
+.hrat-znovu:hover,
+.hrat-znovu:active{
+    background-color: green;
+    border-radius: 7px;
+}
 .vrstva2{
   z-index: 2;
 }
@@ -309,7 +312,6 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-
     border-radius: 10px;
     margin: 40px 20px 15px 30px;
     padding: 16px;
@@ -379,10 +381,7 @@ export default {
 .margin {
   margin: auto;
 }
-
-
 .obalObrazek:hover:not(.zasednuti) {
-
   border: 2px solid green;
 }
 

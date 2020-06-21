@@ -1,7 +1,7 @@
 <template>
   <div class="pozadi overflow-hidden col-md-6 mx-auto mt-5">
     <div class="police d-flex">
-      <div id="jidlo col-md-6">
+      <div id="jidlo col-md-10 mx-auto">
         <div
           class="ikonaJidla"
           id="ikona1"
@@ -267,7 +267,7 @@ export default {
 */
 #jidlo {
   z-index: 2;
- 
+
   display: flex;
   position: absolute;
   top: 100px;
@@ -275,29 +275,26 @@ export default {
 /* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
 
 .ikonaJidla {
- 
   position: absolute;
   display: flex;
   justify-content: center;
 }
-@media(min-width:992px){
-.ikonaJidla  {
-  margin: 3px;
-  z-index: 2;
- width:10%;
-  height: auto;
+@media (min-width: 992px) {
+  .ikonaJidla {
+    margin: 3px;
+    z-index: 2;
+    width: 10%;
+    height: auto;
+  }
 }
+@media (max-width: 992px) {
+  .ikonaJidla {
+    margin: 3px;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+  }
 }
-@media(max-width:992px){
-.ikonaJidla {
-  margin: 3px;
-  z-index: 2;
- width: 100%;
-  height: auto;
-}
-}
-
-
 
 #ikona1 {
   left: 0;
