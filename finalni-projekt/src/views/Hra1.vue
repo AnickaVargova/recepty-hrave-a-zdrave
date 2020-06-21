@@ -41,16 +41,16 @@
 
 
     
-      <div class="vysledek col-12 mx-auto m-0" v-if="konecHry" >
-        <p class="">{{ vysledek }}</p>
+      <div class="vysledek col-12 mx-auto m-0 d-flex align-items-center" v-if="konecHry" >
+        <h2 class="vysledek-text">{{ vysledek }}</h2>
         <button
           style="margin: 10px 0 0 0 "
-          class="btn btn-primary m-1"
+          class="btn btn-primary mt-1"
           v-on:click="zacitHru"
         >Hrát znovu?</button>
       </div>
     
-    <div class="prehled col-12 mx-auto" v-else>
+    <div class="prehled col-12 mx-auto d-flex align-items-center" v-else>
       <p class="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
       <br />
       <!--        <p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
@@ -254,6 +254,8 @@ export default {
 </script>
 
 <style>
+
+
 .shelf {
   z-index: 1;
   display: block;
