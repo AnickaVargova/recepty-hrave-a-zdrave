@@ -1,7 +1,7 @@
 <template>
   <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
-    <div class="police">
-      <div class="jidlo col-md-10 mx-auto">
+    <div class="police mx-auto">
+      <div class="jidlo">
         <div
           class="ikonaJidla"
           id="ikona1"
@@ -35,28 +35,24 @@
           <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" alt="jídlo" />
         </div>
       </div>
-
-      <img class="shelf col-md-10 mx-auto" src="./../assets/ikony/shelf.png" />
     </div>
 
+    <!--<div class="vysledek col-12 mx-auto m-0 d-flex align-items-center" v-if="konecHry">
+      <h2 class="vysledek-text">{{ vysledek }}</h2>
+      <button
+        style="margin: 10px 0 0 0 "
+        class="btn btn-primary mt-1"
+        v-on:click="zacitHru"
+      >Hrát znovu?</button>
+    </div>-->
 
-    
-      <div class="vysledek col-12 mx-auto m-0 d-flex align-items-center" v-if="konecHry" >
-        <h2 class="vysledek-text">{{ vysledek }}</h2>
-        <button
-          style="margin: 10px 0 0 0 "
-          class="btn btn-primary mt-1"
-          v-on:click="zacitHru"
-        >Hrát znovu?</button>
-      </div>
-    
-    <div class="prehled col-12 mx-auto d-flex align-items-center" v-else>
-      <p class="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
-      <br />
-      <!--        <p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
-      <div class="minutka">Zbývá ti {{ minutka }} vteřin</div>
-      <!-- vyřešit sklonovani -->
-    </div>
+    <!--<div class="prehled col-12 mx-auto d-flex align-items-center" v-else>
+    <h3 class="body mt-1">Počet bodů: {{ pocetBodu-pocetChyb }}</h3>-->
+
+    <!--        <p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
+    <!--  <div class="minutka mt-1">Zbývá ti {{ minutka }} vteřin</div>-->
+    <!-- vyřešit sklonovani 
+    </div>-->
   </div>
 
   <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
@@ -254,8 +250,6 @@ export default {
 </script>
 
 <style>
-
-
 .shelf {
   z-index: 1;
   display: block;
@@ -264,6 +258,7 @@ export default {
   /*display: flex;
   justify-content: center;*/
   position: relative;
+  max-width: 512px;
   /*width: 80vw;*/
 }
 
@@ -274,9 +269,11 @@ export default {
 */
 .jidlo {
   z-index: 2;
-  display: flex;
   position: relative;
-  top: 100px;
+  background-image: url("./../assets/ikony/shelf.png");
+  background-repeat: no-repeat;
+  padding-bottom: 100%;
+  width: 100%;
 }
 /* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
 
