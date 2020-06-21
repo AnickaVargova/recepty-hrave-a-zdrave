@@ -1,60 +1,121 @@
 <template>
   <div class="pozadi overflow-hidden col-md-6 mx-auto mt-5">
-    <div class="police d-flex">
-      <div id="jidlo col-md-10 mx-auto">
-        <div
-          class="ikonaJidla"
-          id="ikona1"
-          v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
-          v-on:click="priKliknuti1"
+    <div v-if="ukazInstrukce">
+      <div>
+        <b-button @click="ukazInstrukce = !ukazInstrukce">Začít hru</b-button>
+
+        <b-modal v-model="ukazInstrukce"
+          >Kliknutím na zdravé jídlo se ti přičte bod.</b-modal
         >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)" alt="jídlo" />
-        </div>
-        <div
-          class="ikonaJidla"
-          id="ikona2"
-          v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
-          v-on:click="priKliknuti2"
-        >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)" alt="jídlo" />
-        </div>
-        <div
-          class="ikonaJidla"
-          id="ikona3"
-          v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
-          v-on:click="priKliknuti3"
-        >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)" alt="jídlo" />
-        </div>
-        <div
-          class="ikonaJidla"
-          id="ikona4"
-          v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
-          v-on:click="priKliknuti4"
-        >
-          <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" alt="jídlo" />
-        </div>
       </div>
 
-      <img class="col-md-10 mx-auto shelf" src="./../assets/ikony/shelf.png" />
-    </div>
-    <div id="vysledek">
-      <div v-if="konecHry" class="row">
-        <p class="col-md-8 mt-auto">{{ vysledek }}</p>
-        <button
-          style="margin: 10px 0 0 0 "
-          class="btn btn-primary"
-          v-on:click="zacitHru"
-        >Hrát znovu?</button>
+      
+      <div class="police d-flex">
+        <div id="jidlo col-md-10 mx-auto">
+          <div
+            class="ikonaJidla"
+            id="ikona1"
+            v-bind:style="{ top: '50px' }"
+            v-on:click="priKliknuti1"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+          <div
+            class="ikonaJidla"
+            id="ikona2"
+            v-bind:style="{ top: '100px' }"
+            v-on:click="priKliknuti2"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+          <img
+            class="col-md-10 mx-auto shelf"
+            src="./../assets/ikony/shelf.png"
+          />
+        </div>
       </div>
-      <div id="prehled" v-else>
-        <p id="body">Počet bodů: {{ pocetBodu-pocetChyb }}</p>
-        <!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
-        <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
-        <!-- vyřešit sklonovani -->
-      </div>
     </div>
-    <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
+
+    <div v-else>
+      <div class="police d-flex">
+        <div id="jidlo col-md-10 mx-auto">
+          <div
+            class="ikonaJidla"
+            id="ikona1"
+            v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
+            v-on:click="priKliknuti1"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+          <div
+            class="ikonaJidla"
+            id="ikona2"
+            v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
+            v-on:click="priKliknuti2"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+          <div
+            class="ikonaJidla"
+            id="ikona3"
+            v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
+            v-on:click="priKliknuti3"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+          <div
+            class="ikonaJidla"
+            id="ikona4"
+            v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
+            v-on:click="priKliknuti4"
+          >
+            <img
+              v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
+              alt="jídlo"
+            />
+          </div>
+        </div>
+
+        <img
+          class="col-md-10 mx-auto shelf"
+          src="./../assets/ikony/shelf.png"
+        />
+      </div>
+      <div id="vysledek">
+        <div v-if="konecHry" class="row">
+          <p class="col-md-8 mt-auto">{{ vysledek }}</p>
+          <button
+            style="margin: 10px 0 0 0 "
+            class="btn btn-primary"
+            v-on:click="zacitHru"
+          >
+            Hrát znovu?
+          </button>
+        </div>
+        <div id="prehled" v-else>
+          <p id="body">Počet bodů: {{ pocetBodu - pocetChyb }}</p>
+          <!--        <p id="chyby">Počet chyb: {{ pocetChyb }}</p>-->
+          <div id="minutka">Zbývá ti {{ minutka }} vteřin</div>
+          <!-- vyřešit sklonovani -->
+        </div>
+      </div>
+      <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
+    </div>
   </div>
 </template>
 
@@ -63,6 +124,7 @@ import ikony from "./../assets/ikony.js";
 export default {
   data() {
     return {
+      ukazInstrukce: true,
       ikonyJidla: ikony,
       jidlo1: null,
       jidlo2: null,
@@ -76,14 +138,14 @@ export default {
       interval4: null,
       konecHry: false,
       minutka: 20,
-      intervalMinutka: null
+      intervalMinutka: null,
     };
   },
   computed: {
     vysledek() {
       return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
       //dodelat funkci na sklonovani: bod, body, bodu
-    }
+    },
   },
   methods: {
     vratIkonu1() {
@@ -166,6 +228,7 @@ export default {
     },
 
     priKliknuti1() {
+      console.log(this.ukazInstrukce);
       if (!this.konecHry) {
         if (this.jidlo1.zdrave) {
           this.pocetBodu++;
@@ -227,6 +290,7 @@ export default {
     },
 
     zacitHru() {
+      // this.ukazInstrukce=true;
       this.pocetBodu = 0;
       this.pocetChyb = 0;
       this.konecHry = false;
@@ -239,13 +303,13 @@ export default {
       this.pohybujIkonou3();
       this.pohybujIkonou4();
       this.odectiSekundu();
-      setTimeout(this.citacCasu, 20000);
-    }
+      setTimeout(this.citacCasu, 5000);
+    },
   },
 
   created() {
     this.zacitHru();
-  }
+  },
 };
 </script>
 
