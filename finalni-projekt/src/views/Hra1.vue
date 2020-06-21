@@ -1,12 +1,20 @@
 <template>
   <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
-
     <div v-if="ukazInstrukce">
       <div>
         <b-button @click="ukazInstrukce = !ukazInstrukce">Začít hru</b-button>
 
-        <b-modal v-model="ukazInstrukce"
-          >Kliknutím na zdravé jídlo se ti přičte bod.</b-modal>
+        <b-modal v-model="ukazInstrukce">Kliknutím na zdravé jídlo se ti přičte bod.</b-modal>
+      </div>
+    </div>
+
+            <router-link to="/">
+              <button id="zpet-hra1" class="mt-lg-4 mt-0 mb-0">
+                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
+              </button>
+            </router-link>
+
+
     <div class="police mx-auto">
       <div class="jidlo">
         <div
@@ -39,116 +47,29 @@
           v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
           v-on:click="priKliknuti4"
         >
-      </div>
-      <div class="police d-flex">
-        <div id="jidlo col-md-10 mx-auto">
-          <div
-            class="ikonaJidla"
-            id="ikona1"
-            v-bind:style="{ top: '50px' }"
-            v-on:click="priKliknuti1"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-          <div
-            class="ikonaJidla"
-            id="ikona2"
-            v-bind:style="{ top: '100px' }"
-            v-on:click="priKliknuti2"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-          <img
-            class="col-md-10 mx-auto shelf"
-            src="./../assets/ikony/shelf.png"
-          />
+          <img v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)" alt="jídlo" />
         </div>
       </div>
     </div>
+    <div class="hlasky">
 
-    <div v-else>
-      <div class="police">
-        <div class="jidlo col-md-10 mx-auto">
-          <div
-            class="ikonaJidla"
-            id="ikona1"
-            v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
-            v-on:click="priKliknuti1"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-          <div
-            class="ikonaJidla"
-            id="ikona2"
-            v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
-            v-on:click="priKliknuti2"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-          <div
-            class="ikonaJidla"
-            id="ikona3"
-            v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
-            v-on:click="priKliknuti3"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-          <div
-            class="ikonaJidla"
-            id="ikona4"
-            v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
-            v-on:click="priKliknuti4"
-          >
-            <img
-              v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
-              alt="jídlo"
-            />
-          </div>
-        </div>
-
-        <img
-          class="shelf col-md-10 mx-auto"
-          src="./../assets/ikony/shelf.png"
-        />
-      </div>
-
-      <div
-        class="vysledek col-12 mx-auto m-0 d-flex align-items-center"
-        v-if="konecHry"
-      >
+      <div class="vysledek col-12 mx-auto m-0 d-flex align-items-center pt-2" v-if="konecHry">
         <h2 class="vysledek-text">{{ vysledek }}</h2>
         <button
-          style="margin: 10px 0 0 0 "
-          class="btn btn-primary mt-1"
+          style="margin: 0 0 8px 0 "
+          class="btn btn-primary"
           v-on:click="zacitHru"
-        >
-          Hrát znovu?
-        </button>
+        >Hrát znovu?</button>
+      </div>
+      <!--<p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
+
+      <div class="prehled col-12 " v-else>
+        <h3 class="body mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
+        <p class="minutka">Zbývá ti {{ minutka }} vteřin</p>
       </div>
 
-      <div class="prehled col-12 mx-auto d-flex align-items-center" v-else>
-        <p class="body">Počet bodů: {{ pocetBodu - pocetChyb }}</p>
-        <br />
-        <!--        <p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
-        <div class="minutka">Zbývá ti {{ minutka }} vteřin</div>
-        <!-- vyřešit sklonovani -->
-      </div>
     </div>
+
   </div>
 
   <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
@@ -173,14 +94,14 @@ export default {
       interval4: null,
       konecHry: false,
       minutka: 20,
-      intervalMinutka: null,
+      intervalMinutka: null
     };
   },
   computed: {
     vysledek() {
       return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
       //dodelat funkci na sklonovani: bod, body, bodu
-    },
+    }
   },
   methods: {
     vratIkonu1() {
@@ -338,19 +259,53 @@ export default {
       this.pohybujIkonou3();
       this.pohybujIkonou4();
       this.odectiSekundu();
-      setTimeout(this.citacCasu, 5000);
-    },
+      setTimeout(this.citacCasu, 20000);
+    }
   },
 
   created() {
     this.zacitHru();
-  },
+  }
 };
 </script>
 
 <style>
+
+.vysledek-text{
+  font-size:25px;
+}
+#zpet-hra1{
+  z-index:1;
+  
+    background-color: white;
+    position: absolute;
+    left:3px;
+    top: 8px;
+    background-color: tan;
+    border-radius:7px;
+    border:none;
+  }
+
+  #zpet-hra1:hover,
+  #zpet-hra1:active {
+    background-color: green;
+    border-radius: 7px;
+}
+
+.prehled h3,
+.prehled p{
+  font-size:20px;
+  padding: 8px;
+  justify-content: space-between;
+  flex-basis: 50%;
+  margin: 3px;
+}
+.prehled{
+  display: flex;
+}
+
 .shelf {
-  z-index: 1;
+/*  z-index: 1;*/
   display: block;
 }
 .police {
@@ -367,12 +322,13 @@ export default {
 }
 */
 .jidlo {
-  z-index: 2;
+ /* z-index: 2;*/
   position: relative;
   background-image: url("./../assets/ikony/shelf.png");
   background-repeat: no-repeat;
   padding-bottom: 100%;
   width: 100%;
+  background-size: auto 100%;
 }
 /* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
 
@@ -385,19 +341,19 @@ export default {
 }
 
 #ikona1 {
-  left: 7%;
+  left: 8%;
 }
 
 #ikona2 {
-  left: 37.5%;
+  left: 30%;
 }
 
 #ikona3 {
-  left: 62.5%;
+  right: 30%;
 }
 
 #ikona4 {
-  left: 80%;
+  right: 8%;
 }
 
 .vysledek {
@@ -406,6 +362,7 @@ export default {
   background: white;
   display: flex;
   justify-content: space-between;
+  border-radius: 8px;
 }
 
 .body {

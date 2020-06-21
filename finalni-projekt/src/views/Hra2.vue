@@ -44,7 +44,7 @@
                     v-bind:alt="item.jmeno"
                   />
                 </div>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row-reverse justify-content-between">
                 <!-- vyhodit zobrazRecepty -->
                 <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
                 <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">HOTOVO</button>
@@ -243,7 +243,7 @@ export default {
   #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: 3px;
+    left: 0px;
     top: 25px;
     border: 1px solid white;
   }
@@ -254,11 +254,27 @@ export default {
   }
 }
 
-@media(max-width){
+@media (max-width: 640px) {
+  #pozadi-zpet {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: -20px;
+    top: 25px;
+    border: 1px solid white;
+  }
+  #pozadi-zpet:active {
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 7px;
+  }
+}
+
+
+@media(min-width: 992px){
  #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: 0px;
+    left: -20px;
     border: none;
   }
   #pozadi-zpet:active {
