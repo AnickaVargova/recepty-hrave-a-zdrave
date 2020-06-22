@@ -1,11 +1,11 @@
 <template>
-  <div class="cover">
+  
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
       <button class="btn btn-sm btn-info" @click="stiskOK">Začni hrát</button>
     </div>
-
+  <div class="cover" v-if="ukazInstrukce"></div>
     <router-link to="/">
       <button id="zpet-hra1" class="mt-4 mb-0 ml-lg-2">
         <img src="./../assets/ikony/arrow.png" id="zpet" />
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-  </div>
+  
 </template>
 
 <script>
