@@ -257,7 +257,13 @@ export default {
 
     zacitHru() {
       // this.ukazInstrukce=true;
-
+      this.pocetBodu = 0;
+      this.pocetChyb = 0;
+      this.konecHry = false;
+      this.vratIkonu1();
+      this.vratIkonu2();
+      this.vratIkonu3();
+      this.vratIkonu4();
       this.pohybujIkonou1();
       this.pohybujIkonou2();
       this.pohybujIkonou3();
@@ -390,6 +396,8 @@ export default {
 
 .body {
   color: green;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .chyby {
