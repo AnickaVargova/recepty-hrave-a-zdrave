@@ -1,32 +1,34 @@
 <template>
   <div class="container mt-5">
-   
-
     <div class="col-md-10 mx-auto">
-      
-      <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+      <detail
+        v-on:zpetNaVyber="zpetNaVyber"
+        v-bind:vybraneRecepty="vybraneRecepty"
+        v-bind:i="i"
+        v-if="detail"
+        id="detail"
+      />
       <div v-else>
         <div class="pozadi col-md-10 mx-auto">
+          <router-link to="/">
+            <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
+              <img src="./../assets/images/left-arrow.png" id="zpet" />
+            </button>
+          </router-link>
 
-           <router-link to="/">
-              <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
-                 <img src="./../assets/images/left-arrow.png" id="zpet"/>
-              </button>
-            </router-link>
-            
           <h1 class="mt-4 pt-4 mb-4 text-center">Vyhledávání receptů</h1>
-          
-            <div class="input-group p-0 col-md-12 mx-auto">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="najdi recept"
-                v-model="klicoveSlovo"
-                v-on:input="vyberReceptySlovo"
-              />
-            </div>
-          
-<!--
+
+          <div class="input-group p-0 col-md-12 mx-auto">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="najdi recept"
+              v-model="klicoveSlovo"
+              v-on:input="vyberReceptySlovo"
+            />
+          </div>
+
+          <!--
           <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
@@ -48,11 +50,12 @@
               <option value="91">Dezerty</option>
               <option value="25">Ryby</option>
             </select> -->
-            
-         
+
           <label for="vyber-slovo"></label>
 
-          <p v-if="oznameni">Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:</p>
+          <p v-if="oznameni">
+            Toto jídlo jsme bohužel nenašli. Možná si vybereš z těchto receptů:
+          </p>
 
           <receptyVyhledavani
             v-bind:vybraneRecepty="vybraneRecepty"
@@ -63,7 +66,6 @@
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -75,58 +77,65 @@ import Detail from "./Detail.vue";
 export default {
   components: {
     receptyVyhledavani: ReceptyVyhledavani,
-    detail: Detail
+    detail: Detail,
   },
 
   data() {
     return {
       klicoveSlovo: "",
-      klicoveId:[],
-      kategorieId:[],
+      klicoveId: [],
+      kategorieId: [],
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
       oznameni: false,
       detail: false,
-      i:0,
+      i: 0,
     };
   },
 
   methods: {
     vyberReceptySlovo() {
-      this.klicoveId=[];
-      this.vybraneRecepty=[];
-      let string=this.klicoveSlovo.toLowerCase().slice(0,this.klicoveSlovo.length-1).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      this.klicoveId = [];
+      this.vybraneRecepty = [];
+      let string = this.klicoveSlovo
+        .toLowerCase()
+        .slice(0, this.klicoveSlovo.length - 1)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
       for (let item of this.klicovaSlova) {
-        item.jmeno=item.jmeno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        if (item.jmeno.includes(string)) {
-                    
+        item.jmeno = item.jmeno
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+        if (item.jmeno.includes(string) && !this.klicoveId.includes(item.id)) {
           this.klicoveId.push(item.id);
         }
-        
       }
-    
-      if (this.klicoveId === null) {
-        this.oznameni = true;
-        vyberNahodneRecepty();
-      }
-        for (let cislo of this.klicoveId){
-          console.log(cislo);
-         let receptySCislem = this.recepty.filter(recept =>
-        recept.vyhledavaniCisla.includes(cislo));
-        console.log(receptySCislem);
-        this.vybraneRecepty.push(receptySCislem);
-        
-        }
-      
-      this.vybraneRecepty=this.vybraneRecepty.flat();
-      
-    },
 
-    vyberReceptyKategorie() {
-      this.vybraneRecepty = this.recepty.filter(recept =>
-        recept.vyhledavaniCisla.includes(this.kategorieId)
-      );
+      if (this.klicoveId.length === 0) {
+        this.oznameni = true;
+        this.vyberNahodneRecepty();
+      } else {
+        this.oznameni = false;
+      }
+
+      for (let cislo of this.klicoveId) {
+        // console.log(cislo);
+        let receptySCislem = this.recepty.filter((recept) =>
+          recept.vyhledavaniCisla.includes(cislo)
+        );
+        // console.log(receptySCislem);
+        this.vybraneRecepty.push(receptySCislem);
+      }
+
+      this.vybraneRecepty = this.vybraneRecepty.flat();
+      let tmpRecepty = [];
+      for (let recept of this.vybraneRecepty) {
+        if (!tmpRecepty.includes(recept)) {
+          tmpRecepty.push(recept);
+        }
+      };
+      this.vybraneRecepty = tmpRecepty;
     },
 
     vyberNahodneRecepty() {
@@ -150,7 +159,7 @@ export default {
       }
     },
 
-     prejdiNaDetail(idx) {
+    prejdiNaDetail(idx) {
       this.i = idx;
       this.detail = true;
       // console.log(this.i);
@@ -158,13 +167,12 @@ export default {
     zpetNaVyber() {
       this.detail = false;
     },
-
   },
 
   created() {
     this.zkratPostup();
     this.vyberNahodneRecepty();
-  }
+  },
 };
 </script>
 

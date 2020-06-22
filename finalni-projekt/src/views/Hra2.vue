@@ -106,20 +106,14 @@ export default {
       this.srovnejPole();
       console.log(this.vybraneRecepty);
       for (let ikona of this.ikonyZakladni) {
-        let aa = false;
-
+        let vReceptu = false;
         for (let vybranyRecept of this.vybraneRecepty) {
           if (vybranyRecept.vyhledavaniCisla.includes(ikona.klicoveSlovo)) {
-            aa = true;
+            vReceptu = true;
             break;
           }
         }
-        // }
-
-        console.log(aa);
-        if (!aa) {
-          ikona.zasednuti = true;
-        }
+        ikona.zasednuti = !vReceptu;
       }
       //konec
       // console.log(this.vybranePole);
