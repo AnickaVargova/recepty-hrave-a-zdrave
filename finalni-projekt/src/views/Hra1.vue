@@ -1,8 +1,8 @@
 <template>
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-5 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
-      <p>Kliknutím na zdravé jídlo se ti přičte bod</p>
-      <button @click="stiskOK">Zacni hrrraaaat</button>
+      <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
+      <button class="btn btn-sm" @click="stiskOK">Zacni hrát</button>
     </div>
 
     <router-link to="/">
@@ -279,13 +279,20 @@ export default {
 <style>
 .instrukce {
   position: absolute;
-  width: 400px;
-  height: 150px;
+  width: 300px;
+  height: 70px;
   top: calc(50% - 75px);
-  left: calc(50% - 200px);
+  left: calc(50% - 150px);
   z-index: 100;
-  background-color: lightgreen;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
+  padding:5px;
+  color: green;
+  
 }
+
+
 .vysledek-text {
   font-size: 25px;
 }
