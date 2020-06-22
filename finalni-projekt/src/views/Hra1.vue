@@ -73,16 +73,13 @@
           Hrát znovu?
         </button>
       </div>
-      <!--<p class="chyby">Počet chyb: {{ pocetChyb }}</p>-->
 
       <div class="prehled col-12 " v-else>
         <h3 class="body mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
-        <p class="minutka">Zbývá ti {{ minutka }} vteřin</p>
+        <p class="minutka">Zbývající počet vteřin: {{ minutka }}</p>
       </div>
     </div>
   </div>
-
-  <!--    <button class="rozcestnik"><router-link to="/" class="odkaz">DOMŮ</router-link></button>-->
 </template>
 
 <script>
@@ -110,36 +107,22 @@ export default {
   computed: {
     vysledek() {
       return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
-      //dodelat funkci na sklonovani: bod, body, bodu
     },
   },
   methods: {
-    vratIkonu1() {
-      this.jidlo1 = this.ikonyJidla[
+    vratIkonu() {
+      return this.ikonyJidla[
         Math.floor(Math.random() * this.ikonyJidla.length)
       ];
+
     },
-    vratIkonu2() {
-      this.jidlo2 = this.ikonyJidla[
-        Math.floor(Math.random() * this.ikonyJidla.length)
-      ];
-    },
-    vratIkonu3() {
-      this.jidlo3 = this.ikonyJidla[
-        Math.floor(Math.random() * this.ikonyJidla.length)
-      ];
-    },
-    vratIkonu4() {
-      this.jidlo4 = this.ikonyJidla[
-        Math.floor(Math.random() * this.ikonyJidla.length)
-      ];
-    },
+   
 
     posunIkonu1() {
       if (this.jidlo1.posunOsaY < 600) {
         this.jidlo1.posunOsaY += Math.random() * 1.8; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
       } else {
-        this.vratIkonu1();
+        this.jidlo1=this.vratIkonu();
         this.jidlo1.posunOsaY = 0;
       }
     },
@@ -148,7 +131,7 @@ export default {
       if (this.jidlo2.posunOsaY < 600) {
         this.jidlo2.posunOsaY += Math.random() * 1.8;
       } else {
-        this.vratIkonu2();
+        this.jidlo2=this.vratIkonu();
         this.jidlo2.posunOsaY = 0;
       }
     },
@@ -156,7 +139,7 @@ export default {
       if (this.jidlo3.posunOsaY < 600) {
         this.jidlo3.posunOsaY += Math.random() * 1.8;
       } else {
-        this.vratIkonu3();
+        this.jidlo3=this.vratIkonu();
         this.jidlo3.posunOsaY = 0;
       }
     },
@@ -164,7 +147,7 @@ export default {
       if (this.jidlo4.posunOsaY < 600) {
         this.jidlo4.posunOsaY += Math.random() * 1.8;
       } else {
-        this.vratIkonu4();
+        this.jidlo4=this.vratIkonu();
         this.jidlo4.posunOsaY = 0;
       }
     },
@@ -201,7 +184,7 @@ export default {
         } else {
           this.pocetChyb;
         }
-        this.vratIkonu1();
+        this.jidlo1=this.vratIkonu();
         this.jidlo1.posunOsaY = 0;
       }
     },
@@ -214,7 +197,7 @@ export default {
         } else {
           this.pocetChyb++;
         }
-        this.vratIkonu2();
+        this.jidlo2=this.vratIkonu();
         this.jidlo2.posunOsaY = 0;
       }
     },
@@ -227,7 +210,7 @@ export default {
         } else {
           this.pocetChyb++;
         }
-        this.vratIkonu3();
+        this.jidlo3=this.vratIkonu();
         this.jidlo3.posunOsaY = 0;
       }
     },
@@ -240,7 +223,7 @@ export default {
         } else {
           this.pocetChyb++;
         }
-        this.vratIkonu4();
+        this.jidlo4=this.vratIkonu();
         this.jidlo4.posunOsaY = 0;
       }
     },
@@ -260,10 +243,10 @@ export default {
       this.pocetBodu = 0;
       this.pocetChyb = 0;
       this.konecHry = false;
-      this.vratIkonu1();
-      this.vratIkonu2();
-      this.vratIkonu3();
-      this.vratIkonu4();
+      this.jidlo1 = this.vratIkonu();
+      this.jidlo2 = this.vratIkonu();
+      this.jidlo3 = this.vratIkonu();
+      this.jidlo4 = this.vratIkonu();
       this.pohybujIkonou1();
       this.pohybujIkonou2();
       this.pohybujIkonou3();
@@ -282,10 +265,10 @@ export default {
     this.pocetBodu = 0;
     this.pocetChyb = 0;
     this.konecHry = false;
-    this.vratIkonu1();
-    this.vratIkonu2();
-    this.vratIkonu3();
-    this.vratIkonu4();
+    this.jidlo1 = this.vratIkonu();
+    this.jidlo2 = this.vratIkonu();
+    this.jidlo3 = this.vratIkonu();
+    this.jidlo4 = this.vratIkonu();
   },
 };
 </script>

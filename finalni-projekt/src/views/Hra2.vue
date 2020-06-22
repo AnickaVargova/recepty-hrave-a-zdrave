@@ -25,7 +25,7 @@
                   <img src="./../assets/ikony/arrow.png" id="zpet" />
                 </button>
               </router-link>
-              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">Na co máš chuť ?</h1>
+              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">Na co máš chuť&nbsp;?</h1>
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
@@ -45,9 +45,7 @@
                   />
                 </div>
                 <div class="d-flex flex-row-reverse justify-content-between mt-md-0 pt-md-0">
-                <!-- vyhodit zobrazRecepty -->
-                <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
-                <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">HOTOVO</button>
+                <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">NAJÍT RECEPTY</button>
                 <button class="hrat-znovu ml-5" v-on:click="hratZnovu"><img src="./../assets/ikony/replay.png"></button>
               </div>
               </div>
@@ -88,21 +86,17 @@ export default {
       if(item.zasednuti){return};
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
-      console.log(this.vybraneJidlo);
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
         this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
-
-      console.log(this.vybranePole);
+    
       if (!this.vybraneJidlo.aktivni) {
         this.vybranePole = this.vybranePole.filter(
           (item) => item !== this.vybraneJidlo.klicoveSlovo
         );
       }
-
-      console.log(this.vybranePole);
-      //omezovani pole-zacatek-pripadne vyhodit
+      
       this.srovnejPole();
       console.log(this.vybraneRecepty);
       for (let ikona of this.ikonyZakladni) {
@@ -115,14 +109,12 @@ export default {
         }
         ikona.zasednuti = !vReceptu;
       }
-      //konec
-      // console.log(this.vybranePole);
+     
     },
 
     srovnejPole() {
       this.vybraneRecepty = [];
-
-      //omezovani pole- pripadne vyhodit
+      
       for (let recept of this.recepty) {
         let obsahujeVsechny = true;
         for (let cislo of this.vybranePole) {
@@ -135,26 +127,7 @@ export default {
           this.vybraneRecepty.push(recept);
         }
       }
-      //konec
-
-      // for (let item2 of this.recepty) {
-      //   item2.shody = 0;
-      //   for (let item1 of this.vybranePole) {
-      //     if (item2.vyhledavaniCisla.includes(item1)) {
-      //       item2.shody++;
-      //       console.log("shoda nalezena " + item2.nazev);
-      //       if (!this.vybraneRecepty.includes(item2)) {
-      //         this.vybraneRecepty.push(item2);
-      //         this.vybraneRecepty.sort((a, b) => b.shody - a.shody);
-      //         let prvniRecepty = this.vybraneRecepty.slice(0, 8);
-      //         //tady je omezeni delky pole
-      //         this.vybraneRecepty = prvniRecepty;
-      //       }
-      //     }
-      //   }
-      // }
-      //TODO: MV
-      //
+      
       console.log(this.vybraneRecepty);
     },
 
@@ -162,17 +135,7 @@ export default {
       this.vybrano = true;
     },
 
-    // //nahodne recepty na doplneni do poctu, nemusi to tam byt
-    // for (let k = 0; k < 4; k++) {
-    //   let i = Math.floor(Math.random() * this.recepty.length);
-    //   if (
-    //     this.vybraneRecepty.length < 4 &&
-    //     !this.vybraneRecepty.includes(this.recepty[i])
-    //   ) {
-    //     this.vybraneRecepty.push(this.recepty[i]);
-    //   }
-    // }
-
+    
     hratZnovu() {
       this.vybrano = false;
       this.vybranePole = [];
