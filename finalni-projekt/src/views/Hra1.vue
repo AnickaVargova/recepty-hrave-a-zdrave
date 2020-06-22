@@ -111,7 +111,7 @@ export default {
   },
   computed: {
     vysledek() {
-      return `Výborně! Tvůj počet bodů: ${this.pocetBodu}`;
+      return `Výborně! Tvůj počet bodů: ${this.pocetBodu-this.pocetChyb}`;
     },
   },
   methods: {
