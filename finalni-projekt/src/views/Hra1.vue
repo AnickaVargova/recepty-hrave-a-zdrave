@@ -2,8 +2,8 @@
   
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
-      <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
-      <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">Začni hrát</button>
+      <p class="mb-4 instrukce-text">Kliknutím na zdravé jídlo se ti přičte bod.</p>
+      <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">ZAČNI HRÁT</button>
     </div>
   <div class="cover" v-if="ukazInstrukce"></div>
     <router-link to="/">
@@ -279,6 +279,10 @@ export default {
 </script>
 
 <style>
+.instrukce-text{
+  font-weight: 600;
+  font-size: 20px;
+}
 .btn-hra1{
   max-width:50%;
   max-height:75%;
