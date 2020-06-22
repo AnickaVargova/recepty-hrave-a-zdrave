@@ -282,12 +282,20 @@ export default {
 .hlasky{
   z-index: 3;
 }
-.prehled{
-
-  background: white;
-  
-  z-index: 4;
+.prehled {
+  z-index: 3;
+  font-weight: bold;
+  background: white !important;
+  position: relative;
+  bottom:0;
+  justify-content: space-between;
   border-radius: 8px;
+}
+.prehled h3{
+  left: 20px
+}
+.prehled p{
+  right: 20px;
 }
 .instrukce {
   position: absolute;
@@ -295,7 +303,7 @@ export default {
   height: 100px;
   top: calc(50% - 50px);
   left: calc(50% - 150px);
-  z-index: 1;
+  z-index: 6;
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
