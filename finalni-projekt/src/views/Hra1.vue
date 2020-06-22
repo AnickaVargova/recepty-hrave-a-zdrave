@@ -297,7 +297,7 @@ export default {
   position: relative;
   bottom:0x;
   justify-content: space-between;
-  border-radius: 8px;}
+  border-radius: 10px;}
   
 .prehled h3{
   left: 20px
@@ -340,7 +340,7 @@ background-color: rgba(79, 83, 91, 0.7);
   background-color: green;
  
   margin: 10px;
-  border-radius:8px;
+  border-radius:10px;
  
   
 }
@@ -361,7 +361,7 @@ background-color: rgba(79, 83, 91, 0.7);
 #zpet-hra1:hover,
 #zpet-hra1:active {
   background-color: green;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 @media(min-width: 448px){
 .prehled h3,
@@ -385,7 +385,7 @@ background-color: rgba(79, 83, 91, 0.7);
   position: relative;
   bottom:0;
   justify-content: space-between;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .prehled h3{
@@ -470,7 +470,7 @@ background-color: rgba(79, 83, 91, 0.7);
   background: white;
   display: flex;
   justify-content: space-between;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .bod {

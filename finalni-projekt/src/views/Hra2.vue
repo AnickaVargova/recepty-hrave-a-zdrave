@@ -259,13 +259,13 @@ export default {
     left: 0px;
     top: 0px;
     border: none;
-    border-radius: 7px;
+    border-radius: 10px;
   }
   #pozadi-zpet:active,
   #pozadi-zpet:hover {
     background-color: green;
     border: 1px solid green;
-    border-radius: 7px;
+    border-radius: 10px;
   }
 
 
@@ -288,7 +288,7 @@ export default {
     border: 2px solid white;
     background-color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
+    border-radius: 10px;
     margin: 10px;
     max-width: 120px !important;
     padding: 10px 5px !important;
@@ -306,7 +306,7 @@ export default {
     color: green;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
-    border-radius: 7px;
+    border-radius: 10px;
     width: 400px;
     margin: 20px auto 20px;
   }
@@ -318,7 +318,7 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
+    border-radius: 10px;
     margin: 10px 8px 15px 30px;
     padding: 16px;
     background-color: green;
@@ -339,7 +339,7 @@ export default {
 .hrat-znovu:hover,
 .hrat-znovu:active{
     background-color: green;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 }
 
@@ -405,7 +405,7 @@ export default {
 
 .hrat-znovu:active{
     background-color: green;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 }
 

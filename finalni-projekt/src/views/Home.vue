@@ -6,16 +6,16 @@
         <div class="col-md-6 mt-md-5 mb-md-5 mt-4 mb-5 pt-5 pt-md-3 pb-md-4 pb-5 pozadi justify-content-center">
             <div class="hlavicka">
             <h1 class="text-center mt-4">Pojď si s&nbsp;námi hrát a vařit!</h1>
-            <p class="text-center">Vyber si ze dvou her a vyhledávání receptů.</p>
+            <p class="text-center mb-5">Vyber si ze dvou her a vyhledávání receptů.</p>
           </div>
           
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-4">
                 <router-link to="/hra1"><button class="btn btn-primary">CHYŤ SI SVÉ JÍDLO</button></router-link>
             </div>
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-4">
                 <router-link to="/hra2"><button class="btn btn-outline-secondary">NA CO MÁŠ CHUŤ?</button></router-link>
             </div>
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-4">
             <router-link to="/vyhledavani"> <button class="btn btn-outline-secondary">VYHLEDÁVÁNÍ RECEPTŮ</button></router-link>
             </div>
         </div>
@@ -40,7 +40,7 @@ h1{
   background:rgba(255, 255, 255, 0.9);
   /*border: 2px solid darkgreen;*/
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   
 }
 

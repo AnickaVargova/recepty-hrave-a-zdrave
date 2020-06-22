@@ -177,6 +177,11 @@ export default {
 </script>
 
 <style>
+ .form-control:focus {
+        border-color: #ff80ff;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);}
+
+
 .stin-inputu{
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
 }
