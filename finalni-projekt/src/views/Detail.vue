@@ -88,7 +88,7 @@ h3{
 .pozadi-detailu{
   background:rgba(255, 255, 255, 1);
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   
 
 }
@@ -97,7 +97,7 @@ h3{
   display: block;
   height: 150px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 
