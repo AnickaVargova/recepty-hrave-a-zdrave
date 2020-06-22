@@ -2,7 +2,7 @@
   
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
-      <p class="mb-4 instrukce-text">Kliknutím na zdravé jídlo se ti přičte bod.</p>
+      <p class="mb-3 instrukce-text p-2">Kliknutím na zdravé jídlo se ti přičte bod.</p>
       <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">ZAČNI HRÁT</button>
     </div>
   <div class="cover" v-if="ukazInstrukce"></div>
@@ -495,6 +495,6 @@ background-color: rgba(79, 83, 91, 0.7);
   margin-right: 5px;
   font-size: 30px;
   font-weight: bold;
-  color: blue;
+  color:  #f2913d;
 }
 </style>
