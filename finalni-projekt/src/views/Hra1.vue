@@ -1,10 +1,11 @@
 <template>
-  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-md-4 mt-5 pt-5">
+  
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
-      <button class="btn btn-sm" @click="stiskOK">Zacni hrát</button>
+      <button class="btn btn-sm btn-info" @click="stiskOK">Začni hrát</button>
     </div>
-
+  <div class="cover" v-if="ukazInstrukce"></div>
     <router-link to="/">
       <button id="zpet-hra1" class="mt-4 mb-0 ml-lg-2">
         <img src="./../assets/ikony/arrow.png" id="zpet" />
@@ -83,6 +84,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -290,8 +292,8 @@ export default {
 .instrukce {
   position: absolute;
   width: 300px;
-  height: 70px;
-  top: calc(50% - 75px);
+  height: 100px;
+  top: calc(50% - 50px);
   left: calc(50% - 150px);
   z-index: 1;
   background-color: white;
@@ -299,6 +301,30 @@ export default {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   padding:5px;
   color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex-direction: column; */
+    
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(96, 124, 138, 0.59);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+
+
+#app .btn-info {
+  background-color: green;
+ 
+  margin: 10px;
+  border-radius:8px;
+ 
   
 }
 .vysledek-text {
