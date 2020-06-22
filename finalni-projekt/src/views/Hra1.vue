@@ -1,5 +1,5 @@
 <template>
-  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-5 pt-5">
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
       <button class="btn btn-sm" @click="stiskOK">Zacni hrát</button>
@@ -321,6 +321,7 @@ export default {
   padding:15px 10px;
   margin: 3px;
   flex-basis: 50%;
+  z-index: 4;
 }
 
 .prehled p{
@@ -338,6 +339,7 @@ export default {
 .prehled p {
   font-size: 20px;
   max-width: 150px;
+  z-index:4;
   
 }
 .prehled h3{
