@@ -75,11 +75,11 @@
         </button>
       </div>
 
-      <div class="prehled" v-else>
+      <div class="prehled d-flex align-items-baseline" v-else>
      
-        <h3 class="bod mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
+        <h3 class="bod mt-1 mb-0">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
        
-        <p class="minutka">Zbývající počet vteřin: {{ minutka }}</p>
+        <p class="minutka mt-1 mb-0">Zbývající počet vteřin: {{ minutka }}</p>
         
       </div>
     </div>
@@ -295,10 +295,10 @@ export default {
   font-weight: bold;
   background: white !important;
   position: relative;
-  bottom:0;
+  bottom:0x;
   justify-content: space-between;
-  border-radius: 8px;
-}
+  border-radius: 8px;}
+  
 .prehled h3{
   left: 20px
 }
@@ -348,7 +348,7 @@ background-color: rgba(79, 83, 91, 0.7);
   font-size: 25px;
 }
 #zpet-hra1 {
-  z-index: 1;
+  z-index: 7;
   background: rgba(255, 255, 255, 0);
   position: absolute;
   left: 0px;
@@ -367,7 +367,7 @@ background-color: rgba(79, 83, 91, 0.7);
 .prehled h3,
 .prehled p {
   font-size: 20px;
-  padding:15px 10px;
+  padding: 15px 10px;
   margin: 3px;
  
 }
@@ -377,10 +377,6 @@ background-color: rgba(79, 83, 91, 0.7);
   justify-content: space-between;
 }
 }
-/*.prehled {
-  z-index: 3 !important;
-  background-color: white;
-}*/
 
 .prehled {
   z-index: 3;
@@ -412,7 +408,7 @@ background-color: rgba(79, 83, 91, 0.7);
 }
 
 .prehled p{
-  padding: 25px 0 0 0;
+  padding: 25px 0 11px 0 ;
 }
 
 }
