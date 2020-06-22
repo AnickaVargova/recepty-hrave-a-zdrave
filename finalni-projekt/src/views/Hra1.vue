@@ -1,8 +1,9 @@
 <template>
+  <div class="cover">
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
-      <button class="btn btn-sm" @click="stiskOK">Zacni hrát</button>
+      <button class="btn btn-sm btn-info" @click="stiskOK">Začni hrát</button>
     </div>
 
     <router-link to="/">
@@ -82,6 +83,7 @@
         
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -280,8 +282,8 @@ export default {
 .instrukce {
   position: absolute;
   width: 300px;
-  height: 70px;
-  top: calc(50% - 75px);
+  height: 100px;
+  top: calc(50% - 50px);
   left: calc(50% - 150px);
   z-index: 100;
   background-color: white;
@@ -289,6 +291,30 @@ export default {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   padding:5px;
   color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex-direction: column; */
+    
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(96, 124, 138, 0.59);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+
+
+#app .btn-info {
+  background-color: green;
+ 
+  margin: 10px;
+  border-radius:8px;
+ 
   
 }
 
