@@ -1,34 +1,32 @@
 <template>
-  <div class="container mt-5">
-    <div class="col-md-10 mx-auto">
-      <detail
-        v-on:zpetNaVyber="zpetNaVyber"
-        v-bind:vybraneRecepty="vybraneRecepty"
-        v-bind:i="i"
-        v-if="detail"
-        id="detail"
-      />
+  <div class="okno p-0 container-fluid mt-lg-4 mt-0">
+   
+
+    <div class="col-lg-6 mt-lg-4 mt-0 pozadi mx-auto">
+      
+      <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
       <div v-else>
-        <div class="pozadi col-md-10 mx-auto">
-          <router-link to="/">
-            <button id="pozadi-zpet" class="mt-lg-4 mt-0 mb-0">
-              <img src="./../assets/images/left-arrow.png" id="zpet" />
-            </button>
-          </router-link>
+        <div class="col-md-12 mx-auto">
 
-          <h1 class="mt-4 pt-4 mb-4 text-center">Vyhledávání receptů</h1>
-
-          <div class="input-group p-0 col-md-12 mx-auto">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="najdi recept"
-              v-model="klicoveSlovo"
-              v-on:input="vyberReceptySlovo"
-            />
-          </div>
-
-          <!--
+           <router-link to="/">
+              <button id="pozadi-zpet" class="mt-4  mb-0">
+                 <img src="./../assets/ikony/arrow.png" id="zpet"/>
+              </button>
+            </router-link>
+            
+          <h1 class=" pt-4 mb-4 pl-5 pr-5 text-center">Vyhledávání receptů</h1>
+          
+            <div class="input-group p-0 col-md-12 mx-auto stin-inputu">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="najdi recept"
+                v-model="klicoveSlovo"
+                v-on:input="vyberReceptySlovo"
+              />
+            </div>
+          
+<!--
           <div class="d-flex form-group col-md-8 ">
             <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
             <select
@@ -65,7 +63,9 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  
+  
 </template>
 
 <script>
@@ -177,6 +177,9 @@ export default {
 </script>
 
 <style>
+.stin-inputu{
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
+}
 .btn-default {
   width: 100px;
   padding: 12.5px;

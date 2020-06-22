@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 mx-auto pozadi position-relative">
+  <div class="col-lg-6 mx-auto pozadi position-relative">
     <detail
       v-bind:vybraneRecepty="vybraneRecepty"
       v-bind:i="i"
@@ -9,7 +9,7 @@
     />
     <div v-else>
       <div class="container mt-lg-4 mt-0">
-        <div class="row justify-content-center mt-lg-4 mt-0 mb-0 mb-lg-4">
+        <div class="row justify-content-center mt-lg-4 mt-0 mb-lg-4">
           <div class="col-md-12 mx-auto">
             <tvojeRecepty
               v-if="vybrano"
@@ -21,15 +21,15 @@
 
             <div v-else>
               <router-link to="/">
-                <button id="pozadi-zpet" class="vrstva1 mt-lg-4 mt-0 mb-0">
-                  <img src="./../assets/images/left-arrow.png" id="zpet" />
+                <button id="pozadi-zpet" class="vrstva1 mt-4 mb-0">
+                  <img src="./../assets/ikony/arrow.png" id="zpet" />
                 </button>
               </router-link>
-              <h2 class="vrstva2">Na co máš chuť ?</h2>
+              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">Na co máš chuť ?</h1>
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
-                  class="obalObrazek col-4 col-md-2"
+                  class="obalObrazek col-3 col-s-1 col-md-3 col-lg-2"
                   v-for="(item, index) in ikonyZakladni"
                   v-bind:key="index"
                   v-on:click="klikJidlo(index,item)"
@@ -44,7 +44,7 @@
                     v-bind:alt="item.jmeno"
                   />
                 </div>
-                <div class="d-flex flex-row-reverse justify-content-between">
+                <div class="d-flex flex-row-reverse justify-content-between mt-md-0 pt-md-0">
                 <!-- vyhodit zobrazRecepty -->
                 <!-- <button class="btn btn-primary hotovo" v-on:click="srovnejPole">HOTOVO</button> -->
                 <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">HOTOVO</button>
@@ -213,33 +213,24 @@ export default {
 </script>
 
 <style>
-.hrat-znovu{
-  border:none;
-  background: rgba(255, 255, 255, 0.1);
-  height: 70px;
-  margin-top: 35px;
-}
 
-.hrat-znovu:hover,
-.hrat-znovu:active{
-    background-color: green;
-    border-radius: 7px;
-}
 .vrstva2{
   z-index: 2;
 }
 
 .vrstva1 {
-  z-index: 1;
+  z-index: 4;
 }
 
-@media (max-width: 992px) {
+
+/*@media (max-width: 992px) {
   #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
     left: 0px;
     top: 25px;
     border: 1px solid white;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -252,9 +243,10 @@ export default {
   #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: -20px;
-    top: 25px;
-    border: 1px solid white;
+    left: 0px;
+    top: 0px;
+    border: 0.1px solid white;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -268,8 +260,9 @@ export default {
  #pozadi-zpet {
     background: rgba(255, 255, 255, 0.1);
     position: absolute;
-    left: -20px;
+    left: 0px;
     border: none;
+    border-radius: 7px;
   }
   #pozadi-zpet:active {
     background-color: green;
@@ -287,7 +280,7 @@ export default {
   #pozadi-zpet {
     background-color: white;
     position: absolute;
-    left: 50px;
+    left: 0px;
     border:none;
   }
 
@@ -296,13 +289,35 @@ export default {
     background-color: green;
     border-radius: 7px;
   }
+}*/
+ #pozadi-zpet {
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    border-radius: 7px;
+  }
+  #pozadi-zpet:active,
+  #pozadi-zpet:hover {
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 7px;
+  }
+
+
+#zpet {
+  height: 35px;
+  width: 50px;
 }
+
+
 .padding-container {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 780px) {
   .obalObrazek {
     display: flex;
     justify-content: center;
@@ -316,6 +331,7 @@ export default {
     padding: 10px 5px !important;
     cursor: pointer;
   }
+
 
   .obalObrazek.zasednuti{
     cursor: default;
@@ -339,8 +355,8 @@ export default {
     background-color: green;
     color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 40px 20px 15px 30px;
+    border-radius: 7px;
+    margin: 10px 8px 15px 30px;
     padding: 16px;
     background-color: green;
     color: white;
@@ -350,9 +366,21 @@ export default {
     color: white;
     transition-duration: 0.1s;
   }
+  .hrat-znovu{
+  border:none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 70px;
+  margin: 10px 20px 15px 30px;
 }
 
-@media (max-width: 576px) {
+.hrat-znovu:hover,
+.hrat-znovu:active{
+    background-color: green;
+    border-radius: 7px;
+}
+}
+
+@media (max-width: 780px) {
   .obalObrazek {
     display: flex;
     justify-content: center;
@@ -390,10 +418,11 @@ export default {
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
     border-radius: 10px;
-    margin: auto;
+    margin: 7px;
     padding: 7px;
     font-weight: bold;
   }
+  
 
   .hotovo:active {
     border: 3px solid green;
@@ -403,6 +432,18 @@ export default {
     position: relative;
     top: 3px;
   }
+  .hrat-znovu{
+  border:none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 70px;
+  margin: 7px;
+}
+
+
+.hrat-znovu:active{
+    background-color: green;
+    border-radius: 7px;
+}
 }
 
 .margin {

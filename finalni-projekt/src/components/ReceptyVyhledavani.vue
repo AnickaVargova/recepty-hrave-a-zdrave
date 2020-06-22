@@ -50,7 +50,7 @@ export default {
   display: block;
   height: 150px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
 }
 
 }
@@ -69,7 +69,7 @@ export default {
   display: block;
   height: 140px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
 }
 
 .bila h4{

@@ -1,7 +1,7 @@
 <template>
   <div class="okno container-fluid">
     
-      <div class="row justify-content-center mt-5">
+      <div class="row justify-content-center mt-lg-5 mt-0">
           
         <div class="col-md-6 pozadi justify-content-center">
             <div class="hlavicka">

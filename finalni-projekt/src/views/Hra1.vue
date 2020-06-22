@@ -1,13 +1,13 @@
 <template>
-  <div class="pozadi overflow-hidden col-md-6 mx-auto mt-lg-5 mt-0">
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-0">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod</p>
       <button @click="stiskOK">Zacni hrrraaaat</button>
     </div>
 
     <router-link to="/">
-      <button id="zpet-hra1" class="mt-lg-4 mt-0 mb-0">
-        <img src="./../assets/images/left-arrow.png" id="zpet" />
+      <button id="zpet-hra1" class="mt-4 mb-0 ml-lg-2">
+        <img src="./../assets/ikony/arrow.png" id="zpet" />
       </button>
     </router-link>
 
@@ -300,11 +300,11 @@ export default {
 #zpet-hra1 {
   z-index: 1;
 
-  background-color: white;
+  background: rgba(255, 255, 255, 0);
   position: absolute;
-  left: 3px;
-  top: 8px;
-  background-color: tan;
+  left: 0px;
+  top: 0px;
+  border-color: none;
   border-radius: 7px;
   border: none;
 }
@@ -347,7 +347,7 @@ export default {
 .jidlo {
   /* z-index: 2;*/
   position: relative;
-  /* background-image: url("./../assets/ikony/shelf.png"); */
+  background-image: url("./../assets/ikony/shelf.png");
   background-repeat: no-repeat;
   padding-bottom: 100%;
   width: 100%;
