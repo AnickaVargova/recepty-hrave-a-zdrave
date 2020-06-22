@@ -3,7 +3,7 @@
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
-      <button class="btn btn-sm btn-info" @click="stiskOK">Začni hrát</button>
+      <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">Začni hrát</button>
     </div>
   <div class="cover" v-if="ukazInstrukce"></div>
     <router-link to="/">
@@ -279,6 +279,10 @@ export default {
 </script>
 
 <style>
+.btn-hra1{
+  max-width:50%;
+  max-height:75%;
+}
 .hlasky{
   z-index: 3;
 }
@@ -299,19 +303,20 @@ export default {
 }
 .instrukce {
   position: absolute;
-  width: 300px;
-  height: 100px;
-  top: calc(50% - 50px);
-  left: calc(50% - 150px);
+  width: 400px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
   z-index: 6;
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  padding:5px;
+  padding:15px;
   color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   /* flex-direction: column; */
     
 }
@@ -320,7 +325,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(96, 124, 138, 0.59);
+background-color: rgba(79, 83, 91, 0.7);
   z-index: 5;
   width: 100%;
   height: 100%;
