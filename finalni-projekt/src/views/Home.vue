@@ -1,9 +1,9 @@
 <template>
   <div class="okno container-fluid">
     
-      <div class="row justify-content-center mt-lg-5 mt-4 pt-5">
+      <div class="row justify-content-center mt-md-0 mt-4 pt-5 pt-md-0">
           
-        <div class="col-md-6 pozadi justify-content-center">
+        <div class="col-md-6 mt-md-5 mb-md-5 mt-4 mb-5 pt-5 pt-md-3 pb-md-4 pb-5 pozadi justify-content-center">
             <div class="hlavicka">
             <h1 class="text-center mt-4">Pojď si s&nbsp;námi hrát a vařit!</h1>
             <p class="text-center">Vyber si ze dvou her a vyhledávání receptů.</p>

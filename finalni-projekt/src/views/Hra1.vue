@@ -1,5 +1,5 @@
 <template>
-  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-md-4 mt-5 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod.</p>
       <button class="btn btn-sm" @click="stiskOK">Zacni hrát</button>
@@ -277,13 +277,23 @@ export default {
 </script>
 
 <style>
+.hlasky{
+  z-index: 3;
+}
+.prehled{
+
+  background: white;
+  
+  z-index: 4;
+  border-radius: 8px;
+}
 .instrukce {
   position: absolute;
   width: 300px;
   height: 70px;
   top: calc(50% - 75px);
   left: calc(50% - 150px);
-  z-index: 100;
+  z-index: 1;
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
@@ -291,14 +301,11 @@ export default {
   color: green;
   
 }
-
-
 .vysledek-text {
   font-size: 25px;
 }
 #zpet-hra1 {
   z-index: 1;
-
   background: rgba(255, 255, 255, 0);
   position: absolute;
   left: 0px;
@@ -314,33 +321,48 @@ export default {
   border-radius: 7px;
 }
 @media(min-width: 448px){
-
 .prehled h3,
 .prehled p {
   font-size: 20px;
   padding:15px 10px;
   margin: 3px;
-  flex-basis: 50%;
-  
+ 
 }
 
-.prehled p{
-  margin-right: 30px;
-}
 .prehled {
   display: flex;
-  z-index: 4;
   justify-content: space-between;
 }
 }
-@media(max-width: 448px){
+/*.prehled {
+  z-index: 3 !important;
+  background-color: white;
+}*/
 
+.prehled {
+  z-index: 3;
+  font-weight: bold;
+  background: white !important;
+  position: relative;
+  bottom:0;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.prehled h3{
+  left: 20px
+}
+
+.prehled p{
+  right: 20px;
+}
+
+@media(max-width: 448px){
 .prehled .bod,
 .prehled p {
   font-size: 20px;
-  max-width: 150px;
- 
-  
+  max-width: 150px;  
+  display: flex;
 }
 .prehled h3{
   padding: 25px 0;
@@ -350,11 +372,6 @@ export default {
   padding: 25px 0 0 0;
 }
 
-.prehled {
-  display: block;
-  overflow: wrap;  
-  z-index: 4;
-}
 }
 .shelf {
   /*  z-index: 1;*/
@@ -389,7 +406,7 @@ export default {
   display: flex;
   justify-content: center;
   margin: 3px;
-  z-index: 2;
+  z-index: 0;
 }
 
 #ikona1 {
@@ -427,14 +444,6 @@ export default {
   color: red;
 }
 
-.prehled {
-  /* display: flex;
-  flex-basis: 100%;
-  flex-shrink: 0;
-  flex-grow: 1;*/
-  z-index: 3;
-  background-color: white;
-}
 
 .minutka {
   position: absolute;
