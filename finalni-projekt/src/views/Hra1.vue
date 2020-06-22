@@ -321,7 +321,7 @@ export default {
   padding:15px 10px;
   margin: 3px;
   flex-basis: 50%;
-  z-index: 4;
+  
 }
 
 .prehled p{
@@ -329,7 +329,7 @@ export default {
 }
 .prehled {
   display: flex;
-  
+  z-index: 4;
   justify-content: space-between;
 }
 }
@@ -339,7 +339,7 @@ export default {
 .prehled p {
   font-size: 20px;
   max-width: 150px;
-  z-index:4;
+ 
   
 }
 .prehled h3{
@@ -353,6 +353,7 @@ export default {
 .prehled {
   display: block;
   overflow: wrap;  
+  z-index: 4;
 }
 }
 .shelf {
