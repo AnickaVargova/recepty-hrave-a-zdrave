@@ -1,5 +1,5 @@
 <template>
-  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-0">
+  <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-5 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
       <p>Kliknutím na zdravé jídlo se ti přičte bod</p>
       <button @click="stiskOK">Zacni hrrraaaat</button>
@@ -74,9 +74,12 @@
         </button>
       </div>
 
-      <div class="prehled col-12 " v-else>
-        <h3 class="body mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
+      <div class="prehled" v-else>
+     
+        <h3 class="bod mt-1">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
+       
         <p class="minutka">Zbývající počet vteřin: {{ minutka }}</p>
+        
       </div>
     </div>
   </div>
@@ -303,19 +306,46 @@ export default {
   background-color: green;
   border-radius: 7px;
 }
+@media(min-width: 448px){
 
 .prehled h3,
 .prehled p {
   font-size: 20px;
-  padding: 8px;
-  justify-content: space-between;
-  flex-basis: 50%;
+  padding:15px 10px;
   margin: 3px;
+  flex-basis: 50%;
+}
+
+.prehled p{
+  margin-right: 30px;
 }
 .prehled {
   display: flex;
+  
+  justify-content: space-between;
+}
+}
+@media(max-width: 448px){
+
+.prehled .bod,
+.prehled p {
+  font-size: 20px;
+  max-width: 150px;
+  
+}
+.prehled h3{
+  padding: 25px 0;
 }
 
+.prehled p{
+  padding: 25px 0 0 0;
+}
+
+.prehled {
+  display: block;
+  overflow: wrap;  
+}
+}
 .shelf {
   /*  z-index: 1;*/
   display: block;
@@ -377,7 +407,7 @@ export default {
   border-radius: 8px;
 }
 
-.body {
+.bod {
   color: green;
   font-size: 20px;
   font-weight: bold;
