@@ -394,6 +394,7 @@ export default {
   padding: 3px;
   margin: 3px;
   z-index: 0;
+  cursor: pointer;
 }
 
 #ikona1 {
