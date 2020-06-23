@@ -22,7 +22,7 @@
             <input
               type="text"
               class="form-control"
-              placeholder="najdi recept"
+              placeholder="zadej klíčové slovo"
               v-model="klicoveSlovo"
               v-on:input="vyberReceptySlovo"
             />
@@ -151,9 +151,14 @@ export default {
 </script>
 
 <style>
-.stin-inputu {
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-}
+
+#app .form-control:focus{
+  border-color: rgba(10,174,29,0.4); 
+  border-width: 3px; 
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1) ;
+  } 
+
+
 .btn-default {
   width: 100px;
   padding: 12.5px;
