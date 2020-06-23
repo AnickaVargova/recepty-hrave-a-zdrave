@@ -25,29 +25,39 @@
                   <img src="./../assets/ikony/arrow.png" id="zpet" />
                 </button>
               </router-link>
-              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">Na co máš chuť&nbsp;?</h1>
+              <h1 class="mt-0 mb-4 pt-4 text-center col-md-12 vrstva2">
+                Na co máš chuť&nbsp;?
+              </h1>
 
               <div class="row w-100 justify-content-center mx-auto">
                 <div
                   class="obalObrazek col-3 col-s-1 col-md-3 col-lg-2"
                   v-for="(item, index) in ikonyZakladni"
                   v-bind:key="index"
-                  v-on:click="klikJidlo(index,item)"
+                  v-on:click="klikJidlo(index, item)"
                   v-bind:class="{
                     zvyraznene: item.aktivni,
                     zasednuti: item.zasednuti,
                   }"
                 >
-                  <!-- seda smazat -->
                   <img
                     v-bind:src="require(`./../assets/ikony/${item.ikona}`)"
                     v-bind:alt="item.jmeno"
                   />
                 </div>
-                <div class="d-flex flex-row-reverse justify-content-between mt-md-0 pt-md-0">
-                <button class="btn btn-primary hotovo mp-5" v-on:click="zobrazRecepty">NAJÍT RECEPTY</button>
-                <button class="hrat-znovu ml-5" v-on:click="hratZnovu"><img src="./../assets/ikony/replay.png"></button>
-              </div>
+                <div
+                  class="d-flex flex-row-reverse justify-content-between mt-md-0 pt-md-0"
+                >
+                  <button
+                    class="btn btn-primary hotovo mp-5"
+                    v-on:click="zobrazRecepty"
+                  >
+                    NAJÍT RECEPTY
+                  </button>
+                  <button class="hrat-znovu ml-5" v-on:click="hratZnovu">
+                    <img src="./../assets/ikony/replay.png" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -82,23 +92,24 @@ export default {
     };
   },
   methods: {
-    klikJidlo(index,item) {
-      if(item.zasednuti){return};
+    klikJidlo(index, item) {
+      if (item.zasednuti) {
+        return;
+      }
       this.vybranyIndex = index;
       this.vybraneJidlo = this.ikonyZakladni[this.vybranyIndex];
       this.vybraneJidlo.aktivni = !this.vybraneJidlo.aktivni;
       if (this.vybraneJidlo.aktivni) {
         this.vybranePole.push(this.vybraneJidlo.klicoveSlovo);
       }
-    
+
       if (!this.vybraneJidlo.aktivni) {
         this.vybranePole = this.vybranePole.filter(
           (item) => item !== this.vybraneJidlo.klicoveSlovo
         );
       }
-      
+
       this.srovnejPole();
-      console.log(this.vybraneRecepty);
       for (let ikona of this.ikonyZakladni) {
         let vReceptu = false;
         for (let vybranyRecept of this.vybraneRecepty) {
@@ -109,12 +120,11 @@ export default {
         }
         ikona.zasednuti = !vReceptu;
       }
-     
     },
 
     srovnejPole() {
       this.vybraneRecepty = [];
-      
+
       for (let recept of this.recepty) {
         let obsahujeVsechny = true;
         for (let cislo of this.vybranePole) {
@@ -127,15 +137,12 @@ export default {
           this.vybraneRecepty.push(recept);
         }
       }
-      
-      console.log(this.vybraneRecepty);
     },
 
     zobrazRecepty() {
       this.vybrano = true;
     },
 
-    
     hratZnovu() {
       this.vybrano = false;
       this.vybranePole = [];
@@ -143,7 +150,6 @@ export default {
 
       for (let item of ikonyZakladni) {
         item.aktivni = false;
-        //MV
         item.zasednuti = false;
       }
     },
@@ -151,7 +157,6 @@ export default {
     prejdiNaDetail(idx) {
       this.i = idx;
       this.detailViditelny = true;
-      console.log(this.i);
     },
 
     zkratPostup() {
@@ -176,8 +181,7 @@ export default {
 </script>
 
 <style>
-
-.vrstva2{
+.vrstva2 {
   z-index: 2;
 }
 
@@ -185,95 +189,25 @@ export default {
   z-index: 4;
 }
 
-
-/*@media (max-width: 992px) {
-  #pozadi-zpet {
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    left: 0px;
-    top: 25px;
-    border: 1px solid white;
-    border-radius: 7px;
-  }
-  #pozadi-zpet:active {
-    background-color: green;
-    border: 1px solid green;
-    border-radius: 7px;
-  }
+#pozadi-zpet {
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: none;
+  border-radius: 10px;
 }
-
-@media (max-width: 640px) {
-  #pozadi-zpet {
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    border: 0.1px solid white;
-    border-radius: 7px;
-  }
-  #pozadi-zpet:active {
-    background-color: green;
-    border: 1px solid green;
-    border-radius: 7px;
-  }
+#pozadi-zpet:active,
+#pozadi-zpet:hover {
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 10px;
 }
-
-
-@media(min-width: 992px){
- #pozadi-zpet {
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    left: 0px;
-    border: none;
-    border-radius: 7px;
-  }
-  #pozadi-zpet:active {
-    background-color: green;
-    border: 1px solid green;
-    border-radius: 7px;
-  }
-}
-
 
 #zpet {
   height: 35px;
   width: 50px;
 }
-@media (min-width: 992px) {
-  #pozadi-zpet {
-    background-color: white;
-    position: absolute;
-    left: 0px;
-    border:none;
-  }
-
-  #pozadi-zpet:hover,
-  #pozadi-zpet:active {
-    background-color: green;
-    border-radius: 7px;
-  }
-}*/
- #pozadi-zpet {
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    border: none;
-    border-radius: 10px;
-  }
-  #pozadi-zpet:active,
-  #pozadi-zpet:hover {
-    background-color: green;
-    border: 1px solid green;
-    border-radius: 10px;
-  }
-
-
-#zpet {
-  height: 35px;
-  width: 50px;
-}
-
 
 .padding-container {
   padding-right: 0 !important;
@@ -295,8 +229,7 @@ export default {
     cursor: pointer;
   }
 
-
-  .obalObrazek.zasednuti{
+  .obalObrazek.zasednuti {
     cursor: default;
   }
 
@@ -329,18 +262,18 @@ export default {
     color: white;
     transition-duration: 0.1s;
   }
-  .hrat-znovu{
-  border:none;
-  background: rgba(255, 255, 255, 0.1);
-  height: 70px;
-  margin: 10px 20px 15px 30px;
-}
+  .hrat-znovu {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    height: 70px;
+    margin: 10px 20px 15px 30px;
+  }
 
-.hrat-znovu:hover,
-.hrat-znovu:active{
+  .hrat-znovu:hover,
+  .hrat-znovu:active {
     background-color: green;
     border-radius: 10px;
-}
+  }
 }
 
 @media (max-width: 780px) {
@@ -357,7 +290,7 @@ export default {
     cursor: pointer;
   }
 
-  .obalObrazek.zasednuti{
+  .obalObrazek.zasednuti {
     cursor: default;
   }
 
@@ -385,7 +318,6 @@ export default {
     padding: 7px;
     font-weight: bold;
   }
-  
 
   .hotovo:active {
     border: 3px solid green;
@@ -395,18 +327,17 @@ export default {
     position: relative;
     top: 3px;
   }
-  .hrat-znovu{
-  border:none;
-  background: rgba(255, 255, 255, 0.1);
-  height: 70px;
-  margin: 7px;
-}
+  .hrat-znovu {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    height: 70px;
+    margin: 7px;
+  }
 
-
-.hrat-znovu:active{
+  .hrat-znovu:active {
     background-color: green;
     border-radius: 10px;
-}
+  }
 }
 
 .margin {

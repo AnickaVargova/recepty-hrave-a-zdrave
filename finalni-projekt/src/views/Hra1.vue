@@ -1,11 +1,15 @@
 <template>
-  
   <div class="pozadi overflow-hidden col-lg-6 mx-auto mt-lg-4 mt-4 pt-5">
     <div class="instrukce" v-if="ukazInstrukce">
-      <p class="mb-3 instrukce-text p-2">Kliknutím na zdravé jídlo se ti přičte bod.</p>
-      <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">ZAČNI HRÁT</button>
+      <p class="mb-3 instrukce-text p-2">
+        Kliknutím na zdravé jídlo získáš bod, kliknutím na nezdravé jídlo bod
+        ztratíš.
+      </p>
+      <button class="mx-auto btn btn-primary btn-hra1" @click="stiskOK">
+        ZAČNI HRÁT
+      </button>
     </div>
-  <div class="cover" v-if="ukazInstrukce"></div>
+    <div class="cover" v-if="ukazInstrukce"></div>
     <router-link to="/">
       <button id="zpet-hra1" class="mt-4 mb-0 ml-lg-2">
         <img src="./../assets/ikony/arrow.png" id="zpet" />
@@ -17,44 +21,44 @@
         <div
           class="ikonaJidla"
           id="ikona1"
-          v-bind:style="{ top: `${jidlo1.posunOsaY}px` }"
-          v-on:click="priKliknuti1"
+          v-bind:style="{ top: `${jidlo[0].posunOsaY}px` }"
+          v-on:click="priKliknuti(0)"
         >
           <img
-            v-bind:src="require(`./../assets/ikony/${jidlo1.ikona}`)"
+            v-bind:src="require(`./../assets/ikony/${jidlo[0].ikona}`)"
             alt="jídlo"
           />
         </div>
         <div
           class="ikonaJidla"
           id="ikona2"
-          v-bind:style="{ top: `${jidlo2.posunOsaY}px` }"
-          v-on:click="priKliknuti2"
+          v-bind:style="{ top: `${jidlo[1].posunOsaY}px` }"
+          v-on:click="priKliknuti(1)"
         >
           <img
-            v-bind:src="require(`./../assets/ikony/${jidlo2.ikona}`)"
+            v-bind:src="require(`./../assets/ikony/${jidlo[1].ikona}`)"
             alt="jídlo"
           />
         </div>
         <div
           class="ikonaJidla"
           id="ikona3"
-          v-bind:style="{ top: `${jidlo3.posunOsaY}px` }"
-          v-on:click="priKliknuti3"
+          v-bind:style="{ top: `${jidlo[2].posunOsaY}px` }"
+          v-on:click="priKliknuti(2)"
         >
           <img
-            v-bind:src="require(`./../assets/ikony/${jidlo3.ikona}`)"
+            v-bind:src="require(`./../assets/ikony/${jidlo[2].ikona}`)"
             alt="jídlo"
           />
         </div>
         <div
           class="ikonaJidla"
           id="ikona4"
-          v-bind:style="{ top: `${jidlo4.posunOsaY}px` }"
-          v-on:click="priKliknuti4"
+          v-bind:style="{ top: `${jidlo[3].posunOsaY}px` }"
+          v-on:click="priKliknuti(3)"
         >
           <img
-            v-bind:src="require(`./../assets/ikony/${jidlo4.ikona}`)"
+            v-bind:src="require(`./../assets/ikony/${jidlo[3].ikona}`)"
             alt="jídlo"
           />
         </div>
@@ -71,20 +75,17 @@
           class="btn btn-primary"
           v-on:click="zacitHru"
         >
-          Hrát znovu?
+          HRÁT ZNOVU?
         </button>
       </div>
 
       <div class="prehled d-flex align-items-baseline" v-else>
-     
         <h3 class="bod mt-1 mb-0">Počet bodů: {{ pocetBodu - pocetChyb }}</h3>
-       
+
         <p class="minutka mt-1 mb-0">Zbývající počet vteřin: {{ minutka }}</p>
-        
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -94,10 +95,8 @@ export default {
     return {
       ukazInstrukce: true,
       ikonyJidla: ikony,
-      jidlo1: null,
-      jidlo2: null,
-      jidlo3: null,
-      jidlo4: null,
+      jidlo: [],
+      i: null,
       pocetBodu: 0,
       pocetChyb: 0,
       interval1: null,
@@ -111,7 +110,7 @@ export default {
   },
   computed: {
     vysledek() {
-      return `Výborně! Tvůj počet bodů: ${this.pocetBodu-this.pocetChyb}`;
+      return `Výborně! Tvůj počet bodů: ${this.pocetBodu - this.pocetChyb}`;
     },
   },
   methods: {
@@ -119,45 +118,41 @@ export default {
       return this.ikonyJidla[
         Math.floor(Math.random() * this.ikonyJidla.length)
       ];
-
     },
-   
 
     posunIkonu1() {
-      if (this.jidlo1.posunOsaY < 600) {
-        this.jidlo1.posunOsaY += Math.random() * 1.8; //rychlost se zvysi nasobenim, 1 je minimalni, 2 je maximalni
+      if (this.jidlo[0].posunOsaY < 600) {
+        this.jidlo[0].posunOsaY += Math.random() * 1.8;
       } else {
-        this.jidlo1=this.vratIkonu();
-        this.jidlo1.posunOsaY = 0;
+        this.jidlo[0] = this.vratIkonu();
+        this.jidlo[0].posunOsaY = 0;
       }
     },
 
     posunIkonu2() {
-      if (this.jidlo2.posunOsaY < 600) {
-        this.jidlo2.posunOsaY += Math.random() * 1.8;
+      if (this.jidlo[1].posunOsaY < 600) {
+        this.jidlo[1].posunOsaY += Math.random() * 1.8;
       } else {
-        this.jidlo2=this.vratIkonu();
-        this.jidlo2.posunOsaY = 0;
+        this.jidlo[1] = this.vratIkonu();
+        this.jidlo[1].posunOsaY = 0;
       }
     },
     posunIkonu3() {
-      if (this.jidlo3.posunOsaY < 600) {
-        this.jidlo3.posunOsaY += Math.random() * 1.8;
+      if (this.jidlo[2].posunOsaY < 600) {
+        this.jidlo[2].posunOsaY += Math.random() * 1.8;
       } else {
-        this.jidlo3=this.vratIkonu();
-        this.jidlo3.posunOsaY = 0;
+        this.jidlo[2] = this.vratIkonu();
+        this.jidlo[2].posunOsaY = 0;
       }
     },
     posunIkonu4() {
-      if (this.jidlo4.posunOsaY < 600) {
-        this.jidlo4.posunOsaY += Math.random() * 1.8;
+      if (this.jidlo[3].posunOsaY < 600) {
+        this.jidlo[3].posunOsaY += Math.random() * 1.8;
       } else {
-        this.jidlo4=this.vratIkonu();
-        this.jidlo4.posunOsaY = 0;
+        this.jidlo[3] = this.vratIkonu();
+        this.jidlo[3].posunOsaY = 0;
       }
     },
-
-    //na pocitaci jidlo konci zbytecne vysoko - vyresit
 
     sekundaDolu() {
       this.minutka--;
@@ -169,7 +164,6 @@ export default {
 
     pohybujIkonou1() {
       this.interval1 = setInterval(this.posunIkonu1, 5);
-      //na 5 nesahat, jinak je pohyb trhany
     },
     pohybujIkonou2() {
       this.interval2 = setInterval(this.posunIkonu2, 5);
@@ -181,55 +175,17 @@ export default {
       this.interval4 = setInterval(this.posunIkonu4, 5);
     },
 
-    priKliknuti1() {
-      console.log(this.ukazInstrukce);
-      if (!this.konecHry) {
-        if (this.jidlo1.zdrave) {
-          this.pocetBodu++;
-        } else {
-          this.pocetChyb;
-        }
-        this.jidlo1=this.vratIkonu();
-        this.jidlo1.posunOsaY = 0;
-      }
-    },
+    priKliknuti(id) {
+      this.i = id;
 
-    priKliknuti2() {
-      console.log("klik2");
       if (!this.konecHry) {
-        if (this.jidlo2.zdrave) {
+        if (this.jidlo[this.i].zdrave) {
           this.pocetBodu++;
         } else {
           this.pocetChyb++;
         }
-        this.jidlo2=this.vratIkonu();
-        this.jidlo2.posunOsaY = 0;
-      }
-    },
-
-    priKliknuti3() {
-      console.log("klik3");
-      if (!this.konecHry) {
-        if (this.jidlo3.zdrave) {
-          this.pocetBodu++;
-        } else {
-          this.pocetChyb++;
-        }
-        this.jidlo3=this.vratIkonu();
-        this.jidlo3.posunOsaY = 0;
-      }
-    },
-
-    priKliknuti4() {
-      console.log("klik4");
-      if (!this.konecHry) {
-        if (this.jidlo4.zdrave) {
-          this.pocetBodu++;
-        } else {
-          this.pocetChyb++;
-        }
-        this.jidlo4=this.vratIkonu();
-        this.jidlo4.posunOsaY = 0;
+        this.jidlo[this.i] = this.vratIkonu();
+        this.jidlo[this.i].posunOsaY = 0;
       }
     },
 
@@ -244,20 +200,18 @@ export default {
     },
 
     zacitHru() {
-      // this.ukazInstrukce=true;
       this.pocetBodu = 0;
       this.pocetChyb = 0;
       this.konecHry = false;
-      this.jidlo1 = this.vratIkonu();
-      this.jidlo2 = this.vratIkonu();
-      this.jidlo3 = this.vratIkonu();
-      this.jidlo4 = this.vratIkonu();
       this.pohybujIkonou1();
       this.pohybujIkonou2();
       this.pohybujIkonou3();
       this.pohybujIkonou4();
       this.odectiSekundu();
       setTimeout(this.citacCasu, 20000);
+      for (let i = 0; i < this.jidlo.length; i++) {
+        this.jidlo[i].posunOsaY = 0;
+      }
     },
 
     stiskOK() {
@@ -270,24 +224,34 @@ export default {
     this.pocetBodu = 0;
     this.pocetChyb = 0;
     this.konecHry = false;
-    this.jidlo1 = this.vratIkonu();
-    this.jidlo2 = this.vratIkonu();
-    this.jidlo3 = this.vratIkonu();
-    this.jidlo4 = this.vratIkonu();
+    for (let i = 0; i < 4; i++) {
+      this.jidlo.push({});
+    }
+
+    for (let i = 0; i < this.jidlo.length; i++) {
+      this.jidlo[i] = this.vratIkonu();
+    }
+  },
+
+  beforeDestroy() {
+    this.citacCasu();
+    for (let i = 0; i < this.jidlo.length; i++) {
+      this.jidlo[i].posunOsaY = 0;
+    }
   },
 };
 </script>
 
 <style>
-.instrukce-text{
+.instrukce-text {
   font-weight: 600;
   font-size: 20px;
 }
-.btn-hra1{
-  max-width:50%;
-  max-height:75%;
+.btn-hra1 {
+  max-width: 50%;
+  max-height: 75%;
 }
-.hlasky{
+.hlasky {
   z-index: 3;
 }
 .prehled {
@@ -295,14 +259,15 @@ export default {
   font-weight: bold;
   background: white !important;
   position: relative;
-  bottom:0x;
+  bottom: 0x;
   justify-content: space-between;
-  border-radius: 10px;}
-  
-.prehled h3{
-  left: 20px
+  border-radius: 10px;
 }
-.prehled p{
+
+.prehled h3 {
+  left: 20px;
+}
+.prehled p {
   right: 20px;
 }
 .instrukce {
@@ -315,34 +280,29 @@ export default {
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
-  padding:15px;
+  padding: 15px;
   color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  /* flex-direction: column; */
-    
 }
 
 .cover {
   position: fixed;
   top: 0;
   left: 0;
-background-color: rgba(79, 83, 91, 0.7);
+  background-color: rgba(79, 83, 91, 0.7);
   z-index: 5;
   width: 100%;
   height: 100%;
 }
 
-
 #app .btn-info {
   background-color: green;
- 
+
   margin: 10px;
-  border-radius:10px;
- 
-  
+  border-radius: 10px;
 }
 .vysledek-text {
   font-size: 25px;
@@ -363,19 +323,18 @@ background-color: rgba(79, 83, 91, 0.7);
   background-color: green;
   border-radius: 10px;
 }
-@media(min-width: 448px){
-.prehled h3,
-.prehled p {
-  font-size: 20px;
-  padding: 15px 10px;
-  margin: 3px;
- 
-}
+@media (min-width: 448px) {
+  .prehled h3,
+  .prehled p {
+    font-size: 20px;
+    padding: 15px 10px;
+    margin: 3px;
+  }
 
-.prehled {
-  display: flex;
-  justify-content: space-between;
-}
+  .prehled {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .prehled {
@@ -383,54 +342,43 @@ background-color: rgba(79, 83, 91, 0.7);
   font-weight: bold;
   background: white !important;
   position: relative;
-  bottom:0;
+  bottom: 0;
   justify-content: space-between;
   border-radius: 10px;
 }
 
-.prehled h3{
-  left: 20px
+.prehled h3 {
+  left: 20px;
 }
 
-.prehled p{
+.prehled p {
   right: 20px;
 }
 
-@media(max-width: 448px){
-.prehled .bod,
-.prehled p {
-  font-size: 20px;
-  max-width: 150px;  
-  display: flex;
-}
-.prehled h3{
-  padding: 25px 0;
-}
+@media (max-width: 448px) {
+  .prehled .bod,
+  .prehled p {
+    font-size: 20px;
+    max-width: 150px;
+    display: flex;
+  }
+  .prehled h3 {
+    padding: 25px 0;
+  }
 
-.prehled p{
-  padding: 25px 0 11px 0 ;
-}
-
+  .prehled p {
+    padding: 25px 0 11px 0;
+  }
 }
 .shelf {
-  /*  z-index: 1;*/
   display: block;
 }
 .police {
-  /*display: flex;
-  justify-content: center;*/
   position: relative;
   max-width: 512px;
-  /*width: 80vw;*/
 }
 
-/*#police > img {
-  width: 80vw;
-  height: 80vh;
-}
-*/
 .jidlo {
-  /* z-index: 2;*/
   position: relative;
   background-image: url("./../assets/ikony/shelf.png");
   background-repeat: no-repeat;
@@ -438,12 +386,12 @@ background-color: rgba(79, 83, 91, 0.7);
   width: 100%;
   background-size: auto 100%;
 }
-/* na mobilu je nad polici velky prostor - kvuli tomu vlastnost top - vyresit */
 
 .ikonaJidla {
   position: absolute;
   display: flex;
   justify-content: center;
+  padding: 3px;
   margin: 3px;
   z-index: 0;
 }
@@ -483,7 +431,6 @@ background-color: rgba(79, 83, 91, 0.7);
   color: red;
 }
 
-
 .minutka {
   position: absolute;
   bottom: 0;
@@ -491,6 +438,6 @@ background-color: rgba(79, 83, 91, 0.7);
   margin-right: 5px;
   font-size: 30px;
   font-weight: bold;
-  color:  #f2913d;
+  color: #f2913d;
 }
 </style>

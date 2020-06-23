@@ -38,7 +38,6 @@ h1{
 
 .pozadi{
   background:rgba(255, 255, 255, 0.9);
-  /*border: 2px solid darkgreen;*/
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   

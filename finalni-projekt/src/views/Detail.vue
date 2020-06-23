@@ -2,55 +2,43 @@
   <div class="container">
     <div class="row justify-content-center mt-lg-5 mt-0 mb-4">
       <div class="nadpis col-md-10 pozadi-detailu">
-         <button v-on:click="zpetNaVyber" id="pozadi-zpet" class="mt-4 mb-0">
-                 <img src="./../assets/ikony/arrow.png" id="zpet"/>
-              </button>
+        <button v-on:click="zpetNaVyber" id="pozadi-zpet" class="mt-4 mb-0">
+          <img src="./../assets/ikony/arrow.png" id="zpet" />
+        </button>
         <h2 class="wrap">{{ vybraneRecepty[i].nazev }}</h2>
 
         <div class="fotka">
           <img
-            v-bind:src="require(`../assets/images/${vybraneRecepty[i].obrazek}`)"
+            v-bind:src="
+              require(`../assets/images/${vybraneRecepty[i].obrazek}`)
+            "
             v-bind:alt="vybraneRecepty[i].nazev"
             id="fotka"
             class="img-fluid"
           />
         </div>
-      
 
-      <h3 class="postup">Postup</h3>
-      <div class="navod">
-        <p>{{ vybraneRecepty[i].postup }}</p>
-      </div>
-      <div>
-        <h3 class=" ingredience">Ingredience</h3>
-      </div>
-      <div class="">
-        <p class="porce">Počet porcí: {{ vybraneRecepty[i].pocetPorci }}</p>
-        <ul>
-          <li
-            v-for="(ingredience, index) in vybraneRecepty[i].ingredience"
-            v-bind:key="index"
-          >{{ ingredience }}</li>
-        </ul>
-      </div>
-
-      
-          <!--
-          <router-link
-          class="nav-button col-4 flex-fill text-center font-weight-bold"
-          to="/hra2"
-          >Vyber recept</router-link
-        >
-        <router-link
-          class="nav-button col-4 flex-fill text-center font-weight-bold"
-          to="/vyhledavani"
-          >Kategorie</router-link
-          >-->
+        <h3 class="postup">Postup</h3>
+        <div class="navod">
+          <p>{{ vybraneRecepty[i].postup }}</p>
+        </div>
+        <div>
+          <h3 class=" ingredience">Ingredience</h3>
+        </div>
+        <div class="">
+          <p class="porce">Počet porcí: {{ vybraneRecepty[i].pocetPorci }}</p>
+          <ul>
+            <li
+              v-for="(ingredience, index) in vybraneRecepty[i].ingredience"
+              v-bind:key="index"
+            >
+              {{ ingredience }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-
-
+  </div>
 </template>
 
 <script>
@@ -59,38 +47,33 @@ export default {
   methods: {
     zpetNaVyber() {
       this.$emit("zpetNaVyber");
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-
-  .wrap{
-    padding: 30px;
-  
+.wrap {
+  padding: 30px;
 }
-.nav-button{
+.nav-button {
   color: white;
   background-color: green;
   position: absolute;
   bottom: 0;
   font-weight: normal;
-  
 }
 
-h3{
+h3 {
   color: green;
   padding: 20px;
   font-size: 20px !important;
 }
 
-.pozadi-detailu{
-  background:rgba(255, 255, 255, 1);
+.pozadi-detailu {
+  background: rgba(255, 255, 255, 1);
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  
-
 }
 .fotka img {
   width: 100%;
@@ -99,7 +82,6 @@ h3{
   object-fit: cover;
   border-radius: 10px;
 }
-
 
 .hlavni {
   position: relative;

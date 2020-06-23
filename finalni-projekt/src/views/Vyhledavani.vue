@@ -1,53 +1,32 @@
 <template>
   <div class="okno p-0 container-fluid mt-lg-4 mt-0">
-   
-
     <div class="col-lg-6 mt-lg-4 mt-0 pozadi mx-auto">
-      
-      <detail v-on:zpetNaVyber="zpetNaVyber" v-bind:vybraneRecepty="vybraneRecepty" v-bind:i="i" v-if="detail" id="detail" />
+      <detail
+        v-on:zpetNaVyber="zpetNaVyber"
+        v-bind:vybraneRecepty="vybraneRecepty"
+        v-bind:i="i"
+        v-if="detail"
+        id="detail"
+      />
       <div v-else>
         <div class="col-md-12 mx-auto">
+          <router-link to="/">
+            <button id="pozadi-zpet" class="mt-4  mb-0">
+              <img src="./../assets/ikony/arrow.png" id="zpet" />
+            </button>
+          </router-link>
 
-           <router-link to="/">
-              <button id="pozadi-zpet" class="mt-4  mb-0">
-                 <img src="./../assets/ikony/arrow.png" id="zpet"/>
-              </button>
-            </router-link>
-            
           <h1 class=" pt-4 mb-4 pl-5 pr-5 text-center">Vyhledávání receptů</h1>
-          
-            <div class="input-group p-0 col-md-12 mx-auto stin-inputu">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="najdi recept"
-                v-model="klicoveSlovo"
-                v-on:input="vyberReceptySlovo"
-              />
-            </div>
-          
-<!--
-          <div class="d-flex form-group col-md-8 ">
-            <label class="col-md-4" for="kategorie">Vyber kategorii:</label>
-            <select
-              name="kategorie"
-              v-model.number="kategorieId"
-              id="kategorie"
-              v-on:click="vyberReceptyKategorie"
-              class="form-control col-md-4"
-            >
-              <option value="56">Polévky</option>
-              <option value="22">Maso</option>
-              <option value="85">Vegetariánské</option>
-              <option value="86">Hlavní jídla</option>
-              <option value="87">Předkrmy</option>
-              <option value="88">Snídaně</option>
-              <option value="71">Saláty</option>
-              <option value="89">Svačiny</option>
-              <option value="90">Pomazánky</option>
-              <option value="91">Dezerty</option>
-              <option value="25">Ryby</option>
-            </select> -->
+
+          <div class="input-group p-0 col-md-12 mx-auto stin-inputu">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="najdi recept"
+              v-model="klicoveSlovo"
+              v-on:input="vyberReceptySlovo"
+            />
+          </div>
 
           <label for="vyber-slovo"></label>
 
@@ -63,9 +42,7 @@
         </div>
       </div>
     </div>
-    </div>
-  
-  
+  </div>
 </template>
 
 <script>
@@ -120,11 +97,9 @@ export default {
       }
 
       for (let cislo of this.klicoveId) {
-        // console.log(cislo);
         let receptySCislem = this.recepty.filter((recept) =>
           recept.vyhledavaniCisla.includes(cislo)
         );
-        // console.log(receptySCislem);
         this.vybraneRecepty.push(receptySCislem);
       }
 
@@ -134,7 +109,7 @@ export default {
         if (!tmpRecepty.includes(recept)) {
           tmpRecepty.push(recept);
         }
-      };
+      }
       this.vybraneRecepty = tmpRecepty;
     },
 
@@ -162,7 +137,6 @@ export default {
     prejdiNaDetail(idx) {
       this.i = idx;
       this.detail = true;
-      // console.log(this.i);
     },
     zpetNaVyber() {
       this.detail = false;
@@ -177,12 +151,7 @@ export default {
 </script>
 
 <style>
- .form-control:focus {
-        border-color: #ff80ff;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);}
-
-
-.stin-inputu{
+.stin-inputu {
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
 }
 .btn-default {
