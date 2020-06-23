@@ -61,7 +61,6 @@ export default {
     return {
       klicoveSlovo: "",
       klicoveId: [],
-      kategorieId: [],
       klicovaSlova: klicovaSlova,
       recepty: recepty,
       vybraneRecepty: [],
@@ -163,12 +162,5 @@ export default {
   width: 100px;
   padding: 12.5px;
 }
-#kategorie {
-  right: 20px;
-}
 
-#vyber-kategorie {
-  margin-top: 20px;
-  justify-content: center;
-}
 </style>
