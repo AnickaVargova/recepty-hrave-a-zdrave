@@ -13,7 +13,7 @@ export default [{
     },
 
     {
-        nazev: 'Quesadillas',
+        nazev: 'Plněné tortilly',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'maso'],
         kategorieCisla: [2, 4],
@@ -37,7 +37,7 @@ export default [{
         shody: 0,
     },
     {
-        nazev: 'Focaccia s\xa0rajčaty, olivami a cibulí',
+        nazev: 'Pizza chléb s\xa0rajčaty, olivami a cibulí',
         pocetPorci: 4,
         kategorie: ['hlavní jídla', 'vegetariánské'],
         kategorieCisla: [3, 4],
