@@ -1,5 +1,5 @@
 {
-    "masterPicture": "TODO: Path to your master picture",
+    "masterPicture": "./src/assets/images/zelenyhrnec.png",
     "iconsPath": "/",
     "design": {
         "ios": {
