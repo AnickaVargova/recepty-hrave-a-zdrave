@@ -241,7 +241,8 @@ export default [{
         postup: 'Z mouky, nasekaného másla, soli a vody vytvoříme kouli. Zabalíme ji do fólie a dáme do ledničky. Pórek a houby nakrájíme na kousky a podusíme na lžíci oleje. Osolíme. V případě potřeby podléváme vodou. Z těsta vytvoříme placku, kterou vmáčkneme do formy s\xa0vyššími okraji. Těsto by mělo tvořit misku. Dovnitř naskládáme zeleninovou směs, zalijeme rozšlehanými vejci a zasypeme sýrem. Pečeme při teplotě 180°C, dokud těsto nezezlátne.',
         ingredience: ['280 g hladké špaldové mouky', '165 g másla', '8 lžic vody', 'sůl', '6 vajec', 'pórek', '500 g žampiónů', 'lžíce oleje', '100 g tvrdého nastrouhaného sýra'],
         obrazek: 'quichesporkem.jpg',
-        vyhledavaniCisla: [2, 11, 23, 9, 41, 86, 89, 88, 85, 116]
+        vyhledavaniCisla: [2, 11, 23, 9, 41, 86, 89, 88, 85, 116],
+        shody: 0,
     },
     {
         nazev: 'Brownies',
@@ -370,7 +371,9 @@ export default [{
         ingredience: ['1 cibule', '3 brambory', '2 lžíce másla', 'sůl', '1 l vody nebo vývaru', '500 g brokolice'],
         obrazek: 'brokolicovapolevka.jpg',
         vyhledavaniCisla: [130, 24, 56, 41, 85, 3, 134],
-
+        shody: 0
+    },
+    {
         nazev: 'Kuřecí maso se zeleninou',
         pocetPorci: 4,
         postup: 'Lilek nakrájíme na nudličky, prosolíme, dáme do cedníku a necháme z\xa0něj odkapat vodu (cca půl hodiny). Na rozpáleném ohni zprudka osmažíme maso  ochucené feferonkou, zázvorem a česnekem. Přidáme najemno nakrájenou zeleninu a po pěti minutách i lilek. Dochutíme sezamovým olejem a lžící chilli omáčky.',
@@ -378,6 +381,7 @@ export default [{
         obrazek: 'kurecimasosezeleninou.jpg',
         vyhledavaniCisla: [114, 4, 144, 3, 130, 23, 66, 69, 22, 86, 41],
         shody: 0,
+
     },
     {
         nazev: 'Pudink s\xa0tvarohem',
@@ -404,6 +408,7 @@ export default [{
         ingredience: ['celer', 'petržel', 'mrkev', 'česnek', 'zázvor', 'rýžový ocet', 'sójová omáčka', 'hrníček koriandru', 'hrníček trhané bazalky', '3 svitky skořice', 'rýžové ploché nudle', 'uzené tofu', 'zelí', 'mungo klíčky'],
         obrazek: 'pho.jpg',
         vyhledavaniCisla: [10, 18, 41, 47, 56, 67, 69, 81, 85, 141, 142, 19, 145, 66, 35, 146, 147, 148, 149],
+        shody: 0,
     },
 
     {
@@ -457,7 +462,7 @@ export default [{
         pocetPorci: 8,
         postup: 'Datle necháme přes noc máčet ve vodě. Vločky rozmixujeme najemno a potom mixujeme s\xa0máslem, datlemi a citrónovou kůrou (pokud se směs špatně míchá, můžeme přilít vodu). Těsto vmáčkneme do formy. Na náplň rozmixujeme dohromady řecký jogurt, tvaroh, vajíčka, pudinkový prášek, mléko a med. Pečeme na 180 stupňů zhruba půl hodiny. K\xa0cheesecaku se hodí rozehřáté ovoce.',
         ingredience: ['80 g datlí', '50 g másla', '150 g ovesných vloček', 'citrónová kůra', '300 g tvarohu', '220 g řeckého jogurtu', '2 vajíčka', 'vanilkový pudink', '150 ml mléka', '2 lžíce medu'],
-        obrazek: 'cheesecake.jpg',
+        obrazek: 'tvarohovykolac.jpg',
         vyhledavaniCisla: [11, 12, 39, 40, 57, 61, 76, 91, 102, 140, 150, 33],
         shody: 0,
     },
