@@ -145,7 +145,7 @@ export default {
   created() {
     this.zkratPostup();
     this.vyberNahodneRecepty();
-  },
+    },
 };
 </script>
 
