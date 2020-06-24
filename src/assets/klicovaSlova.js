@@ -149,10 +149,4 @@ export default [
     { id: 148, jmeno: 'mungo' },
     { id: 149, jmeno: 'klíčky' },
     { id: 150, jmeno: 'cheesecake' },
-    { id: 151, jmeno: '' },
-    { id: 152, jmeno: '' },
-    { id: 153, jmeno: '' },
-    { id: 154, jmeno: '' },
-    { id: 155, jmeno: '' },
-
 ]

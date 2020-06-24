@@ -7,9 +7,7 @@ export default [{
         obrazek: 'hraskovapolevka.jpg',
         vyhledavaniCisla: [1, 2, 3, 56, 41, 67, 85, 86, 62],
         shody: 0,
-
     },
-
     {
         nazev: 'Plněné tortilly',
         pocetPorci: 4,
@@ -245,7 +243,6 @@ export default [{
         obrazek: 'quichesporkem.jpg',
         vyhledavaniCisla: [2, 11, 23, 9, 41, 86, 89, 88, 85, 116]
     },
-
     {
         nazev: 'Brownies',
         pocetPorci: 20,
