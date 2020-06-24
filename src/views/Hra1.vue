@@ -122,7 +122,7 @@ export default {
 
     posunIkonu1() {
       if (this.jidlo[0].posunOsaY < 450) {
-        this.jidlo[0].posunOsaY += Math.random() * 2;
+        this.jidlo[0].posunOsaY += Math.random() * 1.5;
       } else {
         this.jidlo[0] = this.vratIkonu();
         this.jidlo[0].posunOsaY = 0;
@@ -131,7 +131,7 @@ export default {
 
     posunIkonu2() {
       if (this.jidlo[1].posunOsaY < 450) {
-        this.jidlo[1].posunOsaY += Math.random() * 2;
+        this.jidlo[1].posunOsaY += Math.random() * 1.5;
       } else {
         this.jidlo[1] = this.vratIkonu();
         this.jidlo[1].posunOsaY = 0;
@@ -139,7 +139,7 @@ export default {
     },
     posunIkonu3() {
       if (this.jidlo[2].posunOsaY < 450) {
-        this.jidlo[2].posunOsaY += Math.random() * 2;
+        this.jidlo[2].posunOsaY += Math.random() * 1.5;
       } else {
         this.jidlo[2] = this.vratIkonu();
         this.jidlo[2].posunOsaY = 0;
@@ -147,7 +147,7 @@ export default {
     },
     posunIkonu4() {
       if (this.jidlo[3].posunOsaY < 450) {
-        this.jidlo[3].posunOsaY += Math.random() * 2;
+        this.jidlo[3].posunOsaY += Math.random() * 1.5;
       } else {
         this.jidlo[3] = this.vratIkonu();
         this.jidlo[3].posunOsaY = 0;
@@ -394,6 +394,7 @@ export default {
   margin: 3px;
   z-index: 0;
   cursor: pointer;
+  padding-top: 20px;
 }
 
 #ikona1 {

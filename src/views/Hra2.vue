@@ -176,7 +176,7 @@ export default {
   created() {
     this.zkratPostup();
     this.hratZnovu();
-    },
+  },
 };
 </script>
 
@@ -213,6 +213,7 @@ export default {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
+
 
 @media (min-width: 780px) {
   .obalObrazek {
@@ -281,7 +282,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid white;
+    border: 2px solid white !important;
     background-color: white;
     box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.1);
     border: darkgrey;
@@ -348,7 +349,7 @@ export default {
 }
 
 .zvyraznene {
-  border: 2px solid green;
+  border: 2px solid green !important;
   background-color: lightgreen;
 }
 
