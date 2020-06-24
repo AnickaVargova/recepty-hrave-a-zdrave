@@ -22,7 +22,7 @@
             <input
               type="text"
               class="form-control"
-              placeholder="zadej klíčové slovo"
+              placeholder="Hledat"
               v-model="klicoveSlovo"
               v-on:input="vyberReceptySlovo"
             />
