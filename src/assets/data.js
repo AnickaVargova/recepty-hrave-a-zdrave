@@ -5,7 +5,7 @@ export default [{
         postup: 'Pórek a cibuli nakrájíme najemno. V kastrolu na středním ohni rozehřejeme  máslo, přidáme pórek a cibuli, zamícháme, přiklopíme poklicí a necháme dusit 3 minuty. Opět promícháme. Přidáme mražený hrášek, zvýšíme oheň a důkladně mícháme 2 minuty. Přilijeme vroucí vodu, osolíme a přivedeme k\xa0varu. Přidáme zakysanou smetanu, opět přivedeme k\xa0varu a kastrol stáhneme z ohně.Přidáme lístky máty a polévku důkladně rozmixujeme v mixéru. Poté ji přepasírujeme přes cedník do čistého hrnce.',
         ingredience: ['500 g mraženého hrášku', '800 ml vody', '1 lžíce   zakysané smetany', '100 g bílé části pórku', '100 g oloupané cibule', '50 g másla', 'hrst lístků máty', 'sůl'],
         obrazek: 'hraskovapolevka.jpg',
-        vyhledavaniCisla: [1, 2, 3, 56, 41, 67, 85, 86, 62],
+        vyhledavaniCisla: [1, 2, 3, 56, 41, 67, 85, 62],
         shody: 0,
     },
     {
